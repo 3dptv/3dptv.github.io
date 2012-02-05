@@ -1,0 +1,1194 @@
+/* $Id: style.css 3782 2010-10-21 11:16:23Z bherlig $ */ /**/
+/* 
+** HTML ELEMENTS 
+*/
+
+html,body {
+	background-image: url("../../images/night/header___back.png");
+	background-repeat: repeat-x;
+	background-position: top left;
+	font: 10pt Verdana, Arial, Helvetica, sans-serif;
+	color: black;
+	text-align: left;
+	background-color: white;
+	min-width: 980px;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+table {
+	font-size: 1.0em;
+	margin-top: 10px;
+	width: 100%;
+}
+
+tbody {
+	border-top: 0px;
+}
+
+tr.odd td,tr.even td {
+	padding: 0.3em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	padding-top: 1.0em;
+	margin-bottom: 0.5em;
+	padding-bottom: 3px;
+}
+
+h1 {
+	font-size: 18pt;
+	color: #378ddc;
+}
+
+h2 {
+	font-size: 14pt;
+	border-bottom: 1px solid #ccc;
+}
+
+h3 {
+	font-size: 115%;
+}
+
+h4 {
+	font-size: 100%;
+}
+
+h5,h6 {
+	font-size: 110%;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 1.0em;
+}
+
+a {
+	color: #369;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+fieldset {
+	border: 1px solid #ccc;
+}
+
+pre {
+	background-color: #eee;
+	padding: 0.75em 1.5em;
+	font-size: 10pt;
+	border: 1px solid #ddd;
+}
+
+/*
+** OWN OVER ALL STYLES
+*/
+
+.clear {
+	clear: none;
+	height: 0px;
+	line-height: 0px;
+}
+
+.form-text,.form-submit {
+	border: 1px solid #666;
+	font-size: 1.1em;
+	vertical-align: middle;
+	padding: 0.1em;
+}
+
+
+/*
+** HEADER
+*/
+
+#mainheader {
+	z-index: 10; /* Is there because otherwise IE7 draws the dropdown menu below the wiki tabs */
+	position: relative;
+	height: 170px;
+}
+
+#mainheader a {
+	color: #f5f5f5;
+}
+
+
+/*
+** LOGO
+*/
+
+#logo {
+	vertical-align: middle;
+	float: left;
+	height: 150px;
+	overflow:hidden;
+}
+
+a.logo_link {
+    position:absolute;
+    z-index: 20;
+}
+	
+#logo img {
+	float: left;
+	margin: 10px 10px 10px 30px;
+	max-height: 150px;
+	max-width:150px;
+}
+
+.site-name {
+	margin: 0.6em 0 0 0;
+	padding: 0px;
+	font-size: 2.8em;
+}
+
+#site-name-frame {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+}
+
+h1.site-name { /*height: 1em;*/
+	color: #F5F5F5;
+	font-family: Arial,sans-serif;
+	font-size: 28pt;
+	font-weight: bold;
+	margin: 6px 0px 0px 6px;
+	overflow: hidden;
+	padding-left: 200px;
+	white-space: nowrap;
+}
+
+.site-name a:hover {
+	text-decoration: none;
+}
+
+
+/*
+** USER INFO 
+*/
+
+#user-info {
+	float: right;
+	margin: 17.5px;
+}
+
+#user-info ul {
+	list-style: none;
+}
+
+#user-info li {
+	display: inline;
+	margin: 0 0.5em;
+}
+
+#user-info a {
+	font-size: 1em;
+	text-decoration: none;
+}
+
+
+/*
+** SEARCH
+*/
+
+#search-box {
+	float: right;
+	margin: 15px;
+	top: 2.8em;
+}
+
+#search {
+	margin-top: 70px;
+	margin-bottom: 15px;
+	text-align: right;
+}
+
+#search-theme-form,#search-theme-form div {
+	display: inline;
+}
+
+#search-box .form-item label {
+	margin-bottom: 5px;
+	margin-top: 25px;
+	color: #f5f5f5;
+}
+
+#search-theme-form #edit-submit {
+	border: none;
+	vertical-align: middle;
+}
+
+#edit-search-theme-form-keys {
+	height: 1em;
+	padding: 1px;
+	vertical-align: middle;
+}
+
+#search-theme-form .form-submit {
+	vertical-align: middle;
+}
+
+#search-theme-form .form-text {
+	border: 1px solid #aad;
+	width: 9em;
+	padding: 0 0.5em;
+	background-color: #fff;
+	vertical-align: middle;
+	height: 21px;
+	font-size: 10pt;
+}
+
+.search-text {
+	color: #CCCCCC;
+	background-image:url('../images/search.gif');
+	background-repeat:no-repeat;
+	background-position:right;
+}
+
+
+/*
+** MENU TOP - NAV LIST 
+*/
+
+#navlist {
+	float: right;
+	height: 28px;
+	font-size: 1.0em;
+}
+
+ul#navlist.links li {
+	display: block;
+	float: left;
+	height: 28px;
+	line-height: 28px;
+	padding: 0px;
+	position:relative;
+	z-index: 20;
+}
+
+#mainheader ul.links li a {
+	border-left: 1px solid #666;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+
+/*
+** MENU TOP - MAIN NAVIGATION
+*/
+
+#mainheader .main_navi {
+	position: absolute;
+	bottom: 7px;
+	left: 198px;
+}
+
+.main_navi .clear-block {
+	display: inline;
+	float: left;
+	width: inherit;
+}
+
+/*
+** MAIN CONTENT AND FOOTER
+*/
+
+#footer {
+	margin: 10px 30px;
+	padding-bottom: 40px;
+}
+
+#footer a {
+	color: #666;
+}
+
+
+/*
+** BREADCRUMBS
+*/
+
+#breadcrumbs {
+	height: 1em;
+	font-size: 0.9em;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+/*
+** TABS
+*/
+
+.node .taxonomy {
+	color: #999999;
+	display: block;
+	font-size: 0.8em;
+	padding-left: 1.5em;
+}
+
+.node .taxonomy ul.links li.first {
+	border: medium none;
+}
+
+.node .taxonomy ul.links li {
+	border-left: 1px solid #eee;
+}
+
+
+/*
+** WIKI TABS
+*/
+
+.tabs {
+}
+
+.tabs_back {
+	z-index: 0; /* Is there because otherwise IE7 draws the dropdown menu below the wiki tabs */
+	margin: 0px;
+	padding-left: 30px;
+	position: relative;
+	background-image: url("../../images/night/tabs___back.png");
+	background-repeat: repeat-x;
+	background-position: top left;
+	height: 46px;
+	border: none;
+}
+
+.list_back {
+	bottom: 1px;
+	position: absolute;
+}
+
+.tabs ul.primary {
+	overflow: visible;
+	position: relative;
+	border: none;
+	margin: 5px 0px;
+	padding: 0px;
+}
+
+.tabs ul.primary li {
+	display: inline;
+	margin: 0;
+	padding: 5px 10px;
+	background: #eee;
+	background-image: url("../images/tabs___button.png");
+	background-repeat: repeat-x;
+	background-position: top left;
+	border-color: #333 #333 #7a7a7a #333;
+	border-style: solid solid none solid;
+	border-width: 1px;
+	border-top-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	border-top-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+	color: #616161;
+}
+
+.tabs ul.primary li.active {
+	background-color: #fff;
+	background-image: url("../images/tabs___button_active.png");
+	background-repeat: repeat-x;
+	background-position: top left;
+	border-color: #333 #333 #fff #333;
+	border-style: solid;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+	color: #3f3f3f;
+}
+
+.tabs ul.primary li:hover {
+	border-color: #333 #333 #7a7a7a #333;
+	border-style: solid solid none solid;
+	border-width: 1px;
+	color: #000;
+}
+
+.tabs ul.primary li.active:hover {
+	border-color: #333 #333 #fff #333;
+	border-style: solid;
+	border-width: 1px;
+	color: #000;
+}
+
+.tabs ul.primary li a, .tabs ul.primary li.active a.active {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+.tabs ul.primary li a {
+	color: #616161;
+}
+
+.tabs ul.primary li.active a.active {
+	color: #3f3f3f;
+}
+
+.tabs ul.primary li a:hover, .tabs ul.primary li.active a.active:hover {
+	color: #000;
+}
+
+
+
+/*
+** Menu items list
+*/
+
+.item-list ul li {
+	list-style: none;
+	margin: 0 0 0.25em 0em;
+	padding: 0;
+}
+
+
+/*
+** PAGE LAYOUT
+*/
+
+.clear-block {
+	display: inline-block;
+	float: none;
+	width: 100%;
+}
+
+.node-form .standard {
+	clear: none;
+}
+
+.form-text,.form-textarea {
+	border: 1px solid #aad;
+}
+
+.form-item label {
+	margin-bottom: 5px;
+	margin-top: 25px;
+}
+
+h1.title {
+	margin: 10px 0 20px;
+	padding-top: 0.2em;
+	font-size: 28pt;
+}
+
+h2.title {
+	font-size: 14pt;
+}
+
+.title,.title a {
+	font-size: 130%;
+	font-weight: bold;
+	margin: 0pt auto;
+}
+
+.sticky {
+	padding: .5em;
+	background-color: #eee;
+	border: solid 1px #ddd;
+}
+
+.node .taxonomy {
+	color: #999;
+	padding-left: 1.5em;
+}
+
+.node .picture {
+	border: 1px solid #ddd;
+	float: right;
+	margin: 0.5em;
+}
+
+.node .submitted {
+	color: #666;
+}
+
+.node .taxonomy,.node .submitted {
+	font-size: 0.8em;
+}
+
+
+/*
+** CONTENT
+*/
+
+#sidebar-middle {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	min-height: 100%;
+	height: auto !important;
+	/*border-bottom: 1px solid #aaa;*/
+}
+
+#main {
+	/* min-height:440px;
+ height:auto !important;*/ /*height: 440px;*/
+	padding: 20px 30px 30px 30px;
+	min-width: 800px;
+	/*position: relative; Distance between content parts */
+}
+
+ul,ol {
+	margin-top: 0.5em;
+	margin-bottom: 1.0em;
+	margin-left: 2.5em;
+}
+
+#main .tabs ul,#navigation .tabs .ul {
+	margin: 10px 0px 0px 0px;
+}
+
+.section-edit {
+	margin-top: 2.5em;
+	padding-right: 0.5em;
+}
+
+a.section-edit {
+    font-size: 8pt;	
+}
+
+.indented {
+	margin-left: 25px;
+}
+
+.comment {
+	border: 1px solid #abc;
+	padding: 0.5em;
+	margin-bottom: 1em;
+	clear: none;
+}
+
+.comment .title a {
+	font-size: 1.1em;
+	font-weight: normal;
+}
+
+.comment .new {
+	text-align: right;
+	font-weight: bold;
+	font-size: 0.8em;
+	float: right;
+	color: red;
+}
+
+.comment .links {
+	margin-bottom: 0;
+}
+
+.comment .picture {
+	border: 1px solid #abc;
+	float: right;
+	margin: 0.5em;
+}
+
+
+/*
+** User Profile
+*/
+
+#profile {
+	width: 100%;
+}
+
+#profile #colleft {
+}
+
+#profile #colright {
+	margin-top: 40px;
+}
+
+#profile #name {
+	font-size: 200%;
+	font-weight: bolder;
+	margin-bottom: 2px;
+	padding: 2px 3px;
+}
+
+#profile #picture {
+	width: 200px;
+}
+
+#profile .profile_edit_link {
+	font-size: 10pt;
+	float: right;
+}
+
+#profile .section_header {
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 2px;
+	padding: 2px 3px;
+}
+
+#profile .section {
+	padding: 2px 3px;
+}
+
+#profile .infotext {
+	float: left;
+	margin-bottom: 2px;
+	width: 130px;
+}
+
+#profile .infodata {
+	margin-left: 140px;
+	margin-bottom: 2px;
+	width: 254px;
+}
+
+#profile .operation {
+	width: 200px;
+	border-bottom: thin solid #98B5E5;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+#profile .friendrow {
+	margin-bottom: 10px;
+	overflow: auto;
+	width: 100%;
+}
+
+#profile .friend {
+	float: left;
+	min-height: 100px;
+	width: 133px;
+}
+
+#profile .friend .icon {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: -2px;
+	text-align: center;
+}
+
+#profile .friend .name {
+	text-align: center;
+}
+
+
+/*
+** User Profile Settings
+** Special styles for form items
+*/
+
+#profile_setting .form-item label {
+	float: left;
+	min-width: 150px;
+}
+
+#profile_setting .fieldset-neg-spacer {
+	margin-top: -10px;
+}
+
+#profile_setting .form-item .description {
+	margin-left: 150px;
+}
+
+#profile_setting .form-item .resizable-textarea {
+	clear: right;
+	margin-top: 10px;
+}
+
+#profile_setting .form-item .option {
+	clear: left;
+	float: none;
+}
+
+#profile_setting .form-item .form-checkbox {
+	margin: 3px;
+}
+
+#profile_setting .img_assist-button {
+	visibility: hidden;
+	height: 0px;
+}
+
+#profile_setting .birthday_year {
+	float: left;
+	margin-right: 5px;
+}
+
+#profile_setting .birthday_month {
+	float: left;
+	margin-right: 5px;
+}
+
+#profile_setting .birthday_day {
+	clear: right;
+}
+
+#profile_setting .form-item label {
+	margin-top: 0px;
+}
+
+#profile_setting .form-submit {
+	clear: left;
+	float: none;
+}
+
+
+/*
+** FRIENDS
+*/
+
+#friends {
+	margin-top: 10px;
+}
+
+#friends .friend {
+	padding: 5px;
+	/*min-height: 100px;*/
+	width: 600px;
+	margin-bottom: 10px;
+	background-color: #eee;
+	border: thin solid #336699;
+	overflow: auto;
+}
+
+#friends .icon {
+	float: left;
+	width: 100px;
+	margin-right: 10px;
+}
+
+#friends .name {
+	float: left;
+	width: 290px;
+	margin-right: 10px;
+}
+
+#friends .operations {
+	float: left;
+	width: 180px;
+}
+
+#friends .operation {
+	margin-bottom: 2px;
+}
+
+
+/*
+** PROJECT
+*/
+
+.projectInformationTable td {
+	vertical-align: top;
+	padding: 3px;
+	border: 1px #fff solid;
+	background-color: #eee;
+}
+
+/*
+** Dashboard
+*/
+#dashboard {
+}
+
+#dashboard #colleft {
+}
+
+#dashboard #colright {
+}
+
+#dashboard .section {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+}
+
+#dashboard .section_header {
+	font-size: 100%;
+	font-weight: bold;
+	padding: 2px 5px;
+}
+
+#dashboard .section_description {
+	color: graytext;
+}
+
+#dashboard .entry {
+	font-weight: bold;
+	margin-top: 10px;
+	padding: 0px 5px;
+}
+
+#dashboard .description {
+	padding: 0px 5px;
+}
+
+.goto-project img {
+  vertical-align: middle;	
+}
+
+
+/*
+** Community
+*/
+
+#community {
+}
+
+#community #colleft {
+}
+
+#community #colright {
+}
+
+#community #name {
+	font-size: 200%;
+	font-weight: bolder;
+	margin-bottom: 2px;
+	padding: 2px 3px;
+}
+
+#community .section_header {
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 2px;
+	padding: 2px 3px;
+}
+
+#community .section {
+}
+
+#community .infotext {
+	float: left;
+	margin-bottom: 2px;
+	width: 130px;
+}
+
+#community .infodata {
+	margin-left: 140px;
+	margin-bottom: 2px;
+	width: 260px;
+}
+
+#community .operation {
+	border-bottom: 1px solid #CCCCCC;
+	padding: 4px 0;
+}
+
+#toc {
+	border: 1px solid gray;
+	padding: 5px 10px 5px 10px;
+	background-color: #eee;
+}
+
+#toc ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+#toc .toclevel-1 {
+	margin-left: 0px;
+}
+
+#toc .toclevel-2 {
+	margin-left: 10px;
+}
+
+#toc .toclevel-3 {
+	margin-left: 20px;
+}
+
+#toc .toclevel-4 {
+	margin-left: 30px;
+}
+
+#toc .toclevel-5 {
+	margin-left: 40px;
+}
+
+
+/**
+ * MY ORIGO HOME
+ */
+
+#main .item-list {
+	overflow: hidden;
+	height: 2em;
+	margin: 20px 0 0 0;
+}
+ 
+table.workitems {
+	width: 100%;
+}
+
+table.workitems td {
+	font-size: 8pt;
+}
+
+table.workitems td.workitem-footer {
+    border-bottom: none;
+    font-size: 10pt;	
+}
+
+table.workitems td.cell1 {width: 20pt;}
+table.workitems td.cell2 {width: 110pt;}
+table.workitems td.cell3 {width: 30pt;}
+
+table.workitems td.cell3 img {
+	width: 18px;
+	height: 18px;
+}
+
+table.workitems td {
+    border-bottom: 1px dashed #ccc;	
+}
+
+#readstatelink {
+	font-size: 8pt;
+	padding: 5px;
+	display: block;
+}
+
+#tabborder {
+	height: 0px;
+	clear: none;
+}
+
+#navigation {
+	overflow: auto;
+	padding-top: 5px;
+	background-color: #eee;
+	border-bottom: none;
+}
+
+#navigation li a {
+	float: left;
+	border: none;
+	border-top: 1px solid #aaa; /* needed for wrapped tabs...*/
+	border-left: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	position: static;
+}
+
+#navigation li a.high .outer {
+	background-image: url("../images/active.gif");
+	background-repeat:no-repeat;
+	background-position: top right;
+	padding: 0px 10px 0px 0px;  
+}
+#navigation li a.active .inner {
+	background-color: white;
+	padding: 0px 2px;  
+}
+
+
+#navigation li a.active {
+	border-bottom: 1px solid white; /*needed for wrapped tabs*/
+}
+
+.workitem_read {
+	color: #AAA;	
+}
+
+.workitem_read a {
+	color: #69d;	
+}
+
+/*
+** Recent Content
+*/
+
+table.views-table {
+	width: 100%;
+}
+
+.views-exposed-form .views-exposed-widgets {
+	display: inline-block;
+}
+
+
+/*
+** WIKI
+*/
+
+blockquote {
+	border-left:3px solid #e1e1e1;
+	margin:8px;
+	padding:0 0 0 15px;
+}
+
+ul.primary li a.active {
+	font-weight: bold;
+}
+
+.messages {
+	background-color: #eee;
+	border: 1px solid #ccc;
+	padding: 0.3em;
+	margin-bottom: 1em;
+}
+
+.error {
+	border-color: red;
+	background-color: #fee;
+}
+
+ul.primary li a.active:hover { /*border-bottom: 1px solid white;*/
+	
+}
+
+
+/*
+** subscriptions
+*/
+
+#subscriptions .form-checkboxes {
+	margin: 0px 0px;	
+}
+
+#subscriptions {
+	margin: 10px 0px;	
+}
+
+
+/*
+ * Hiding the teaser-button/checkbox
+ * See http://drupal.org/node/225955
+ */
+.teaser-checkbox {
+	display:none;
+}
+
+
+/*
+ * ISSUE TRACKER AND FORUM
+ */
+
+.links {
+	margin: 10px 0;
+	overflow: auto;
+	padding: 10px 0;
+}
+ 
+#issue_table .pager {
+	clear: none;
+	margin: 20px 0 5px;
+	text-align: center;
+}
+
+.pager a, .pager strong.pager-current {
+	padding:0.5em;
+}
+
+#issue_header {
+	margin-top: 0.75em;
+}
+
+#forum .title,.title a {
+	font-size: 1.0em;
+	font-weight: normal;
+}
+
+ul.horizontal_list {
+	list-style-type: disc;
+}
+
+ul.horizontal_list li {
+	display: inline;
+	margin-right: 10em;
+}
+
+#issue-tracker-goto-form {
+	display: inline;
+}
+
+#issue-tracker-goto-form div {
+  display: inline;
+}
+
+/* Horizontal layout of some issue-submission input fields */
+.issue-edit #edit-issuestatus-wrapper,
+.issue-edit #edit-assignedto-wrapper,
+.issue-edit #edit-resolution-wrapper,
+.issue-edit #edit-deadline-wrapper,
+.issue-edit #edit-work-amount-wrapper,
+.issue-edit .edit-take-wrapper {
+	float: left;
+	margin: 0 2em 0 0;
+}
+
+.issue-edit {
+	display: table-cell;
+	vertical-align: middle
+}
+	
+.issue-edit .form-item label {
+	/* margin: 0; */
+	margin-top: 0;
+	margin-bottom: 0;
+}
+	
+#edit-body-wrapper {
+	clear: none;
+}
+
+/* Horizontal layout for project-creation form */
+
+.creation-input-top,
+.creation-input-middle,
+.creation-input-bottom {
+	vertical-align: middle;
+	width: 1024px;
+	overflow:hidden;
+/*  clear:left; */
+}
+
+.creation-input-top #edit-user-name-wrapper,
+.creation-input-top #edit-projectname-wrapper,
+.creation-input-middle #edit-description-wrapper,
+.creation-input-middle #edit-mailtext-wrapper,
+.creation-input-bottom .form-item
+{
+	float: left;
+	margin: 0 2em 0 0;
+	width:45%;
+}
+
+.creation-input-top .form-text,
+.creation-input-middle .form-textarea {
+	width:100%;
+	margin: 0 2em 0 0;
+}
+	
+/* no float for radio-buttons */
+.creation-input-bottom .form-item .form-radios .form-item {
+	float:none;
+}
+
+#edit-description-wrapper,
+.creation-input-bottom,
+#progressbar-wrapper {
+	clear: none;
+}
+
+/* Style line numbers of code blocks rendered by GeShiFilter */
+div.geshifilter div ol li {
+	border-left: 1px solid #888;
+	padding-left: 0.4em;
+}
+/* Exclusive to ETHZ */
+#mainheader { 
+	background-image: url("../images/night/header_eth___back.png");
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
