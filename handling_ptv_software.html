@@ -1,0 +1,854 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+
+  <title>Jochen Willneff Reference Manual</title>
+</head><body>
+<br />
+<div class="tabs"><div id="main">
+<h1 class="title"> Handling PTV Software </h1>
+
+<div class="node">
+<div class="clear-block"> <span class="submitted"> <span class="taxonomy">
+<div class="content">
+<center><b>Documentation of 3D Particle Tracking Velocimetry</b></center>
+<p><br />
+</p>
+<center>Technical aspects, Installation, Handling, Software Architecture</center>
+<p><br />
+</p>
+<center>by Jochen Willneff, October 2003</center>
+<p><br />
+<b>1. Installation and Handling of the PTV-Software</b>
+</p>
+<p><br />
+The <a href="http://ptv.origo.ethz.ch/system/files/ptvmanual.pdf" class="external text" title="http://ptv.origo.ethz.ch/system/files/ptvmanual.pdf">attached
+manual</a> contains information on use of the software and gives a
+description of the input data file which have to be provided.
+</p>
+<p><br />
+The test data set typically contains the following:
+</p>
+<p><br />
+images: Cam1 Cam2 Cam3 Cam4 </p>
+<p><br />
+Cam3.addpar
+man_ori.dat
+Cam1.addpar Cam3.ori parameters/
+Cam1.ori </p>
+<p>ptvmanual.pdf
+</p>
+<p>Cam4.addpar res/
+Cam2.addpar
+Cam4.ori
+start.bat
+Cam2.ori
+calFieldApril.txt
+</p>
+<p>Cam3img/
+</p>
+<p><br />
+Images for calibration, camera orientation data, files for additional
+parameters as well as the coordinate file of the points on the
+reference. In man_ori.dat the manually measured image coordinates for
+the pre-orientation (for calibration purpose) are stored.
+</p>
+<p><br />
+</p>
+<ol>
+  <li> subdirectory <span class="geshifilter"><code class="text geshifilter-text">&nbsp;/img</code></span> contains the
+image sequences </li>
+  <li> subdirectory /res for storage of results
+  </li>
+  <li> subdirectory /parameters contains the parameter files
+  </li>
+</ol>
+<p><br />
+The data mentioned above are the data for the experiment itself. To
+avoid confusion this data should be kept separated to the software
+data!
+</p>
+<p><br />
+The software for PTV is stored under /tk84ptv. To start the software
+&gt;&gt; click double on start.bat, which establishes the link to the
+software. Project and software data should not be confused. To start
+the software it is sufficient that a start.bat file, thus the software
+(and code) can be stored independently.
+</p>
+<p><br />
+<b>2. Tcl/Tk-Installation</b>
+</p>
+<p><br />
+The install executable for Tcl/Tk is ActiceTcl8.4.2-win32-ix86.exe in
+this directory. Or can be downloaded from a webpage. Download under:
+</p>
+<p><br />
+<a href="http://downloads.activestate.com/ActiveTcl/Windows/8.4.2/" class="external free" title="http://downloads.activestate.com/ActiveTcl/Windows/8.4.2/">http://downloads.activestate.com/ActiveTcl/Windows/8.4.2/</a>
+</p>
+<p><br />
+After installing Tcl/Tk 8.4.2 all files with extension #.tcl should
+appear with the Tcl/Tk-symbol (feather). Otherwise repeat installation.
+Make sure that the flag for the extensions (*.tcl) is included in the
+path. Otherwise not all needed dll-files can be found from arbitrary
+directories on the PC.
+</p>
+<p><br />
+<b>3. Compilation of TIFF library</b>
+</p>
+<p><br />
+The handling of TIFF images requires a according library libtiff.lib
+and the files tiff.h, tiffio.h and tiffvers.h. If these files are not
+available, they can be generated as described in the following.
+Download file tiff-v3.5.7.zip from the webpage www.libtiff.org. It’s
+also possible to use the newer version tiff-v3.6.0.zip. Both versions
+were tested for Windows2000 and WindowsXP. After unzip change to
+/libtiff, where you will find the file named makefile.vc. </p>
+<p>In the header of this file the command (nmake /f makefile.vc all) to
+compile the library with nmake is given. It is also possible compile
+with Microsoft Visual C++. To open the makefile in the right way,
+change the filename from makefile.vc to makefile.mak. Only the files
+libtiff.lib, tiff.h, tiffio.h and tiffvers.h are necessary for PTV (and
+may be copied in the directory /tk84ptv/src_c, if done so no paths have
+to be adjusted for the compilation of PTV). </p>
+<p><br />
+<b>4. Compilation of the source code of PTV</b>
+</p>
+<p><br />
+In the /tk84ptv directory You will find the following data:
+</p>
+<p><br />
+indexscript to generate tclIndex (/ might be missing in the generated
+tclIndex!)
+</p>
+<p>ptv.tclmain script to start graphical user interface (Windows)
+</p>
+<p>ptvunix.tcldito for Unix
+</p>
+<p>startstart file for Unix
+</p>
+<p>tclIndexIndex with relative paths to Tcl functions
+</p>
+<p>/src_csource code directory
+</p>
+<p>/src_tcltcl script directory
+</p>
+<p><br />
+The contents of the /src_c:
+</p>
+<p>change_parameter.cjw_main.c segmentation.c
+</p>
+<p>checkpoints.cjw_ptv.c sortgrid.c
+</p>
+<p>correspondences.clibtiff.lib unixmakefile
+</p>
+<p>demo.clsqadj.c tiff.h
+</p>
+<p>draw.cmousefunction.c tiffio.h
+</p>
+<p>epi.cmultimed.c tiffvers.h
+</p>
+<p>globals.horientation.c tools.c
+</p>
+<p>homemakefilepeakfitting.c track.c
+</p>
+<p>homemakefile.makpointpos.c trafo.c
+</p>
+<p>image_processing.cptv.c ttools.c
+</p>
+<p>imgcoord.cptv.h typedefs.h
+</p>
+<p>intersect.cray_tracing.c vrml.c
+</p>
+<p>jw_ImgFmtTIF.crotation.c </p>
+<p><br />
+The contents of the /src_tcl:
+</p>
+<p>button.tcldisplay.tclmainpar.tcl
+</p>
+<p>calpar.tcldraw.tcltrackpar.tcl
+</p>
+<p><br />
+The source code is written in C in combination with Tcl/Tk. The
+directory /src_c contains a makefile (homemakefile.mak) which can be
+open with Microsoft Visual C++. During opening this file, a new
+workspace will be generated.
+</p>
+<p><b>NOTICE!</b> The following paths to the libs in the makefile have
+to be adjusted:
+</p>
+<p><br />
+INC_DIR1 = C:\Tcl\include\
+</p>
+<p><br />
+TCL_LIB = C:\Tcl\lib\tcl84.lib </p>
+<p>TK_LIB = C:\Tcl\lib\tk84.lib
+</p>
+<p>TIFF_LIB = H:\tk84ptv\src_c\libtiff.lib
+</p>
+<p><br />
+An alternative is the compilation with nmake in the DOS prompt. For
+compilation in the DOS prompt first perform vcvars32.bat for
+initalization, after that:
+</p>
+<p><br />
+nmake -f homemakefile.mak
+</p>
+<p><br />
+<b>IMPORTANT! </b>Before running the software some paths have to be
+set. start.bat may contain:
+</p>
+<p><br />
+G:/tk84ptv/src_c/jw_prog G:/tk84ptv/ptv.tcl
+</p>
+<p><br />
+This has to be modified to the actual position on the PC. First the
+path to the jw_prog.exe followed by the path to the ptv.tcl script
+file.
+</p>
+<p><br />
+In addition, change path in first line of ptv.tcl (use # for comments):
+</p>
+<p><br />
+set auto_path "G:/tk84ptv . $auto_path"
+</p>
+<p><br />
+Change to according path on PC! The start.bat should be copied to the
+project data directory. Start with double click!
+</p>
+<p><br />
+<b>5. 3D PTV source code</b>
+</p>
+<p><br />
+Authors: Hans-Gerd Maas / Jochen Willneff
+</p>
+<p>Address:Institute of Geodesy and Photogrammetry
+</p>
+<pre>ETH – Hoenggerberg<br /></pre>
+<pre>CH - 8093 Zurich<br /></pre>
+<p><br />
+Functions in <i><b>jw_ptv.c</b></i>:
+</p>
+<p><br />
+<i><b>init_proc_c</b></i>
+</p>
+<p><br />
+initialization, allocation of memory for image data, reading of </p>
+<p>parameter files
+</p>
+<p><br />
+- parameters/ptv.par
+</p>
+<p>- parameters/criteria.par
+</p>
+<p>- parameters/sequence.par
+</p>
+<p><br />
+call of <i><b>parameter_panel_init</b></i>, to fill Tcl/Tk sheets
+</p>
+<p><br />
+<i><b>start_proc_c</b></i>
+</p>
+<p><br />
+reading of parameters/ptv.par
+</p>
+<p><br />
+create file names for low and high pass image and ori/addpar data
+</p>
+<p><br />
+Reading orientation data from file, reading image
+</p>
+<p>Allocation of tracking structure
+</p>
+<p><br />
+<i><b>pre_processing_c</b></i>
+</p>
+<p><br />
+reading of parameters/unsharp_mask.par, default value 12, if not
+existing, call of <i><b>highpass</b></i>, with optional display
+</p>
+<p><br />
+<i><b>detection_proc_c</b></i>
+</p>
+<p><br />
+reading of parameters/pft_version, switch pft for peak fitting
+</p>
+<p><br />
+three cases:
+</p>
+<p><br />
+- 3, call of <i><b>peak_fit_new</b></i>
+</p>
+<p>- 0, call of <i><b>simple_connectivity</b></i>
+</p>
+<p>- 1, call of <i><b>targ_rec</b></i>
+</p>
+<p><br />
+mostly <i><b>peak_fit_new</b></i> was used recently
+</p>
+<p>call of <i><b>quicksort_target_y</b></i>, to sort detected
+particles
+</p>
+<p><br />
+<i><b>correspondences_proc_c</b></i>
+</p>
+<p><br />
+Transformation from pixel to metric coordinates with call of </p>
+<p>- <i><b>pixel_to_metric</b></i>
+</p>
+<p>- <i><b>correct_brown_affin</b></i>
+</p>
+<p><br />
+sort coordinates for binary search with <i><b>quicksort_coord2d_x</b></i>
+</p>
+<p>reading of parameters/criteria.par
+</p>
+<p><br />
+calculation of look up table for multimedia radial displacement
+</p>
+<p>- <i><b>init_mmLUT</b></i>, performed only once!
+</p>
+<p><br />
+search for correspondences with most important function!
+</p>
+<p>- <i><b>correspondences_4</b></i>
+</p>
+<p><br />
+create #_targets data for each image, writing data to *_targets files
+</p>
+<p><br />
+<i><b>determination_proc_c</b></i>
+</p>
+<p><br />
+create res/dt_lsq file, call of function for 3D coordinate
+determination
+</p>
+<p>- <i><b>det_lsq</b></i>, writing data to res/dt_lsq file,
+</p>
+<p><br />
+sort coordinates for binary search in epi line segment drawing
+</p>
+<p>- <i><b>quicksort_coord2d_x</b></i>
+</p>
+<p><br />
+<i><b>sequence_proc_c</b></i>
+</p>
+<p><br />
+reading of parameter file parameters/sequence.par, first and last
+</p>
+<p>time step of sequence
+</p>
+<p><br />
+create file names, res/rt_is.#
+</p>
+<p>processing of each time step with
+</p>
+<p>- <i><b>read_image</b></i>
+</p>
+<p>- <i><b>pre_processing_c</b></i>
+</p>
+<p>- <i><b>detection_proc_c</b></i>
+</p>
+<p>- <i><b>correspondences_proc_c</b></i>
+</p>
+<p>- <i><b>determination_proc_c</b></i>
+</p>
+<p><br />
+<i><b>calibration_proc_c</b></i>
+</p>
+<p><br />
+reading of parameters/unsharp_mask.par, default value 12, if not
+</p>
+<p>existing
+</p>
+<p><br />
+8 cases, switch set by sel:
+</p>
+<p><br />
+- 1, read calibration parameter file parameters/cal_ori.par
+</p>
+<p>create file names, call of <i><b>read_image</b></i>
+</p>
+<p><br />
+- 2, detection procedure, call of <i><b>pre_processing_c</b></i>,
+target
+</p>
+<p>recognition by call of <i><b>targ_rec</b></i>, reading </p>
+<p>parameters/detect_plate.par, writing #pix files for each image
+</p>
+<p><br />
+- 3, manual orientation, read parameters/man_ori.par, interactive
+</p>
+<p>measurement of four reference points in each image, writing </p>
+<p>pixel coordinates to file man_ori.dat, can be used for further
+</p>
+<p>orientation calculation, see case 4
+</p>
+<p><br />
+- 4, read points numbers from parameters/man_ori.par, read pixel </p>
+<p>coordinates of older pre-orientation from man_ori.dat, display
+</p>
+<p><br />
+- 5, sort grid, read coordinate from reference body, </p>
+<p>read orientation and addpar files, calculation of raw orientation </p>
+<p>with 4 points by call of <i><b>raw_orient</b></i>, write
+orientation data,
+</p>
+<p>call of <i><b>write_ori</b></i>, sorting of detected points by </p>
+<p>back-projection by call of <i><b>sortgrid_man</b></i>, with
+display, </p>
+<p>if examine is set to 4, create files for dump dataset, </p>
+<p>allowing layerwise calibration
+</p>
+<p><br />
+- 6, orientation, if examine set to 4, reading files for layerwise
+calibration, else calculation of resection by call of <i><b>orient</b></i>,
+if examine set to 4, read dumped data sets first, then call orient,
+write results in ori and addpar files
+</p>
+<p><br />
+- 7, <i><b>checkpoint_proc</b></i>, to display residuals of
+checkpoints
+</p>
+<p><br />
+- 8, draw additional parameter figures, display regular grid and
+</p>
+<p>(exaggerate) distorted grid
+</p>
+<p><br />
+<i><b>quit_proc_c</b></i>
+</p>
+<p><br />
+free memory, delete unneeded file and quit
+</p>
+<p><br />
+<b>6. PTV argument examine</b>
+</p>
+<p><br />
+The start.bat file without using the examine option is similar to:
+</p>
+<p><br />
+H:/prog/tk84ptv/src_c/jw_prog H:/prog/tk84ptv/ptv.tcl
+</p>
+<p><br />
+Different examine options can be set by the start of
+</p>
+<p>PTV (e.g. .../jw_prog .../ptv.tcl 4)
+</p>
+<p><br />
+1 (or any number) more details on output during orientation
+</p>
+<p>(calibration), double zoomfactor, creates #_pix files
+</p>
+<p><br />
+3 to save low pass image,
+</p>
+<p>doesn't work on Windows system, sorry!
+</p>
+<p><br />
+4 creates ASCII output with 3D object point list and </p>
+<p>referring image coordinates for calibration with dumped </p>
+<p>data sets, detailed descriptions see below.
+</p>
+<p><br />
+5 more detailed output for statistical examinations </p>
+<p>of Qvv, Qxx at determination of particle positions
+</p>
+<p>and during orientation (calibration)
+</p>
+<p><br />
+10 gives information about average and expected number of </p>
+<p>touch events and the average number of pixel per target,
+</p>
+<p>at detection of particles
+</p>
+<p><br />
+Option 4 is used for the calibration with different z-positions of the
+reference body. The examine option appears in the following source code
+files:
+</p>
+<p><br />
+draw.c: if ( examine &amp;&amp; zoom_f[nr] &gt; 2 )
+</p>
+<p>jw_ptv.c: int examine = 0; /* for more detailed output */
+</p>
+<p>jw_ptv.c: valp = Tcl_GetVar(interp, "examine", TCL_GLOBAL_ONLY);
+</p>
+<p>jw_ptv.c: examine = atoi (valp);
+</p>
+<p>jw_ptv.c: if (examine == 4)
+</p>
+<p>jw_ptv.c: if (examine == 4)
+</p>
+<p>jw_ptv.c: if (examine) for (i=0; i&lt;n_img; i++)
+</p>
+<p>jw_ptv.c: if (examine == 4)
+</p>
+<p>jw_ptv.c: if (examine == 4)
+</p>
+<p>jw_ptv.c: if (examine&nbsp;!= 4)
+</p>
+<p>jw_ptv.c: if (examine == 4)
+</p>
+<p>mousefunction.c: if (examine) zf *= 4;
+</p>
+<p>orientation.c: if (examine) for (i=0; i&lt;16; i++)
+</p>
+<p>peakfitting.c: if (examine==10)
+</p>
+<p>pointpos.c: if (examine == 5)
+</p>
+<p>segmentation.c: if (examine == 3)
+</p>
+<p>segmentation.c: if (examine == 3)
+</p>
+<p><br />
+<b>How to calibrate with different z-positions of the reference body?</b>
+</p>
+<p><br />
+Set examine = 4!
+</p>
+<p><br />
+After the <b>Detection</b> (case 2, under calibration) #_pix files are
+generated, which lists the detections of each view (no correspondences,
+only image coordinates), was used for template matching outside of PTV,
+not used for further processing steps (could be removed or commented in
+the code).
+</p>
+<p>---&gt;&gt; continue as usual!!!
+</p>
+<p><br />
+During <b>Sortgrid</b> (case 5, under calibration) a file dump_for_rdb
+is created. This is a list of the 3D points with the according 2D image
+coordinates of each view. Is not used for further steps.
+</p>
+<p>---&gt;&gt; continue as usual!!!
+</p>
+<p><br />
+<b>Important!!!</b> In<b> Orientation</b> (case 6, under calibration).
+For each z-position an according 3D coordinate file has to be provided
+(File of Coordinates on Plate, at <b>Calibration Parameters</b> has to
+be adjusted for that!!!)
+</p>
+<p><br />
+During <b>Orientation</b> with examine set to 4, please consider the
+DOS prompt. You will be asked:
+</p>
+<p><br />
+Resection with dumped datasets? (y/n)
+</p>
+<p><br />
+Answer with n in the DOS prompt to write data to disk, which will later
+be used for the common calibration. For each camera you have to answer
+individually (up to four times depending on the number of cameras)! </p>
+<p><br />
+The files, which are created have the following name structure:
+</p>
+<p><br />
+resect_#.crd, containing the corrected metric image coordinates (e.g.
+resect_Cam1.crd).
+</p>
+<p><br />
+resect_#.fix, containing the 3D coordinates of the active reference
+body file (e.g. resect_Cam1.fix).
+</p>
+<p><br />
+After the generation of these files, the different file names have to
+be adjusted to a sequential structure:
+</p>
+<p><br />
+resect.fix03D reference body file of z-position 0
+</p>
+<p>resect.fix13D reference body file of z-position 1
+</p>
+<p>resect.fix23D reference body file of z-position 2
+</p>
+<p><br />
+... and so on.
+</p>
+<p><br />
+For each camera and each z-position a set of metric image coordinates
+</p>
+<p>has to be provided with the following names:
+</p>
+<p><br />
+resect_0.crd0 metric image coordinates of camera 0 at z-position 0
+</p>
+<p>resect_0.crd1 metric image coordinates of camera 0 at z-position 1
+</p>
+<p>resect_0.crd2 metric image coordinates of camera 0 at z-position 2
+</p>
+<p><br />
+resect_1.crd0 metric image coordinates of camera 1 at z-position 0
+</p>
+<p>resect_1.crd1 metric image coordinates of camera 1 at z-position 1
+</p>
+<p>resect_1.crd2 metric image coordinates of camera 1 at z-position 2
+</p>
+<p><br />
+resect_2.crd0 metric image coordinates of camera 2 at z-position 0
+</p>
+<p>resect_2.crd1 metric image coordinates of camera 2 at z-position 1
+</p>
+<p>resect_2.crd2 metric image coordinates of camera 2 at z-position 2
+</p>
+<p><br />
+resect_3.crd0 metric image coordinates of camera 3 at z-position 0
+</p>
+<p>resect_3.crd1 metric image coordinates of camera 3 at z-position 1
+</p>
+<p>resect_3.crd2 metric image coordinates of camera 3 at z-position 2
+</p>
+<p><br />
+... and so on.
+</p>
+<p><br />
+After the generation of this file structure, it's recommended to save
+these files first before continuing with the calibration. Restart PTV,
+press <b>Show Calib. Image</b> and continue directly with <b>Orientation</b>,
+consider the DOS prompt. Now answer to
+</p>
+<p><br />
+Resection with dumped datasets? (y/n)
+</p>
+<p><br />
+with y for each individual camera (again up to four times depending on
+the number of cameras), #.ori and #.addpar file are generated according
+to the given cameraname (e.g. Cam1.ori, Cam1.addpar). The orientation
+and additional parameters for each individual cameras are calculated in
+a common adjustment of all z-positions.
+</p>
+<p><br />
+<b>7. Using C code in connection with Tcl/Tk</b>
+</p>
+<p><br />
+The source code of PTV, which is written in C is connected to a
+graphical user interface realized in Tcl/Tk. This requires the
+declaration and initilization of commands.
+</p>
+<p>In jw_main.c the C function <i><b>main</b></i> is called. In this
+function only the initialization for the Tcl/Tk application is
+performed. The <i><b>main</b></i> just calls the function <i><b>Tk_Main(argc,
+argv, Tcl_AppInit)</b></i>, also included in jw_main.c, which starts
+the function <i><b>Tcl_AppInit(interp)</b></i>, (in jw_main.c). <i><b>Tcl_AppInit(interp)</b></i>
+calls the function <i><b>jw_Init</b></i> (again in jw_main.c).
+</p>
+<p>With the call of <i><b>jw_Init</b></i> the additional Tcl/Tk
+commands are defined. For example: </p>
+<p><br />
+Tcl_CreateCommand(interp, "start_proc_cmd", start_proc_c,
+</p>
+<p>(ClientData)NULL, (Tcl_CmdDeleteProc *)NULL);
+</p>
+<p><br />
+The name of the defined Tcl/Tk command is <i><b>start_proc_cmd</b></i>.
+This command can be used in the Tcl/Tk script. The related C function <i><b>start_proc_c</b></i>
+is evaluated, when <i><b>start_proc_cmd</b></i> is called.
+</p>
+<p>The C function is defined as Tcl/Tk command in ptv.h like this:
+</p>
+<p><br />
+extern Tcl_CmdProc start_proc_c;
+</p>
+<p><br />
+In addition the function itself has to be defined in global.h:
+</p>
+<p><br />
+int start_proc_c();
+</p>
+<p><br />
+For the actual implementation the function needs some Tcl/Tk related
+arguments:
+</p>
+<p><br />
+int start_proc_c(ClientData clientData, Tcl_Interp* interp, int argc,
+const char** argv)
+</p>
+<p><br />
+To call the function from the Tcl/Tk script (in this case by pressing
+the button "<b>Start</b>", see in ptv.tcl):
+</p>
+<p><br />
+button .mbar.start -text "Start" –command "start_proc_cmd;
+bindingsstart "
+</p>
+<p><br />
+The option -command also allows the combination with other commands or
+function calls. In this example with <b>bindingsstart</b>, which
+defines the current mouse functions.
+</p>
+<p><br />
+If these C functions are called from some other C function and not from
+the
+</p>
+<p>Tcl/Tk script do like this:
+</p>
+<p><br />
+pre_processing_c (clientData, interp, argc, argv);
+</p>
+<p><br />
+<b>Exchange of variables between C and Tcl/Tk</b>
+</p>
+<p><br />
+In the C source code and the Tcl/Tk script variables have to be
+exchanged. This is the case for reading and writing the input data from
+the input files and the Tcl/Tk sheets.
+</p>
+<p>The according variable is defined in the C code as well as in Tcl/Tk
+(e.g. n_img in C refers to mp(ncam) in Tcl/Tk). The reading of the
+input files is realized in C. The exchange to Tcl/Tk is done by the
+commands:
+</p>
+<p><br />
+Tcl_SetVar2 and Tcl_GetVar2
+</p>
+<p><br />
+Remarks: </p>
+<p>- Tcl/Tk treats the variables as string (therefore char type in C)
+</p>
+<p>- Tcl_SetVar2, Tcl_GetVar2 (not Tcl_SetVar, Tcl_GetVar) are used
+</p>
+<p>to be able to define variables in vector structure
+</p>
+<p><br />
+Example in src_tcl/mainpar.tcl:
+</p>
+<p><br />
+global mp
+</p>
+<p>mp is the structure for all main parameters. mp(ncam) represents a
+specific parameter
+</p>
+<p><br />
+The exchange works the following way, from C to Tcl/Tk (see in function
+<i><b>parameter_panel_init</b></i> in src_c/change_parameter.c):
+</p>
+<p><br />
+int parameter_panel_init(Tcl_Interp* interp)
+</p>
+<p>{
+</p>
+<p>char val[256];
+</p>
+<p><br />
+/* read 20 parameters from ptv.par */
+</p>
+<p>fp1 = fopen_r ("parameters/ptv.par");
+</p>
+<p><br />
+fscanf (fp1, "%s", val);
+</p>
+<p>Tcl_SetVar2(interp, "mp", "ncam", val, TCL_GLOBAL_ONLY);
+</p>
+<p><br />
+fclose (fp1);
+</p>
+<p>return TCL_OK;
+</p>
+<p>}
+</p>
+<p><br />
+The parameter is read from the input file to C variable val, its value
+is transferred (Tcl_SetVar2) to Tcl/Tk variable mp(ncam) and is
+available in the Tcl/Tk scripts. From Tcl/Tk to C (see in function <i><b>done_proc_c</b></i>
+in src_c/change_parameter.c):
+</p>
+<p><br />
+int done_proc_c(ClientData clientData, Tcl_Interp* interp, int argc,
+const char** argv) </p>
+<p>{
+</p>
+<p>const char *valp;
+</p>
+<p><br />
+/* rewrite all parameter files */
+</p>
+<p>fp1 = fopen ("parameters/ptv.par", "w");
+</p>
+<p><br />
+valp=Tcl_GetVar2(interp, "mp", "ncam", TCL_GLOBAL_ONLY);
+</p>
+<p><br />
+fprintf (fp1, "%s\n", valp);
+</p>
+<p>fclose (fp1);
+</p>
+<p>return TCL_OK;
+</p>
+<p>}
+</p>
+<p><br />
+Parameter mp(ncam) from Tcl/Tk is transferred (Tcl_GetVar2) to C
+variable valp and written to file.
+</p>
+<p><br />
+<b>ATTENTION!!!</b> valp is a char type. For later use in C (for
+calculations) this variable may has to be converted, for e.g. to
+integer:
+</p>
+<p><br />
+valp = Tcl_GetVar(interp, "examine", TCL_GLOBAL_ONLY);
+</p>
+<p>examine = atoi (valp);
+</p>
+<p><br />
+<b>8. 3D PTV data acquisition and setup parameters</b>
+</p>
+<p><br />
+The processing of the image sequences from PTV experiments requires
+some information about the hardware configuration. From the used
+cameras at least a rough estimation of the focal length, size of the
+pixel in x- and y-direction and the image size (in pixel) itself has to
+be specified.
+</p>
+<p>To be able to model the multimedia geometry the refractive index of
+the fluid and glass plate as well as the glass plate thickness has to
+be known.
+</p>
+<p>For calibration purposes the coordinates of the used reference body
+have to be specified. The boundary of the glass plate and fluid defines
+the x-y-plane (z = 0). The coordinate file of the reference body has to
+be edited according to its actual position, which requires the
+knowledge of the distance of the reference body to the inner glass
+plate side.
+</p>
+<p><br />
+The image sequences have to be provided according to the following
+convention. For the sequence of each camera the filename is a
+combination of a base name and a number of the current time step. No
+extensions after the current number of the time steps are possible.
+</p>
+<p><br />
+<b>Example</b>, basename: cam1., time steps from 1 to 1001, the files
+have to be provided with the following names:
+</p>
+<p><br />
+cam1.001 … cam1.009, cam1.010 … cam1.099, cam1.100 … cam1.999,
+cam1.1000, cam1.1001
+</p>
+<p><br />
+</p>
+<p><br />
+</p>
+<table id="attachments" class="sticky-enabled">
+  <thead><tr>
+    <th>Attachment</th>
+    <th>Size</th>
+  </tr>
+  </thead><tbody>
+    <tr>
+      <td style="vertical-align: top;"><br />
+      </td>
+      <td style="vertical-align: top;"><br />
+      </td>
+    </tr>
+<tr class="odd">
+      <td><a href="http://ptv.origo.ethz.ch/system/files/ptvmanual.pdf">ptvmanual.pdf</a></td>
+      <td>121.41 KB</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</span></span></div>
+</div></div>
+
+</div>
+</body></html>
