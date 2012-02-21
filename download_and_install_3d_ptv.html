@@ -1,72 +1,234 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
-  <title>Download</title>
-</head><body>
-&nbsp;
 
-<br />
 
-<div class="tabs"><div id="main"><h1 class="title"> Download and install 3D-PTV </h1>
 
-<div class="node">
-<div class="clear-block"> <span class="submitted"> <span class="taxonomy">
-<div class="content"><a name="Subscribe">
-</a><h2><a name="Subscribe"> <span class="mw-headline"><b>Subscribe</b></span></a></h2>
-<p><a name="Subscribe">If you have not already done so </a><a href="http://ptv.origo.ethz.ch/wiki/Subscription" class="extiw path" title="path:wiki/Subscription">join the 3D-PTV origo project</a>.
-</p>
-<a name="Download_Tcl_tk_software">
-</a><h2><a name="Download_Tcl_tk_software"> <span class="mw-headline"><b>Download Tcl/tk software</b></span></a></h2>
-<p><a name="Download_Tcl_tk_software">We recommend the 'batteries-included' ActiveTcl. Use the version </a><a href="http://www.tcl.tk/software/tcltk/8.4.html" class="external text" title="http://www.tcl.tk/software/tcltk/8.4.html">8.4.x</a>. 8.5.x has
-few function calls different so we compile our versions with the
-8.4.19. Install it at the location: <span class="geshifilter"><code class="text geshifilter-text">C:/Tcl</code></span>.
-</p>
-<a name="Follow_the_instructions:">
-</a><h2><a name="Follow_the_instructions:"> <span class="mw-headline"><b>Follow the instructions:</b></span></a></h2>
-<ul>
-<a name="Follow_the_instructions:">  </a><li><a href="http://ptv.origo.ethz.ch/wiki/Compilation_with_MVS" class="extiw path" title="path:wiki/Compilation with MVS"> Compilation
-with MVS</a>
-  </li>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Download and install 3D-PTV | ptv</title>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/sites/all/themes/oxymoron/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/origo_home/css/origo_home.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/node/node.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/defaults.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/system/system-menus.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/user/user.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/geshifilter/geshifilter.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/google_cse/google_cse.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/img_assist/img_assist.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/mediawiki_filter/mediawiki_filter.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/forum/forum.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/modules/views/css/views.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/modules/comment/comment.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/oxymoron/css/style.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/oxymoron/css/mainmenu.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/oxymoron/css/iconsmenu.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/oxymoron/css/colours/night.css?n" />
+<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/oxymoron/css/colours/day.css?n" />
+<link type="text/css" rel="stylesheet" media="print" href="/sites/all/themes/oxymoron/css/print.css?n" />
+  <script type="text/javascript" src="/misc/jquery.js?n" />
+<script type="text/javascript" src="/misc/drupal.js?n" />
+<script type="text/javascript" src="/sites/all/modules/mediawiki_filter/mediawiki_filter.js?n" />
+<script type="text/javascript" src="/sites/all/modules/google_analytics/googleanalytics.js?n" />
+<script type="text/javascript" src="/sites/all/modules/img_assist/img_assist.js?n" />
+<script type="text/javascript" src="/sites/all/themes/oxymoron/js/jquery_example/jquery.example.min.js?n" />
+<script type="text/javascript" src="/sites/all/themes/oxymoron/js/oxymoron.js?n" />
+<script type="text/javascript" src="/sites/all/themes/oxymoron/js/mainmenu.js?n" />
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": "1", "trackMailto": "1", "trackDownload": "1", "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+Drupal.behaviors.issue_tracker = function(context) {
+        $('a[class=extiw issue]').each(function() {
+          // extract issue number from the URL
+          var issueURL = $(this)[0].href;
+          var issueURLSplitted = issueURL.split('/')
+          var issueNumber = issueURLSplitted[issueURLSplitted.length - 1];
+
+          var target= $(this);
+          $.get(Drupal.settings.basePath + "ajax/issue_get_status/" + issueNumber, null, function(response) {
+            var result = Drupal.parseJson(response);
+
+            var decorationString = "";
+            if (result.issueClosedStatus == true) {
+              decorationString = 'line-through';
+            }
+            $(target).css('text-decoration', decorationString);
+          });
+        });
+      }
+//--><!]]>
+</script>
+  <style type="text/css" media="print">@import "/sites/all/themes/oxymoron/css/print.css";</style>
+  <script type="text/javascript"> </script><!--[if IE 7]>
+  	<link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/oxymoron/css/style_ie7.css" />
+  <![endif]--></head><body>
+
+<!-- START HEADER -->
+    <div id="mainheader">
+    
+        <div id="logo">
+			            <a class="logo_link" href="/" title="Home" rel="home" id="logo">
+                <img src="/sites/ptv/files/ptv_0.jpg" alt="Home" />
+            </a>
+						            <div id="site-name-frame">
+				                <h1 class="site-name"><a href="/" title="Home">3D-PTV</a></h1>
+				            </div>
+        </div>
+
+        <ul id="user-info">
+                                  <li><a href="/user/register?destination=node%2F29">Register</a></li>
+                    <li><a href="/user?destination=node%2F29">Sign in</a></li>
+                      </ul>
+        <div id="search-box"><form action="/wiki/download_and_install_3d_ptv" accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <input maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" type="text" />
+</div>
+<input name="op" id="edit-submit" value="Search" class="form-submit" type="submit" />
+<input name="form_build_id" id="form-1f951d82356cc982d13a686fb88b1cb4" value="form-1f951d82356cc982d13a686fb88b1cb4" type="hidden" />
+<input name="form_id" id="edit-search-theme-form" value="search_theme_form" type="hidden" />
+<input name="3" id="edit-3" value="" type="hidden" />
+
+</div></form>
+</div>
+	
+		<div id="iconsmenu">
+		  <!-- START TOP NAV -->
+					  					  
+<ul id="navlist">
+	<li><a href="/" title="Home" class="home"><div class="home"><span class="notext">Home</span></div></a><br />
+</li>
+	<li><a href="/download" title="Download" class="download"><div class="download"><span class="notext">Download</span></div></a><br />
+</li>
+	<li><a href="/forum" title="Forum" class="forum"><div class="forum"><span class="notext">Forum</span></div></a><br />
+</li>
+	<li><a href="/blog" title="Issues" class="blog"><div class="blog"><span class="notext">Blog</span></div></a><br />
+</li>
+	<li><a href="/issues" title="Issues" class="issues"><div class="issues"><span class="notext">Issues</span></div></a><br />
+</li>
+	<li><a href="/statistics" title="Statistics" class="statistics"><div class="statistics"><span class="notext">Statistics</span></div></a><br />
+</li>
 </ul>
+					  					  <br class="clear" />
+			  <!-- END TOP NAV -->
+		</div>
+				<div class="main_navi">
+			<div class="clear-block block block-origo_home" id="block-origo_home-0">
+  
+  <div class="content"><ul class="menu"><li class="collapsed"><a href="/search_global">Global Search</a></li></ul></div>
+</div>
+		</div>
+			
+    </div>
+<!-- END HEADER -->
+
+<!-- START MAIN -->
+	<div class="tabs" />
+
+	<div id="main">
+		<!-- START TITLE -->
+				   <h1 class="title">
+			 			 Download and install 3D-PTV			 		   </h1>
+				<!-- END TITLE -->
+
+		
+		
+		<!-- CONTENT START -->
+		     <div class="node">
+        <div class="clear-block">
+        <span class="submitted" />
+    <span class="taxonomy" />
+    <div class="content"><a name="Subscribe" /><h2> <span class="mw-headline"><b>Subscribe</b></span></h2>
+<p>If you have not already done so <a href="http://ptv.origo.ethz.ch/wiki/Subscription" class="extiw path" title="path:wiki/Subscription">join the 3D-PTV origo project</a>.
+</p>
+<a name="Download_Tcl_tk_software" /><h2> <span class="mw-headline"><b>Download Tcl/tk software</b></span></h2>
+<p>We recommend the 'batteries-included' ActiveTcl. Use the version <a href="http://www.tcl.tk/software/tcltk/8.4.html" class="external text" title="http://www.tcl.tk/software/tcltk/8.4.html">8.4.x</a>. 8.5.x has few function calls different so we compile our versions with the 8.4.19. Install it at the location: <span class="geshifilter"><code class="text geshifilter-text">C:/Tcl</code></span>.
+</p><p><br />
+</p>
+<a name="Follow_the_instructions:" /><h2> <span class="mw-headline"><b>Follow the instructions:</b></span></h2>
+<ul><li><a href="http://ptv.origo.ethz.ch/wiki/Compilation_with_MVS" class="extiw path" title="path:wiki/Compilation with MVS"> Compilation with MVS</a>
+</li></ul>
 <p><br />
-</p>
-<p></p>
-</div>
-</span></span></div></div>
-<div id="comments"> <a id="comment-76">
-</a><div class="comment">
-<div class="clear-block">
-<h3 class="title"><a href="/wiki/download_and_install_3d_ptv#comment-76" class="active">"Batteries included" is outdated - use the Github option</a></h3>
-<div class="submitted">Submitted by alexl on Thu, 2011-09-22 19:51.</div>
-<div class="content">
-<p>"Batteries included" is outdated - use the Github option to get the
-most recent software.
-</p>
-<p>In short: </p>
-<p>1. Download Tcl/Tk (8.4 version)
-</p>
-<p>2. Download the software using the Zip button from the Github page: http://github.com/3dptv/3dptv or use the <br />
-</p>
-<pre><span style="font-family: monospace;">	git clone git@github.com:3dptv/3dptv.gi</span>
-</pre>
-
-<p>3. Download compiler - Microsoft Visual C Express is the best choice
-on Windows, *nix has g++ included
-</p>
-
-<p>4. Follow the compilation instructions to get the source code
-compiled together with the Tcl/Tk includes and libraries.
-</p>
-<p><br />
-</p>
+</p></div>
+    </div>
+          <div class="links">» <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f29%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f29%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="/user/login?destination=comment%2Freply%2F29%23comment-form">Login</a> or <a href="/user/register?destination=comment%2Freply%2F29%23comment-form">register</a> to post comments</span></li>
+</ul></div>
+      </div>
+<div id="comments">
+  <a id="comment-76" />
+  <div class="comment">
+      <div class="clear-block">
+<h3 class="title"><a href="/wiki/download_and_install_3d_ptv#comment-76" class="active">"Batteries included" is outdated - use the SVN option</a></h3>
+    <div class="submitted">Submitted by alexl on Thu, 2011-09-22 19:51.</div>
+  <div class="content">
+      <p>"Batteries included" is outdated - use the SVN option to get the most recent software.
+</p><p>In short: 
+</p><p>1. Download Tcl/Tk (8.4 version)
+</p><p>2. Download SVN client (TortoiseSVN on Windows, SVNX on Mac OS X)
+</p><p>3. Download compiler - Microsoft Visual C Express is the best choice on Windows, *nix has g++ included
+</p><p>4. Using SVN client get the software by <span class="geshifilter"><code class="text geshifilter-text">&nbsp;svn checkout ...</code></span> (see the instructions) TRUNK is recommended
+</p><p>5. Follow the compilation instructions to get the source code compiled together with the Tcl/Tk includes and libraries.
+</p><p><br />
+</p>        </div>
+  </div>
+  <div class="links">
+    » <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f29%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f29%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="/user/login?destination=comment%2Freply%2F29%23comment-form">Login</a> or <a href="/user/register?destination=comment%2Freply%2F29%23comment-form">register</a> to post comments</span></li>
+</ul>  </div>
 </div>
 </div>
+		<!-- CONTENT END -->
 
+		
+	</div>
+<!-- END MAIN -->
+
+<!-- START FOOTER -->
+	<div id="footer">
+		<a href="http://oriact.com">Powered by</a><br />
+		<a href="http://oriact.com"><img src="/sites/all/themes/oxymoron/oriact_button.png" alt="Powered by Oriact" height="20" width="85" /></a><br />
+		<div class="clear-block block block-origo_eth" id="block-origo_eth-0">
+  
+  <div class="content"><a href="http://origo.ethz.ch">Hosted on </a><br /><a href="http://origo.ethz.ch"><img src="/sites/all/themes/oxymoron/origo_button_1.png" alt="Hosted on Origo" height="20" width="85" /></a><br /><a href="http://origo.ethz.ch">a project by ETH Zürich</a><br />©<a href="http://origo.ethz.ch"> 2006 - 2010</a><br /><a href="/global/terms_of_use">Terms of Use</a><br /></div>
 </div>
-</div>
-</div>
+	</div>
+<!-- END FOOTER -->
 
+  <!-- CLOSURE (e.g. javascript) -->
+    <script type="text/javascript" src="/sites/all/modules/google_cse/google_cse.js?n" />
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "googleCSE": { "language": "en" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) {
+      $(document).ready(function() {
+        $('a.origo-private').each(function() {
+          $(this).append('&nbsp;<img src="/sites/all/themes/oxymoron/private-page-link.png" alt="private"/>');
+        });
+      });
+    }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) {
+      $(document).ready(function() {
+        $('a.external').each(function() {
+          $(this).append('&nbsp;<img src="/sites/all/modules/mediawiki_filter/external.png" alt="external"/>');
+        });
+      });
+    }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-1676928-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
 
-
-
-</div>
 </body></html>
