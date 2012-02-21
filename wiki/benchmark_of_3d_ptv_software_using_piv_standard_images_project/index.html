@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Benchmark of 3D-PTV software using PIV standard images project | ptv</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../sites/all/themes/oxymoron/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/origo_home/css/origo_home-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/geshifilter/geshifilter-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/google_cse/google_cse-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mediawiki_filter/mediawiki_filter-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/forum/forum-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/mainmenu-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/iconsmenu-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/night-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/day-36200.css" />
+<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/oxymoron/css/print-36200.css" />
+  <script type="text/javascript" src="../../misc/jquery.js?n"></script>
+<script type="text/javascript" src="../../misc/drupal.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/mediawiki_filter/mediawiki_filter.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist.js?n"></script>
+<script type="text/javascript" src="../../misc/tableheader.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/jquery_example/jquery.example.min.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/oxymoron.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/mainmenu.js?n"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": "1", "trackMailto": "1", "trackDownload": "1", "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+Drupal.behaviors.issue_tracker = function(context) {
+        $('a[class=extiw issue]').each(function() {
+          // extract issue number from the URL
+          var issueURL = $(this)[0].href;
+          var issueURLSplitted = issueURL.split('/')
+          var issueNumber = issueURLSplitted[issueURLSplitted.length - 1];
+
+          var target= $(this);
+          $.get(Drupal.settings.basePath + "ajax/issue_get_status/" + issueNumber, null, function(response) {
+            var result = Drupal.parseJson(response);
+
+            var decorationString = "";
+            if (result.issueClosedStatus == true) {
+              decorationString = 'line-through';
+            }
+            $(target).css('text-decoration', decorationString);
+          });
+        });
+      }
+//--><!]]>
+</script>
+  <style type="text/css" media="print">@import "../../sites/all/themes/oxymoron/css/print.css";</style>
+  <script type="text/javascript"> </script>
+  <!--[if IE 7]>
+  	<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style_ie7.css" />
+  <![endif]-->
+
+</head>
+
+<body>
+
+<!-- START HEADER -->
+    <div id="mainheader">
+    
+        <div id="logo">
+			            <a class="logo_link" href="../../index.html" title="Home" rel="home" id="logo">
+                <img src="../../sites/ptv/files/ptv_0.jpg" alt="Home"/>
+            </a>
+						            <div id="site-name-frame">
+				                <h1 class='site-name'><a href="../../index.html" title="Home">3D-PTV</a></h1>
+				            </div>
+        </div>
+
+        <ul id="user-info">
+                                  <li><a href="../../user/register/index-24909.html">Register</a></li>
+                    <li><a href="../../user/index-24909.html">Sign in</a></li>
+                      </ul>
+        <div id='search-box'><form action="/wiki/benchmark_of_3d_ptv_software_using_piv_standard_images_project"  accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-9fcbf9a8f07686c507297410893e9619" value="form-9fcbf9a8f07686c507297410893e9619"  />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+<input type="hidden" name="3" id="edit-3" value=""  />
+
+</div></form>
+</div>
+	
+		<div id="iconsmenu">
+		  <!-- START TOP NAV -->
+					  					  
+<ul id='navlist'>
+	<li><a href="../../index.html" title="Home" class="home"><div class="home"><span class="notext">Home</span></div></a></li>
+	<li><a href="../../download/index.html" title="Download" class="download"><div class="download"><span class="notext">Download</span></div></a></li>
+	<li><a href="../../forum/index.html" title="Forum" class="forum"><div class="forum"><span class="notext">Forum</span></div></a></li>
+	<li><a href="../../blog/index.html" title="Issues" class="blog"><div class="blog"><span class="notext">Blog</span></div></a></li>
+	<li><a href="../../issues/index.html" title="Issues" class="issues"><div class="issues"><span class="notext">Issues</span></div></a></li>
+	<li><a href="../../statistics/index.html" title="Statistics" class="statistics"><div class="statistics"><span class="notext">Statistics</span></div></a></li>
+</ul>
+					  					  <br class="clear" />
+			  <!-- END TOP NAV -->
+		</div>
+				<div class='main_navi'>
+			<div class="clear-block block block-origo_home" id="block-origo_home-0">
+  
+  <div class="content"><ul class="menu"><li class="collapsed"><a href="../../search_global/index.html">Global Search</a></li></ul></div>
+</div>
+		</div>
+			
+    </div>
+<!-- END HEADER -->
+
+<!-- START MAIN -->
+	<div class="tabs"></div>
+
+	<div id="main">
+		<!-- START TITLE -->
+				   <h1 class="title">
+			 			 Benchmark of 3D-PTV software using PIV standard images project			 		   </h1>
+				<!-- END TITLE -->
+
+		
+		
+		<!-- CONTENT START -->
+		     <div class="node">
+        <div class="clear-block">
+        <span class="submitted"></span>
+    <span class="taxonomy"><ul class="links inline"><li class="first taxonomy_term_13"><a href="../../category/tags/benchmark/index.html" rel="tag" title="" class="taxonomy_term_13 benchmark">benchmark</a></li>
+<li class="taxonomy_term_10"><a href="../../category/tags/piv/index.html" rel="tag" title="" class="taxonomy_term_10 piv">piv</a></li>
+<li class="taxonomy_term_11"><a href="../../category/tags/ptv/index.html" rel="tag" title="" class="taxonomy_term_11 ptv">ptv</a></li>
+<li class="taxonomy_term_12"><a href="../../category/tags/standard_images/index.html" rel="tag" title="" class="taxonomy_term_12 standard images">standard images</a></li>
+<li class="last taxonomy_term_2"><a href="../../category/tags/tutorial/index.html" rel="tag" title="" class="taxonomy_term_2 tutorial">tutorial</a></li>
+</ul></span>
+    <div class="content"><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><strong>Contents</strong></div>
+<div id="tocbody">
+<ul>
+<li class="toclevel-1"><a href="#Benchmark_of_3D-PTV_software_using_PIV_Standard_Images_project"><span class="tocnumber">1</span> <span class="toctext">Benchmark of 3D-PTV software using PIV Standard Images project</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Introduction"><span class="tocnumber">1.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-2"><a href="#Benchmark_proposal_1"><span class="tocnumber">1.2</span> <span class="toctext">Benchmark proposal 1</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Prerequisites"><span class="tocnumber">1.2.1</span> <span class="toctext">Prerequisites</span></a></li>
+<li class="toclevel-3"><a href="#Download_and_prepare_the_test_case"><span class="tocnumber">1.2.2</span> <span class="toctext">Download and prepare the test case</span></a></li>
+<li class="toclevel-3"><a href="#Sample_run"><span class="tocnumber">1.2.3</span> <span class="toctext">Sample run</span></a></li>
+<li class="toclevel-3"><a href="#Prepare_calibration"><span class="tocnumber">1.2.4</span> <span class="toctext">Prepare calibration</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div>
+</td></tr></table><a name="Benchmark_of_3D-PTV_software_using_PIV_Standard_Images_project"></a><h1> <span class="mw-headline"> Benchmark of 3D-PTV software using PIV Standard Images project</span></h1>
+<a name="Introduction"></a><h2> <span class="mw-headline"> Introduction </span></h2>
+Recent WG1 meeting in Zurich was our Experimental Workshop. It was roposed during that meeting that we develop few test cases that different research groups can use to test their own algorithms and software.  <div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/blackboard_of_wg1_meeting/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/28082009718.preview.jpg" width="180" height="103.1625" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/blackboard_of_wg1_meeting/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div> The report of the groups will help to identify those performing best at different stages of the analysis and to expose the best practices to the other members of the action. There is a single important condition - open science. The codes, algorithms, data should be <b>open</b> to all the members of the action. The main goal is to make particle tracking better and accessible.  
+<p><br />
+</p>
+<a name="Benchmark_proposal_1"></a><h2> <span class="mw-headline"> Benchmark proposal 1 </span></h2>
+<p>We <b>propose</b> to start with the synthetic images, created from a known velocity field. Such images and data are available from the PIV Standard Images Project <a href="http://www.piv.jp/image3d/image-e.html" class="external autonumber" title="http://www.piv.jp/image3d/image-e.html">[1]</a>. Here we describe the test <b>case #377</b> (which is slightly more tricky due to an unknown wall reflection and camera positions). 
+</p><p>we keep a mirror copy of the data for the case 352 on <a href="http://dl.dropbox.com/u/5266698/piv_std_352.tgz" class="external text" title="http://dl.dropbox.com/u/5266698/piv_std_352.tgz">case 352 copy</a>
+</p><p><br />
+<img src="http://www.piv.jp/image3d/jpeg/im377.jpg" alt="im377.jpg" />
+</p><p><br />
+Here we first copy the original description of the experimental conditions from their case 377 website 
+</p><p><div class="geshifilter"><div class="geshifilter-text" style="font-family: monospace;"><ol><li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">No. &nbsp; &nbsp; &nbsp;377 &nbsp; &nbsp;Unit</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Image Size&nbsp; &nbsp; &nbsp; 256 x 256 &nbsp; &nbsp; &nbsp; pixel</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Area&nbsp; &nbsp; 1 x 1 &nbsp; cm</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Laser Illumination&nbsp; &nbsp; &nbsp; Volume&nbsp; mm</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Interval&nbsp; &nbsp; &nbsp; &nbsp; 0.001 &nbsp; sec</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Max. Velocity &nbsp; 10 &nbsp; &nbsp; &nbsp;pixel/interval</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Max. out-of-plane Velocity&nbsp; &nbsp; &nbsp; ?? &nbsp; &nbsp; &nbsp;%</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">DATA DOWNLOAD</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">* The format of the images are RAW data.[64KB]</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">* The particle data file[100KB] contains; (1) particle ID, (2-4) particle 3d location [x,y,z] (cm), </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">(5,6) particle location in Image 0 [X,Y] and (7,8) particle location in Image 1 [X,Y] and </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">(9,10) particle location in Image 2 [X,Y] and (11) maximum intensity of the particle [I]. </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">The particle ID is unique, so that the same particle location could be correctly tracked with using </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">the serial particle files. Please see the example</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">* The vector file[50KB] contains; (1-3) node of the image (X,Y,Z) [cm] and (4-6) </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">vector (U,V,W) in the unit of [cm/s] Please see the example</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">PIV Three-dimensional Standard Images &nbsp; &nbsp;#377</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Generator: &nbsp;K. Okamoto &nbsp;(Univ. Tokyo)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Program: &nbsp; &nbsp;ddr.c</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Date: &nbsp; &nbsp; &nbsp; March 27, 1998</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Parameters:</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Target Flow Field: &nbsp;Jet impinging on the Wall</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Reynolds Number: &nbsp; &nbsp;3000</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2cm</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;------------| &nbsp; |------------</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| &nbsp;15cm/s</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;V</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; XXX</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; XXX</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-----------------------------</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Number of Particles inserted in the field &nbsp; &nbsp; &nbsp;40000 Particles</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Number of Particles visualized in one Image &nbsp; &nbsp; &nbsp;500 Particles (average)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Diameter of Particles &nbsp; &nbsp; &nbsp;5 pixel (average)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 &nbsp; &nbsp; &nbsp; (standard deviation)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1 &nbsp; &nbsp; &nbsp; (minimum)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Maximum Velocity &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 12 cm/s</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Target Flow field &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5mm x 5mm x 5mm</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Time Interval between images &nbsp; &nbsp; 1 msec</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Laser Illumination &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cylindrical from bottom (radius = 1cm)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Water refractive index &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.33</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Wall distance &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7 mm from center </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; orientation &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; y-direction &nbsp;(simulate impinging plate)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Camera positions</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; #0 &nbsp;(x,y,z) = (5.77, -10, 0)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; #1 &nbsp;(x,y,z) = (-2.88, -10, -5)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; #2 &nbsp;(x,y,z) = (-2.88, -10, 5)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; Small Orientation variations were considered.</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ^ y</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |/</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ------------+---------------&gt; x</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #2 &nbsp; /|</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; / | &nbsp; &nbsp; &nbsp;#1</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #3 &nbsp; &nbsp; /</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; /z</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;L</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Side View &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;^</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Jet &nbsp;| y-axis</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;O| Particles</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; --------------+-----------------&gt; x-axis</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/| &nbsp; &nbsp; &nbsp; &nbsp;n=1.33(water)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ==============|2mm==================</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/ &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;n=1.33(acryl)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ==============|7mm================== WALL</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/ &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;n=1.00(air)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; / &nbsp; &nbsp; |</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;/ &nbsp; &nbsp; &nbsp;|</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; / &nbsp; &nbsp; &nbsp; |</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #2,3 &nbsp; &nbsp; &nbsp;| &nbsp; &nbsp; &nbsp; &nbsp;#0 camera</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;camera &nbsp; &nbsp; &nbsp; |</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The wall surface is (y=-7mm)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Jet impinging plate is (y=-2mm)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Visualized region is (-2,-2,-2) &lt; (x,y,z) &lt; (2,2,2)mm</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Image Files (imX???.raw)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; X: &nbsp; &nbsp;camera# (0-2)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; ???: &nbsp;serial# (000-200) &nbsp; Total 200msec</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; Image size &nbsp;256x256 pixel (8bit:256)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;Calibration File (imX999.raw)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp;Particles (Total 125 particles)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp;x = -0.2, -0.1, 0, 0.1, 0.2 cm</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp;y = -0.2, -0.1, 0, 0.1, 0.2 cm</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp;z = -0.2, -0.1, 0, 0.1, 0.2 cm</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Vector files &nbsp;(vec???.dat)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp;x &nbsp; &nbsp; &nbsp;y &nbsp; &nbsp; &nbsp;z &nbsp; &nbsp; &nbsp; &nbsp;u &nbsp; &nbsp; &nbsp; &nbsp; v &nbsp; &nbsp; &nbsp; &nbsp; w</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;-0.80 &nbsp;-0.80 &nbsp;-0.80 &nbsp; 0.17542 &nbsp;-4.51977 &nbsp; 0.01204</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;-0.80 &nbsp;-0.80 &nbsp;-0.60 &nbsp;-0.18245 &nbsp;-4.11870 &nbsp;-0.26516</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;-0.80 &nbsp;-0.80 &nbsp;-0.40 &nbsp;-0.78761 &nbsp;-3.38484 &nbsp;-0.41633</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp;unit: x,y,z &nbsp;[cm]</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;u,v,w &nbsp;[cm/s]</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Particle Files &nbsp;(ptc???.dat)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;#1 camera &nbsp; &nbsp; #2 camera &nbsp; &nbsp; #3 camera &nbsp;intensity</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp;ID &nbsp; &nbsp;x &nbsp; &nbsp; &nbsp;y &nbsp; &nbsp; &nbsp;z &nbsp; &nbsp; &nbsp;X &nbsp; &nbsp; &nbsp;Y &nbsp; &nbsp; &nbsp;X &nbsp; &nbsp; &nbsp;Y &nbsp; &nbsp; &nbsp;X &nbsp; &nbsp; &nbsp;Y</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; 4 -0.301 &nbsp;0.584 &nbsp;0.893 147.61 &nbsp;64.91 &nbsp;95.55 &nbsp;65.10 &nbsp;53.07 &nbsp;65.92 208.18</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; 6 -0.898 &nbsp;1.266 -0.258 &nbsp; 0.00 &nbsp; 0.00 &nbsp; 0.00 &nbsp; 0.00 &nbsp;46.22 &nbsp; 0.15 208.69</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; 8 &nbsp;1.178 &nbsp;0.886 &nbsp;0.149 249.88 &nbsp;38.07 251.10 &nbsp;35.42 219.99 &nbsp;32.46 191.52</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; 9 &nbsp;0.720 -1.242 -0.530 183.76 252.88 201.24 254.40 &nbsp; 0.00 &nbsp; 0.00 211.21</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp;unit: x,y,z &nbsp;[cm]</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;X,Y &nbsp; &nbsp;[pixel]</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp;The particle ID is unique number, therefore, the same particle could</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp;be easily tracked with checking the ID for serial particle files.</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">If you have any questions, please contact Dr. Okamoto</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">(okamoto@tokai.t.u-tokyo.ac.jp)</div></li></ol></div></div>
+</p><p><br />
+</p>
+<a name="Prerequisites"></a><h3> <span class="mw-headline"> Prerequisites </span></h3>
+<ol><li> 3D-PTV software (it requires ActiveTCL 8.4.x)
+</li><li> post-processing software
+</li><li> Matlab (meanwhile, we're trying to move it all to Python/Numpy/Matplotlib)
+</li></ol>
+<a name="Download_and_prepare_the_test_case"></a><h3> <span class="mw-headline"> Download and prepare the test case </span></h3>
+<ol><li> Download the images, point and vec files from the origional website using <a href="http://www.piv.jp/image3d/image377.html" class="external autonumber" title="http://www.piv.jp/image3d/image377.html">[2]</a> . 
+</li><li> Create 3D-PTV directory: 
+</li></ol>
+<p><div class="geshifilter"><div class="geshifilter-text" style="font-family: monospace;"><ol><li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">C:/PTV/case377</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; /img</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; /res</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; /cal</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; &nbsp; &nbsp; /parameters</div></li></ol></div></div>
+</p>
+<ol><li> Convert RAW images into TIFF (8 bit) images using IrfanView (on Windows), ImageMagick or Matlab. The name convention is cam1.XXX cam2.XXX cam3.XXX (not .tif extension)
+</li><li> Use the attached <a href="../../system/files/ptc999_to_man_ori_377.m.txt" class="external autonumber" title="http://ptv.origo.ethz.ch/system/files/ptc999_to_man_ori_377.m.txt">[3]</a> Matlab file (remove .txt extension) to generate the calibration images and necessary ASCII files (see <span class="geshifilter"><code class="text geshifilter-text">&nbsp;&gt;&gt; help ptc999_to_man_ori_377</code></span> for more information).
+</li><li> The orientation of the cameras turned to be quite tricky as the authors didn't mention the rotation around the imaging axis. Never mind, the ORI files are attached (remove .txt extension) . These could be significantly improved using iterative SHAKING algorithm of Beat. 
+</li></ol>
+<a name="Sample_run"></a><h3> <span class="mw-headline"> Sample run </span></h3>
+<ol><li> If all the previous steps were successful, then running <span class="geshifilter"><code class="text geshifilter-text">&nbsp;start.bat</code></span> will open the main window. From there, Start, then Tracking -&gt; Sequence/Tracking will be the fastest way of checking it. At the end, Tracking -&gt; Show trajectories should show something of the kind:
+</li></ol>
+<a name="Prepare_calibration"></a><h3> <span class="mw-headline"> Prepare calibration </span></h3>
+<p><div class="geshifilter"><div class="geshifilter-text" style="font-family: monospace;"><ol><li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">function ptc999_to_man_ori_377(dir1,dir2,midplane)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% PTC999_TO_MAN_ORI_377(DIRNAME1,DIRNAME2,MIDPLANE)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% takes the PTC999.DAT file from DIRNAME1 as an input</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% and generates all the necessary files for the 3D-PTV software</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% (almost) automatic calibration in DIRNAME2:</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% MAN_ORI.DAT </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% MAN_ORI.PAR in /parameters</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% CAL377.TXT </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% CAM1.TIF, CAM2.TIF, CAM3.TIF in /cal</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">%</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% There is only CAM1-3.TIF.ORI files are missing. </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">%</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% MIDPLANE = 0 or 1 (false or true) - useful if only the midplane</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% points are used for the calibration. </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% Author: Alex Liberzon</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% </div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">if ~nargin</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; dir1 = 'c:\PTV\benchmarks\piv_std_377\ptc\';</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; dir2 = 'c:\PTV\Software\sortgrid_from_initial_guess_Oct09\case377\';</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; midplane = 0;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">end</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% PTC999_TO_MAN_ORI_377</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% read ptc999.dat file from the case 377</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">d = load(fullfile(dir1,'ptc999.dat'));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">cal = fullfile(dir2,'cal377mid.txt');</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">dat = fullfile(dir2,'man_ori.dat');</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">par = fullfile(dir2,'parameters','man_ori.par');</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">cam1 = fullfile(dir2,'cal','cam1.tif');</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">cam2 = fullfile(dir2,'cal','cam2.tif');</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">cam3 = fullfile(dir2,'cal','cam3.tif');</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% cm -&gt; mm</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">d(:,2:4) = d(:,2:4)*10;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% transform axis: x-&gt;x y-&gt;-z z -&gt; y</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">tmp = d;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">d(:,3) = tmp(:,4);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">d(:,4) = -tmp(:,3);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% indices:</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% d(:,1) = d(:,1) + 1;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% if one plane only:</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">if midplane</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">midplane = find(d(:,4) == 0);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">d = d(midplane,:);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">d(:,1) = 1:size(d,1);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">id = [1,5,21,25];</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">else</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; d(:,1) = d(:,1) + 1;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; id = [1,5,121,125];</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">end</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% write cal377.txt</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">fid = fopen(cal,'w');</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">fprintf(fid,'%5d %9.4f %9.4f %9.4f\n',d(:,1:4)');</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">fclose(fid);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% choose points</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">id = [1,5,21,25];</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">fidpar = fopen(par,'w');</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">fiddat = fopen(dat,'w');</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">for i = 1:4</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; fprintf(fidpar,'%3d\n',d(id,1));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">end</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">for i = 1:4</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; fprintf(fiddat,'%6.3f %6.3f\n',d(id(i),5:6));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">end</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">for i=1:4</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; fprintf(fiddat,'%6.3f %6.3f\n',d(id(i),7:8));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">end</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">for i=1:4</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; fprintf(fiddat,'%6.3f %6.3f\n',d(id(i),9:10));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">end</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">fclose(fidpar);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">fclose(fiddat);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% generate images:</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% Image generation parameters</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">Radius = 2;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">sx = 256;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">sy = 256;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">%% Cam1</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">x = d(:,5);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">y = d(:,6);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% figure, scatter(x,y)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">bw = uint8(zeros(sx,sy));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">for j = 1:length(x)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; output_coord = plot_circle(x(j),y(j),Radius);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; bw = imadd(bw,uint8(poly2mask(output_coord(:,1),output_coord(:,2),sx,sy)));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">end</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">bw(bw&gt;0) = 255;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% figure, imshow(bw)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">imwrite(bw,cam1,'tiff','compression','none')</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">%% Cam1</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">x = d(:,7);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">y = d(:,8);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% figure, scatter(x,y)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">bw = uint8(zeros(sx,sy));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">for j = 1:length(x)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; output_coord = plot_circle(x(j),y(j),Radius);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; bw = imadd(bw,uint8(poly2mask(output_coord(:,1),output_coord(:,2),sx,sy)));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">end</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">bw(bw&gt;0) = 255;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% figure, imshow(bw)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">imwrite(bw,cam2,'tiff','compression','none')</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">%% Cam1</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">x = d(:,9);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">y = d(:,10);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% figure, scatter(x,y)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">bw = uint8(zeros(sx,sy));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">for j = 1:length(x)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; output_coord = plot_circle(x(j),y(j),Radius);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; bw = imadd(bw,uint8(poly2mask(output_coord(:,1),output_coord(:,2),sx,sy)));</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">end</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">bw(bw&gt;0) = 255;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">% figure, imshow(bw)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">imwrite(bw,cam3,'tiff','compression','none')</div></li></ol></div></div>
+</p><p><br />
+</p><table id="attachments" class="sticky-enabled">
+ <thead><tr><th>Attachment</th><th>Size</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><a href="../../system/files/ptc999_to_man_ori_377.m.txt">ptc999_to_man_ori_377.m.txt</a></td><td>2.96 KB</td> </tr>
+ <tr class="even"><td><a href="../../system/files/cam1.tif_.ori_.txt">cam1.tif_.ori_.txt</a></td><td>303 bytes</td> </tr>
+ <tr class="odd"><td><a href="../../system/files/cam2.tif_.ori_.txt">cam2.tif_.ori_.txt</a></td><td>303 bytes</td> </tr>
+ <tr class="even"><td><a href="../../system/files/cam3.tif_.ori_.txt">cam3.tif_.ori_.txt</a></td><td>303 bytes</td> </tr>
+</tbody>
+</table>
+</div>
+    </div>
+          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f18%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f18%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-20295.html">Login</a> or <a href="../../user/register/index-20295.html">register</a> to post comments</span></li>
+</ul></div>
+      </div>
+		<!-- CONTENT END -->
+
+		
+	</div>
+<!-- END MAIN -->
+
+<!-- START FOOTER -->
+	<div id="footer">
+		<a href="http://oriact.com">Powered by</a><br/>
+		<a href="http://oriact.com"><img width="85" height="20" src="../../sites/all/themes/oxymoron/oriact_button.png" alt="Powered by Oriact"/></a><br/>
+		<div class="clear-block block block-origo_eth" id="block-origo_eth-0">
+  
+  <div class="content"><a href="http://origo.ethz.ch">Hosted on </a><br/><a href="http://origo.ethz.ch"><img width="85" height="20" src="../../sites/all/themes/oxymoron/origo_button_1.png" alt="Hosted on Origo"/></a><br/><a href="http://origo.ethz.ch">a project by ETH Zürich</a><br/>&copy;<a href="http://origo.ethz.ch"> 2006 - 2010</a><br/><a href="../../global/terms_of_use/index.html">Terms of Use</a><br/></div>
+</div>
+	</div>
+<!-- END FOOTER -->
+
+  <!-- CLOSURE (e.g. javascript) -->
+    <script type="text/javascript" src="../../sites/all/modules/google_cse/google_cse.js?n"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "googleCSE": { "language": "en" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) {
+      $(document).ready(function() {
+        $('a.origo-private').each(function() {
+          $(this).append('&nbsp;<img src="/sites/all/themes/oxymoron/private-page-link.png" alt="private"/>');
+        });
+      });
+    }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) {
+      $(document).ready(function() {
+        $('a.external').each(function() {
+          $(this).append('&nbsp;<img src="/sites/all/modules/mediawiki_filter/external.png" alt="external"/>');
+        });
+      });
+    }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-1676928-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+
+</body>
+
+</html>
+<!-- Localized -->
