@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dumbbell Calibration for Aorta Project | ptv</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../sites/all/themes/oxymoron/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/origo_home/css/origo_home-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/geshifilter/geshifilter-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/google_cse/google_cse-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mediawiki_filter/mediawiki_filter-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/forum/forum-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/mainmenu-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/iconsmenu-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/night-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/day-36200.css" />
+<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/oxymoron/css/print-36200.css" />
+  <script type="text/javascript" src="../../misc/jquery.js?n"></script>
+<script type="text/javascript" src="../../misc/drupal.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/mediawiki_filter/mediawiki_filter.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/jquery_example/jquery.example.min.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/oxymoron.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/mainmenu.js?n"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": "1", "trackMailto": "1", "trackDownload": "1", "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+Drupal.behaviors.issue_tracker = function(context) {
+        $('a[class=extiw issue]').each(function() {
+          // extract issue number from the URL
+          var issueURL = $(this)[0].href;
+          var issueURLSplitted = issueURL.split('/')
+          var issueNumber = issueURLSplitted[issueURLSplitted.length - 1];
+
+          var target= $(this);
+          $.get(Drupal.settings.basePath + "ajax/issue_get_status/" + issueNumber, null, function(response) {
+            var result = Drupal.parseJson(response);
+
+            var decorationString = "";
+            if (result.issueClosedStatus == true) {
+              decorationString = 'line-through';
+            }
+            $(target).css('text-decoration', decorationString);
+          });
+        });
+      }
+//--><!]]>
+</script>
+  <style type="text/css" media="print">@import "../../sites/all/themes/oxymoron/css/print.css";</style>
+  <script type="text/javascript"> </script>
+  <!--[if IE 7]>
+  	<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style_ie7.css" />
+  <![endif]-->
+
+</head>
+
+<body>
+
+<!-- START HEADER -->
+    <div id="mainheader">
+    
+        <div id="logo">
+			            <a class="logo_link" href="../../index.html" title="Home" rel="home" id="logo">
+                <img src="../../sites/ptv/files/ptv_0.jpg" alt="Home"/>
+            </a>
+						            <div id="site-name-frame">
+				                <h1 class='site-name'><a href="../../index.html" title="Home">3D-PTV</a></h1>
+				            </div>
+        </div>
+
+        <ul id="user-info">
+                                  <li><a href="../../user/register/index-26716.html">Register</a></li>
+                    <li><a href="../../user/index-26716.html">Sign in</a></li>
+                      </ul>
+        <div id='search-box'><form action="/wiki/dumbbell_calibration_for_aorta_project"  accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-096028557a56486ddea821303b9a8e09" value="form-096028557a56486ddea821303b9a8e09"  />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+<input type="hidden" name="3" id="edit-3" value=""  />
+
+</div></form>
+</div>
+	
+		<div id="iconsmenu">
+		  <!-- START TOP NAV -->
+					  					  
+<ul id='navlist'>
+	<li><a href="../../index.html" title="Home" class="home"><div class="home"><span class="notext">Home</span></div></a></li>
+	<li><a href="../../download/index.html" title="Download" class="download"><div class="download"><span class="notext">Download</span></div></a></li>
+	<li><a href="../../forum/index.html" title="Forum" class="forum"><div class="forum"><span class="notext">Forum</span></div></a></li>
+	<li><a href="../../blog/index.html" title="Issues" class="blog"><div class="blog"><span class="notext">Blog</span></div></a></li>
+	<li><a href="../../issues/index.html" title="Issues" class="issues"><div class="issues"><span class="notext">Issues</span></div></a></li>
+	<li><a href="../../statistics/index.html" title="Statistics" class="statistics"><div class="statistics"><span class="notext">Statistics</span></div></a></li>
+</ul>
+					  					  <br class="clear" />
+			  <!-- END TOP NAV -->
+		</div>
+				<div class='main_navi'>
+			<div class="clear-block block block-origo_home" id="block-origo_home-0">
+  
+  <div class="content"><ul class="menu"><li class="collapsed"><a href="../../search_global/index.html">Global Search</a></li></ul></div>
+</div>
+		</div>
+			
+    </div>
+<!-- END HEADER -->
+
+<!-- START MAIN -->
+	<div class="tabs"></div>
+
+	<div id="main">
+		<!-- START TITLE -->
+				   <h1 class="title">
+			 			 Dumbbell Calibration for Aorta Project			 		   </h1>
+				<!-- END TITLE -->
+
+		
+		
+		<!-- CONTENT START -->
+		     <div class="node">
+        <div class="clear-block">
+        <span class="submitted"></span>
+    <span class="taxonomy"></span>
+    <div class="content"><p>Calibration is the heart of the 3D-PTV. Therefore, having a better calibration will lead a better solution. There are two ways to calibrate the cameras. One can use traditional calibration (target block calibration) for which a three dimensional calibration target is required. The basic idea is to use a reference object with known coordinates. The calibration target should be seen by four cameras.
+</p>
+<div class="center"><div class="floatnone"><span><a href="../../image/dumbbelll/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/dumbbell.png" width="640" height="480" border="0" /></a></span></div></div>
+<p>The other possibility is to use dumbbell calibration. In some applications, it is not feasible to use a calibration target inside or outside the investigation domain as a result of lack of space. The main idea is to move two points, with a fixed distance and known diameter, around the investigation domain. This movement will provide a 3D domain. As long as the points are seen by four cameras for all time instances, initial guesses converge. If the quality of the recordings is good enough, software will find two correspondences per image which are the points of dumbbell. Afterward calibration optimizes the distances by which the epipolar lines miss each other while maintaining the detected distance of the dumbbell points.
+</p><p><br />
+Here is an example of a dumbbell calibration:
+</p>
+<div class="center"><div class="floatnone"><span><a href="../../image/dumbbell_image_splitter/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/dumbbell_two.png" width="640" height="480" border="0" /></a></span></div></div>
+<p>During the experiments, image splitter and four mirrors are used to mimic four virtual cameras. For a detailed preview, please check (<a href="../four_view_image_splitter_3d_ptv/index.html" class="external free" title="http://ptv.origo.ethz.ch/wiki/four_view_image_splitter_3d_ptv">http://ptv.origo.ethz.ch/wiki/four_view_image_splitter_3d_ptv</a>). The investigation domain is the ascending aorta replica which has a diameter of 20 mm. The index of refraction is matched to avoid the noises. 
+</p>
+<div class="center"><div class="floatnone"><span><a href="../../image/aorta_back/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/dumbbell_three.png" width="607" height="640" border="0" /></a></span></div></div>
+<p>Firstly, dumbbell is moved behind the aorta. Then, it is moved in front of the aorta. All movements are recorded in 5000fps. The images are combined with a time step of 0.0176 s. It means that there are 62 time instances for dumbbell calibration. 
+</p>
+<div class="center"><div class="floatnone"><span><a href="../../image/aorta_front/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/dumbbell_four.png" width="610" height="640" border="0" /></a></span></div></div>
+<p>The pre-calibration parameters and initial guesses are quite important to reach better results faster. For a rough initial guess, it will take some time to converge. The better initial guess, the less convergence time. Since it starts converging, the software will find two correspondences.   
+</p>
+<div class="center"><div class="floatnone"><span><a href="../../image/correspondences/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/correpondence.png" width="612" height="640" border="0" /></a></span></div></div>
+<div class="center"><div class="floatnone"><span><a href="../../image/screenshot_of_correspondence/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/screen_one.png" width="636" height="640" border="0" /></a></span></div></div>   
+<p>Dumbbell parameters will help to find the optimum eps values. One can start with a coarser numbers, then switch them into finer ones. After a certain number of iterations, the software converges. At this point, the quality of the result is related to user's satisfactory. If the rms values are not good enough, one can go for a finer gradient descent factor and dumbbell penalty weight.
+</p>
+<div class="center"><div class="floatnone"><span><a href="../../image/converge/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/screen_two_0.png" width="640" height="632" border="0" /></a></span></div></div>
+<p>There is a small trick to go beyond converged numbers. One can apply shaking to the best initial guesses. Shaking improves the result. It helps to reduce error below 10 microns. But in any case one should back up ori files. Because sometimes it crashes!!!
+</p>
+<div class="center"><div class="floatnone"><span><a href="../../image/shaking/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/shaking.png" width="610" height="640" border="0" /></a></span></div></div>
+<div class="center"><div class="floatnone"><span><a href="../../image/shaked/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/screen_three.png" width="640" height="634" border="0" /></a></span></div></div>
+<p>Now, you have a dynamic calibration by using dumbbell. Here are the plots of dumbbell tracking. 
+</p>
+<div class="center"><div class="floatnone"><span><a href="../../image/tracking/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/track.png" width="611" height="640" border="0" /></a></span></div></div>
+<div class="center"><div class="floatnone"><span><a href="../../image/dumbbell_tracking/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/dumbbell_track.png" width="640" height="317" border="0" /></a></span></div></div>
+</div>
+    </div>
+          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f254%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f254%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-46173.html">Login</a> or <a href="../../user/register/index-46173.html">register</a> to post comments</span></li>
+</ul></div>
+      </div>
+		<!-- CONTENT END -->
+
+		
+	</div>
+<!-- END MAIN -->
+
+<!-- START FOOTER -->
+	<div id="footer">
+		<a href="http://oriact.com">Powered by</a><br/>
+		<a href="http://oriact.com"><img width="85" height="20" src="../../sites/all/themes/oxymoron/oriact_button.png" alt="Powered by Oriact"/></a><br/>
+		<div class="clear-block block block-origo_eth" id="block-origo_eth-0">
+  
+  <div class="content"><a href="http://origo.ethz.ch">Hosted on </a><br/><a href="http://origo.ethz.ch"><img width="85" height="20" src="../../sites/all/themes/oxymoron/origo_button_1.png" alt="Hosted on Origo"/></a><br/><a href="http://origo.ethz.ch">a project by ETH Zürich</a><br/>&copy;<a href="http://origo.ethz.ch"> 2006 - 2010</a><br/><a href="../../global/terms_of_use/index.html">Terms of Use</a><br/></div>
+</div>
+	</div>
+<!-- END FOOTER -->
+
+  <!-- CLOSURE (e.g. javascript) -->
+    <script type="text/javascript" src="../../sites/all/modules/google_cse/google_cse.js?n"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "googleCSE": { "language": "en" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) {
+      $(document).ready(function() {
+        $('a.origo-private').each(function() {
+          $(this).append('&nbsp;<img src="/sites/all/themes/oxymoron/private-page-link.png" alt="private"/>');
+        });
+      });
+    }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) {
+      $(document).ready(function() {
+        $('a.external').each(function() {
+          $(this).append('&nbsp;<img src="/sites/all/modules/mediawiki_filter/external.png" alt="external"/>');
+        });
+      });
+    }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-1676928-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+
+</body>
+
+</html>
+<!-- Localized -->

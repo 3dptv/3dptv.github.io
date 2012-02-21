@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8" ?><rss version="2.0" xml:base="http://ptv.origo.ethz.ch/taxonomy/term/13/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Tag benchmark</title>
+    <link>http://ptv.origo.ethz.ch/taxonomy/term/13/</link>
+    <description></description>
+    <language>en</language>
+          <item>
+    <title>3D-PTV benchmark program</title>
+    <link>http://ptv.origo.ethz.ch/wiki/3d_ptv_benchmark_program</link>
+    <description>&lt;table id=&quot;toc&quot; class=&quot;toc&quot; summary=&quot;Contents&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;div id=&quot;toctitle&quot;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/div&gt;
+&lt;div id=&quot;tocbody&quot;&gt;
+&lt;ul&gt;
+&lt;li class=&quot;toclevel-1&quot;&gt;&lt;a href=&quot;#_3D-PTV_benchmark_program&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;3D-PTV benchmark program&lt;/span&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li class=&quot;toclevel-2&quot;&gt;&lt;a href=&quot;#Introduction&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1.1&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;Introduction&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;toclevel-2&quot;&gt;&lt;a href=&quot;#Test_cases&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1.2&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;Test cases&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;toclevel-2&quot;&gt;&lt;a href=&quot;#Synthetic_images_test_cases&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1.3&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;Synthetic images test cases&lt;/span&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li class=&quot;toclevel-3&quot;&gt;&lt;a href=&quot;#How_to_prepare_and_post_the_test_case&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1.3.1&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;How to prepare and post the test case&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;a name=&quot;_3D-PTV_benchmark_program&quot;&gt;&lt;/a&gt;&lt;h1&gt; &lt;span class=&quot;mw-headline&quot;&gt;3D-PTV benchmark program&lt;/span&gt;&lt;/h1&gt;
+&lt;div class=&quot;thumb tright&quot;&gt;&lt;div class=&quot;thumbinner&quot; style=&quot;width:182px;&quot;&gt;&lt;a href=&quot;/image/blackboard_of_wg1_meeting&quot; class=&quot;image&quot; title=&quot;&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;/sites/ptv/files/images/28082009718.preview.jpg&quot; width=&quot;180&quot; height=&quot;103.1625&quot; border=&quot;0&quot; class=&quot;thumbimage&quot; /&gt;&lt;/a&gt;  &lt;div class=&quot;thumbcaption&quot;&gt;&lt;div class=&quot;magnify&quot; style=&quot;float:right&quot;&gt;&lt;a href=&quot;/image/blackboard_of_wg1_meeting&quot; class=&quot;internal&quot; title=&quot;Enlarge&quot;&gt;&lt;strong&gt;+&lt;/strong&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;a name=&quot;Introduction&quot;&gt;&lt;/a&gt;&lt;h2&gt; &lt;span class=&quot;mw-headline&quot;&gt;Introduction&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;Recent WG1 meeting in Zurich (August 2009) concluded that the three-dimensional particle tracking velocimetry (3D-PTV) is one of the established experimental approaches in the field of Particles in Turbulence. As a consequence, many algorithms, software packages have been developed over years by various research groups worldwide. This action is an attempt to learn best practices from each and to develop the open source particle tracking velocimetry that will combine the know-how of all the involved parties.
+&lt;/p&gt;&lt;p&gt;The first step, proposed during that meeting, was to develop few test cases that different research groups can use to test their own algorithms and software. The report of the groups will help to identify those performing best at different stages of the analysis and to expose the best practices to the other members of the action. There is a single important condition - open science. The codes, algorithms, data should be open to all the members of the action. The main goal is to make particle tracking better and accessible. 
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt; 
+&lt;/p&gt;
+&lt;a name=&quot;Test_cases&quot;&gt;&lt;/a&gt;&lt;h2&gt; &lt;span class=&quot;mw-headline&quot;&gt;Test cases&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;At the moment there are few test cases available. These are of the two major types:
+&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt; Synthetic images - for the demonstration purposes, we use the Standard PIV Images project. Specifically, we use the 3D standard images: &lt;a href=&quot;http://www.piv.jp/image3d/image-e.html&quot; class=&quot;external free&quot; title=&quot;http://www.piv.jp/image3d/image-e.html&quot;&gt;http://www.piv.jp/image3d/image-e.html&lt;/a&gt;. 
+&lt;/li&gt;&lt;li&gt; Real experimental data
+&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;/p&gt;
+&lt;a name=&quot;Synthetic_images_test_cases&quot;&gt;&lt;/a&gt;&lt;h2&gt; &lt;span class=&quot;mw-headline&quot;&gt; Synthetic images test cases &lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;There are four cases on the Standard 3D Images website &lt;a href=&quot;http://www.piv.jp/image3d/image-e.html&quot; class=&quot;external autonumber&quot; title=&quot;http://www.piv.jp/image3d/image-e.html&quot;&gt;[1]&lt;/a&gt; that seem to fit our purpose of testing the tracking software packages:
+&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;b&gt;Transient 3D flow field from 3 angles with wall refrection&lt;/b&gt;&lt;br /&gt;
+
+Case &lt;b&gt;351&lt;/b&gt; (Jet Shear flow)
+&lt;ul&gt;&lt;li&gt; Number of particles = 2000
+&lt;/li&gt;&lt;li&gt; Camera calibration Images are imX999.raw
+&lt;/li&gt;&lt;/ul&gt;
+(x,y,z) = (-0.8:0.0:0.8, -0.8:0.0:0.8, -0.8:0.0:0.8) 27 points
+&lt;ul&gt;&lt;li&gt; Three-cameras are on the holizontal plane 
+&lt;/li&gt;&lt;/ul&gt;
+
+Case &lt;b&gt;352&lt;/b&gt; (Jet Shear flow)
+&lt;ul&gt;&lt;li&gt; Number of particles = 300
+&lt;/li&gt;&lt;li&gt; Camera calibration Images are imX999.raw
+&lt;/li&gt;&lt;/ul&gt;
+(x,y,z) = (-0.8:0.0:0.8, -0.8:0.0:0.8, -0.8:0.0:0.8) 27 points
+&lt;ul&gt;&lt;li&gt; Three-cameras are on the holizontal plane 
+&lt;/li&gt;&lt;/ul&gt;
+
+&lt;b&gt;Transient 3D flow field from 3 angles with unknown wall refrection&lt;/b&gt;
+&lt;br /&gt;
+Case &lt;b&gt;371&lt;/b&gt; (Jet Shear flow)
+&lt;ul&gt;&lt;li&gt; Number of particles = 500
+&lt;/li&gt;&lt;li&gt; Camera calibration Images are imX999.raw
+&lt;/li&gt;&lt;/ul&gt;
+(x,y,z) = (-0.4:0.0:0.4, -0.4:0.0:0.4, -0.4:0.0:0.4) 27 points
+&lt;ul&gt;&lt;li&gt; camera parameters are not known 
+&lt;/li&gt;&lt;/ul&gt;
+
+Case &lt;b&gt;377&lt;/b&gt; (Jet Impinging flow)
+&lt;ul&gt;&lt;li&gt; Number of particles = 500
+&lt;/li&gt;&lt;li&gt; Camera calibration Images are imX999.raw
+&lt;/li&gt;&lt;/ul&gt;
+(x,y,z) = (-0.2:0.0:0.2, -0.2:0.0:0.2, -0.2:0.0:0.2) 125 points
+&lt;ul&gt;&lt;li&gt; cameras are set at the bottom of impinging plates 
+&lt;/li&gt;&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br /&gt;
+As we see, we can process the various cases and compare our algorithms versus the 
+&lt;/p&gt;
+&lt;ul&gt;&lt;li&gt; given particle positions (aspects of stereo-matching, center-of-gravity, calibration and camera models, etc.)
+&lt;/li&gt;&lt;li&gt; given tracking (aspects of tracking, length of trajectory, filters along the trajectory, post-tracking &quot;gluing&quot; algorithms, etc.)
+&lt;/li&gt;&lt;/ul&gt;
+&lt;p&gt;For example, comparing the case 352 and 371 will show if the effect of &quot;known&quot; vs &quot;unknown&quot; wall reflections on your camera model, comparing case 351 wit 352 will show the &lt;b&gt;traceability parameter&lt;/b&gt; best, where the number of particles density is much higher in the &quot;same&quot; flow in case 351. 
+&lt;/p&gt;
+&lt;a name=&quot;How_to_prepare_and_post_the_test_case&quot;&gt;&lt;/a&gt;&lt;h3&gt; &lt;span class=&quot;mw-headline&quot;&gt;How to prepare and post the test case&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;For the demonstration purposes, we use the test case no 352: &quot;Transient 3D flow field from 3 angles with wall refrection&quot;. We find that the way Standard PIV Images project defined the test cases is simple and comprehensible. We suggest to adopt this way of formatting your experimental data for the test case. Below we report the way 3D-PTV software (ETH Zurich) is used to analyze the case #352 and to report the results for further analysis.
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt; 
+General description
+&lt;/p&gt;&lt;p&gt;1. Demo images - to provide a quick overview
+&lt;/p&gt;&lt;p&gt;Source: &lt;img src=&quot;http://www.piv.jp/image3d/jpeg/im352.jpg&quot; alt=&quot;im352.jpg&quot; /&gt;
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt; 
+2. Textual information of the authors:
+&lt;/p&gt;&lt;p&gt;PIV Three-dimensional Standard Images    #352
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+Generator:  K. Okamoto  (Univ. Tokyo)
+Program:    ddr.c
+Date:       March 27, 1998
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt; 
+&lt;/p&gt;&lt;p&gt;3. Parameters:
+&lt;/p&gt;
+&lt;pre&gt;Target Flow Field:  Jet impinging on the Wall
+Reynolds Number:    3000
+&lt;/pre&gt;
+&lt;pre&gt;                     2cm
+        ------------|   |------------
+                      |  15cm/s
+                      V
+&lt;/pre&gt;
+&lt;pre&gt;                   XXX
+                   XXX
+&lt;/pre&gt;
+&lt;pre&gt;        -----------------------------
+&lt;/pre&gt;
+&lt;pre&gt;Number of Particles inserted in the field       1000 Particles
+Number of Particles visualized in one Image      320 Particles (average)
+&lt;/pre&gt;
+&lt;pre&gt;Diameter of Particles      5 pixel (average)
+                           2       (standard deviation)
+                           1       (minimum)
+&lt;/pre&gt;
+&lt;pre&gt;Maximum Velocity                 12 cm/s
+Target Flow field                2cm x 2cm x 2cm
+Time Interval between images     5 msec
+&lt;/pre&gt;
+&lt;pre&gt;Laser Illumination               Cylindrical from bottom (radius = 5cm)
+                                    [almost whole illumination]
+&lt;/pre&gt;
+&lt;pre&gt;Water refractive index           1.33
+Wall distance                    3 cm from center
+     orientation                 parallel to #1 camera image
+&lt;/pre&gt;
+&lt;p&gt;4. Camera positions
+&lt;/p&gt;
+&lt;pre&gt;   #0  Distance from center      20 cm
+       angle to X axis          -30 degree
+&lt;/pre&gt;
+&lt;pre&gt;   #1  Distance from center      20 cm
+       angle to X axis            0 degree
+&lt;/pre&gt;
+&lt;pre&gt;   #2  Distance from center      20 cm
+       angle to X axis           30 degree
+&lt;/pre&gt;
+&lt;pre&gt; No orientation variations were considered.
+&lt;/pre&gt;
+&lt;p&gt;5. Sketch of the coordinate system
+&lt;/p&gt;
+&lt;pre&gt;                                  ^ y
+                                   |
+                                   |/
+                       ------------+---------------&amp;gt; x
+                                  /|
+                                 / |
+                                /
+                               /z
+                              L
+&lt;/pre&gt;
+&lt;pre&gt;           TOP VIEW
+                                 |
+                                O| Particles
+                   --------------+-----------------&amp;gt; x-axis
+                                /|
+                               / |
+                              /  |        n=1.33(water)
+                   ==============|===================== WALL
+                            /    |        n=1.00(air)
+                           /theta|
+                          / (-30)|(30)
+                         /       |
+                       #0        |        #2 camera
+                    camera       |
+                                #1 camera
+                                 |
+                                 | z-axis
+                                 V 
+&lt;/pre&gt;
+&lt;p&gt;6. Data description 
+&lt;/p&gt;&lt;p&gt;Image Files (imX???.raw)
+&lt;/p&gt;
+&lt;pre&gt; X:    camera# (0-2)
+&amp;nbsp;???:  serial# (000-144)   Total 720msec
+&lt;/pre&gt;
+&lt;pre&gt; Image size  256x256 pixel (8bit:256)
+&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;/p&gt;
+&lt;pre&gt;Calibration File (imX999.raw)
+  Particles (Total 27 particles)
+    x = -0.8, 0, 0.8 cm
+    y = -0.8, 0, 0.8 cm
+    z = -0.8, 0, 0.8 cm
+&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;/p&gt;&lt;p&gt;Vector files  (vec???.dat)
+&lt;/p&gt;
+&lt;pre&gt;  x      y      z        u         v         w
+-0.80  -0.80  -0.80   0.17542  -4.51977   0.01204
+-0.80  -0.80  -0.60  -0.18245  -4.11870  -0.26516
+-0.80  -0.80  -0.40  -0.78761  -3.38484  -0.41633
+&lt;/pre&gt;
+&lt;pre&gt;  unit: x,y,z  [cm]
+        u,v,w  [cm/s]
+&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;
+Particle Files  (ptc???.dat)
+&lt;/p&gt;
+&lt;pre&gt;                            #1 camera     #2 camera     #3 camera  intensity
+  ID    x      y      z      X      Y      X      Y      X      Y
+   4 -0.301  0.584  0.893 147.61  64.91  95.55  65.10  53.07  65.92 208.18
+   6 -0.898  1.266 -0.258   0.00   0.00   0.00   0.00  46.22   0.15 208.69
+   8  1.178  0.886  0.149 249.88  38.07 251.10  35.42 219.99  32.46 191.52
+   9  0.720 -1.242 -0.530 183.76 252.88 201.24 254.40   0.00   0.00 211.21
+&lt;/pre&gt;
+&lt;pre&gt;  unit: x,y,z  [cm]
+        X,Y    [pixel]
+&lt;/pre&gt;
+&lt;pre&gt;  The particle ID is unique number, therefore, the same particle could
+  be easily tracked with checking the ID for serial particle files.
+&lt;/pre&gt;
+&lt;pre&gt;Thanks to the authors of the Standard 3D PIV Images: Dr. Okamoto (okamoto@tokai.t.u-tokyo.ac.jp)
+&lt;/pre&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;/p&gt;</description>
+     <comments>http://ptv.origo.ethz.ch/wiki/3d_ptv_benchmark_program#comments</comments>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/3d_ptv">3d-ptv</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/benchmark">benchmark</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/comparison">comparison</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/test">test</category>
+ <pubDate>Thu, 22 Oct 2009 21:19:23 +0000</pubDate>
+ <dc:creator>alexl</dc:creator>
+ <guid isPermaLink="false">15 at http://ptv.origo.ethz.ch</guid>
+  </item>
+  <item>
+    <title>Benchmark of 3D-PTV software using PIV standard images project</title>
+    <link>http://ptv.origo.ethz.ch/wiki/benchmark_of_3d_ptv_software_using_piv_standard_images_project</link>
+    <description>&lt;table id=&quot;toc&quot; class=&quot;toc&quot; summary=&quot;Contents&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;div id=&quot;toctitle&quot;&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/div&gt;
+&lt;div id=&quot;tocbody&quot;&gt;
+&lt;ul&gt;
+&lt;li class=&quot;toclevel-1&quot;&gt;&lt;a href=&quot;#Benchmark_of_3D-PTV_software_using_PIV_Standard_Images_project&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;Benchmark of 3D-PTV software using PIV Standard Images project&lt;/span&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li class=&quot;toclevel-2&quot;&gt;&lt;a href=&quot;#Introduction&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1.1&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;Introduction&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;toclevel-2&quot;&gt;&lt;a href=&quot;#Benchmark_proposal_1&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1.2&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;Benchmark proposal 1&lt;/span&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li class=&quot;toclevel-3&quot;&gt;&lt;a href=&quot;#Prerequisites&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1.2.1&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;Prerequisites&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;toclevel-3&quot;&gt;&lt;a href=&quot;#Download_and_prepare_the_test_case&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1.2.2&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;Download and prepare the test case&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;toclevel-3&quot;&gt;&lt;a href=&quot;#Sample_run&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1.2.3&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;Sample run&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;toclevel-3&quot;&gt;&lt;a href=&quot;#Prepare_calibration&quot;&gt;&lt;span class=&quot;tocnumber&quot;&gt;1.2.4&lt;/span&gt; &lt;span class=&quot;toctext&quot;&gt;Prepare calibration&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;a name=&quot;Benchmark_of_3D-PTV_software_using_PIV_Standard_Images_project&quot;&gt;&lt;/a&gt;&lt;h1&gt; &lt;span class=&quot;mw-headline&quot;&gt; Benchmark of 3D-PTV software using PIV Standard Images project&lt;/span&gt;&lt;/h1&gt;
+&lt;a name=&quot;Introduction&quot;&gt;&lt;/a&gt;&lt;h2&gt; &lt;span class=&quot;mw-headline&quot;&gt; Introduction &lt;/span&gt;&lt;/h2&gt;
+Recent WG1 meeting in Zurich was our Experimental Workshop. It was roposed during that meeting that we develop few test cases that different research groups can use to test their own algorithms and software.  &lt;div class=&quot;thumb tright&quot;&gt;&lt;div class=&quot;thumbinner&quot; style=&quot;width:182px;&quot;&gt;&lt;a href=&quot;/image/blackboard_of_wg1_meeting&quot; class=&quot;image&quot; title=&quot;&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;/sites/ptv/files/images/28082009718.preview.jpg&quot; width=&quot;180&quot; height=&quot;103.1625&quot; border=&quot;0&quot; class=&quot;thumbimage&quot; /&gt;&lt;/a&gt;  &lt;div class=&quot;thumbcaption&quot;&gt;&lt;div class=&quot;magnify&quot; style=&quot;float:right&quot;&gt;&lt;a href=&quot;/image/blackboard_of_wg1_meeting&quot; class=&quot;internal&quot; title=&quot;Enlarge&quot;&gt;&lt;strong&gt;+&lt;/strong&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt; The report of the groups will help to identify those performing best at different stages of the analysis and to expose the best practices to the other members of the action. There is a single important condition - open science. The codes, algorithms, data should be &lt;b&gt;open&lt;/b&gt; to all the members of the action. The main goal is to make particle tracking better and accessible.  
+&lt;p&gt;&lt;br /&gt;
+&lt;/p&gt;
+&lt;a name=&quot;Benchmark_proposal_1&quot;&gt;&lt;/a&gt;&lt;h2&gt; &lt;span class=&quot;mw-headline&quot;&gt; Benchmark proposal 1 &lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;We &lt;b&gt;propose&lt;/b&gt; to start with the synthetic images, created from a known velocity field. Such images and data are available from the PIV Standard Images Project &lt;a href=&quot;http://www.piv.jp/image3d/image-e.html&quot; class=&quot;external autonumber&quot; title=&quot;http://www.piv.jp/image3d/image-e.html&quot;&gt;[1]&lt;/a&gt;. Here we describe the test &lt;b&gt;case #377&lt;/b&gt; (which is slightly more tricky due to an unknown wall reflection and camera positions). 
+&lt;/p&gt;&lt;p&gt;we keep a mirror copy of the data for the case 352 on &lt;a href=&quot;http://dl.dropbox.com/u/5266698/piv_std_352.tgz&quot; class=&quot;external text&quot; title=&quot;http://dl.dropbox.com/u/5266698/piv_std_352.tgz&quot;&gt;case 352 copy&lt;/a&gt;
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;http://www.piv.jp/image3d/jpeg/im377.jpg&quot; alt=&quot;im377.jpg&quot; /&gt;
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+Here we first copy the original description of the experimental conditions from their case 377 website 
+&lt;/p&gt;&lt;p&gt;&lt;div class=&quot;geshifilter&quot;&gt;&lt;div class=&quot;geshifilter-text&quot; style=&quot;font-family: monospace;&quot;&gt;&lt;ol&gt;&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;No. &amp;nbsp; &amp;nbsp; &amp;nbsp;377 &amp;nbsp; &amp;nbsp;Unit&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Image Size&amp;nbsp; &amp;nbsp; &amp;nbsp; 256 x 256 &amp;nbsp; &amp;nbsp; &amp;nbsp; pixel&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Area&amp;nbsp; &amp;nbsp; 1 x 1 &amp;nbsp; cm&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Laser Illumination&amp;nbsp; &amp;nbsp; &amp;nbsp; Volume&amp;nbsp; mm&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Interval&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 0.001 &amp;nbsp; sec&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Max. Velocity &amp;nbsp; 10 &amp;nbsp; &amp;nbsp; &amp;nbsp;pixel/interval&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Max. out-of-plane Velocity&amp;nbsp; &amp;nbsp; &amp;nbsp; ?? &amp;nbsp; &amp;nbsp; &amp;nbsp;%&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;DATA DOWNLOAD&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;* The format of the images are RAW data.[64KB]&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;* The particle data file[100KB] contains; (1) particle ID, (2-4) particle 3d location [x,y,z] (cm), &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;(5,6) particle location in Image 0 [X,Y] and (7,8) particle location in Image 1 [X,Y] and &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;(9,10) particle location in Image 2 [X,Y] and (11) maximum intensity of the particle [I]. &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;The particle ID is unique, so that the same particle location could be correctly tracked with using &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;the serial particle files. Please see the example&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;* The vector file[50KB] contains; (1-3) node of the image (X,Y,Z) [cm] and (4-6) &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;vector (U,V,W) in the unit of [cm/s] Please see the example&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;PIV Three-dimensional Standard Images &amp;nbsp; &amp;nbsp;#377&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Generator: &amp;nbsp;K. Okamoto &amp;nbsp;(Univ. Tokyo)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Program: &amp;nbsp; &amp;nbsp;ddr.c&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Date: &amp;nbsp; &amp;nbsp; &amp;nbsp; March 27, 1998&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Parameters:&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Target Flow Field: &amp;nbsp;Jet impinging on the Wall&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Reynolds Number: &amp;nbsp; &amp;nbsp;3000&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 2cm&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;------------| &amp;nbsp; |------------&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;| &amp;nbsp;15cm/s&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;V&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; XXX&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; XXX&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;-----------------------------&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Number of Particles inserted in the field &amp;nbsp; &amp;nbsp; &amp;nbsp;40000 Particles&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Number of Particles visualized in one Image &amp;nbsp; &amp;nbsp; &amp;nbsp;500 Particles (average)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Diameter of Particles &amp;nbsp; &amp;nbsp; &amp;nbsp;5 pixel (average)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 2 &amp;nbsp; &amp;nbsp; &amp;nbsp; (standard deviation)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 1 &amp;nbsp; &amp;nbsp; &amp;nbsp; (minimum)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Maximum Velocity &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 12 cm/s&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Target Flow field &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;5mm x 5mm x 5mm&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Time Interval between images &amp;nbsp; &amp;nbsp; 1 msec&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Laser Illumination &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Cylindrical from bottom (radius = 1cm)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Water refractive index &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; 1.33&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Wall distance &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;7 mm from center &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; orientation &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; y-direction &amp;nbsp;(simulate impinging plate)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Camera positions&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; #0 &amp;nbsp;(x,y,z) = (5.77, -10, 0)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; #1 &amp;nbsp;(x,y,z) = (-2.88, -10, -5)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; #2 &amp;nbsp;(x,y,z) = (-2.88, -10, 5)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; Small Orientation variations were considered.&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ^ y&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; |&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; |/&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ------------+---------------&amp;gt; x&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; #2 &amp;nbsp; /|&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; / | &amp;nbsp; &amp;nbsp; &amp;nbsp;#1&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; #3 &amp;nbsp; &amp;nbsp; /&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; /z&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;L&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Side View &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;^&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Jet &amp;nbsp;| y-axis&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; |&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;O| Particles&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; --------------+-----------------&amp;gt; x-axis&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;/| &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;n=1.33(water)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ==============|2mm==================&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;/ &amp;nbsp;| &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;n=1.33(acryl)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ==============|7mm================== WALL&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;/ &amp;nbsp; &amp;nbsp;| &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;n=1.00(air)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; / &amp;nbsp; &amp;nbsp; |&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;/ &amp;nbsp; &amp;nbsp; &amp;nbsp;|&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; / &amp;nbsp; &amp;nbsp; &amp;nbsp; |&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; #2,3 &amp;nbsp; &amp;nbsp; &amp;nbsp;| &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;#0 camera&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;camera &amp;nbsp; &amp;nbsp; &amp;nbsp; |&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; |&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; The wall surface is (y=-7mm)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Jet impinging plate is (y=-2mm)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Visualized region is (-2,-2,-2) &amp;lt; (x,y,z) &amp;lt; (2,2,2)mm&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Image Files (imX???.raw)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; X: &amp;nbsp; &amp;nbsp;camera# (0-2)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; ???: &amp;nbsp;serial# (000-200) &amp;nbsp; Total 200msec&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; Image size &amp;nbsp;256x256 pixel (8bit:256)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;Calibration File (imX999.raw)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp;Particles (Total 125 particles)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;x = -0.2, -0.1, 0, 0.1, 0.2 cm&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;y = -0.2, -0.1, 0, 0.1, 0.2 cm&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;z = -0.2, -0.1, 0, 0.1, 0.2 cm&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Vector files &amp;nbsp;(vec???.dat)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp;x &amp;nbsp; &amp;nbsp; &amp;nbsp;y &amp;nbsp; &amp;nbsp; &amp;nbsp;z &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;u &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; v &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; w&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;-0.80 &amp;nbsp;-0.80 &amp;nbsp;-0.80 &amp;nbsp; 0.17542 &amp;nbsp;-4.51977 &amp;nbsp; 0.01204&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;-0.80 &amp;nbsp;-0.80 &amp;nbsp;-0.60 &amp;nbsp;-0.18245 &amp;nbsp;-4.11870 &amp;nbsp;-0.26516&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;-0.80 &amp;nbsp;-0.80 &amp;nbsp;-0.40 &amp;nbsp;-0.78761 &amp;nbsp;-3.38484 &amp;nbsp;-0.41633&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp;unit: x,y,z &amp;nbsp;[cm]&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;u,v,w &amp;nbsp;[cm/s]&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Particle Files &amp;nbsp;(ptc???.dat)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;#1 camera &amp;nbsp; &amp;nbsp; #2 camera &amp;nbsp; &amp;nbsp; #3 camera &amp;nbsp;intensity&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp;ID &amp;nbsp; &amp;nbsp;x &amp;nbsp; &amp;nbsp; &amp;nbsp;y &amp;nbsp; &amp;nbsp; &amp;nbsp;z &amp;nbsp; &amp;nbsp; &amp;nbsp;X &amp;nbsp; &amp;nbsp; &amp;nbsp;Y &amp;nbsp; &amp;nbsp; &amp;nbsp;X &amp;nbsp; &amp;nbsp; &amp;nbsp;Y &amp;nbsp; &amp;nbsp; &amp;nbsp;X &amp;nbsp; &amp;nbsp; &amp;nbsp;Y&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; 4 -0.301 &amp;nbsp;0.584 &amp;nbsp;0.893 147.61 &amp;nbsp;64.91 &amp;nbsp;95.55 &amp;nbsp;65.10 &amp;nbsp;53.07 &amp;nbsp;65.92 208.18&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; 6 -0.898 &amp;nbsp;1.266 -0.258 &amp;nbsp; 0.00 &amp;nbsp; 0.00 &amp;nbsp; 0.00 &amp;nbsp; 0.00 &amp;nbsp;46.22 &amp;nbsp; 0.15 208.69&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; 8 &amp;nbsp;1.178 &amp;nbsp;0.886 &amp;nbsp;0.149 249.88 &amp;nbsp;38.07 251.10 &amp;nbsp;35.42 219.99 &amp;nbsp;32.46 191.52&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; 9 &amp;nbsp;0.720 -1.242 -0.530 183.76 252.88 201.24 254.40 &amp;nbsp; 0.00 &amp;nbsp; 0.00 211.21&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp;unit: x,y,z &amp;nbsp;[cm]&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;X,Y &amp;nbsp; &amp;nbsp;[pixel]&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp;The particle ID is unique number, therefore, the same particle could&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp;be easily tracked with checking the ID for serial particle files.&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;If you have any questions, please contact Dr. Okamoto&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;(okamoto@tokai.t.u-tokyo.ac.jp)&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+&lt;/p&gt;
+&lt;a name=&quot;Prerequisites&quot;&gt;&lt;/a&gt;&lt;h3&gt; &lt;span class=&quot;mw-headline&quot;&gt; Prerequisites &lt;/span&gt;&lt;/h3&gt;
+&lt;ol&gt;&lt;li&gt; 3D-PTV software (it requires ActiveTCL 8.4.x)
+&lt;/li&gt;&lt;li&gt; post-processing software
+&lt;/li&gt;&lt;li&gt; Matlab (meanwhile, we&#039;re trying to move it all to Python/Numpy/Matplotlib)
+&lt;/li&gt;&lt;/ol&gt;
+&lt;a name=&quot;Download_and_prepare_the_test_case&quot;&gt;&lt;/a&gt;&lt;h3&gt; &lt;span class=&quot;mw-headline&quot;&gt; Download and prepare the test case &lt;/span&gt;&lt;/h3&gt;
+&lt;ol&gt;&lt;li&gt; Download the images, point and vec files from the origional website using &lt;a href=&quot;http://www.piv.jp/image3d/image377.html&quot; class=&quot;external autonumber&quot; title=&quot;http://www.piv.jp/image3d/image377.html&quot;&gt;[2]&lt;/a&gt; . 
+&lt;/li&gt;&lt;li&gt; Create 3D-PTV directory: 
+&lt;/li&gt;&lt;/ol&gt;
+&lt;p&gt;&lt;div class=&quot;geshifilter&quot;&gt;&lt;div class=&quot;geshifilter-text&quot; style=&quot;font-family: monospace;&quot;&gt;&lt;ol&gt;&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;C:/PTV/case377&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; /img&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; /res&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; /cal&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; /parameters&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/p&gt;
+&lt;ol&gt;&lt;li&gt; Convert RAW images into TIFF (8 bit) images using IrfanView (on Windows), ImageMagick or Matlab. The name convention is cam1.XXX cam2.XXX cam3.XXX (not .tif extension)
+&lt;/li&gt;&lt;li&gt; Use the attached &lt;a href=&quot;http://ptv.origo.ethz.ch/system/files/ptc999_to_man_ori_377.m.txt&quot; class=&quot;external autonumber&quot; title=&quot;http://ptv.origo.ethz.ch/system/files/ptc999_to_man_ori_377.m.txt&quot;&gt;[3]&lt;/a&gt; Matlab file (remove .txt extension) to generate the calibration images and necessary ASCII files (see &lt;span class=&quot;geshifilter&quot;&gt;&lt;code class=&quot;text geshifilter-text&quot;&gt;&amp;nbsp;&amp;gt;&amp;gt; help ptc999_to_man_ori_377&lt;/code&gt;&lt;/span&gt; for more information).
+&lt;/li&gt;&lt;li&gt; The orientation of the cameras turned to be quite tricky as the authors didn&#039;t mention the rotation around the imaging axis. Never mind, the ORI files are attached (remove .txt extension) . These could be significantly improved using iterative SHAKING algorithm of Beat. 
+&lt;/li&gt;&lt;/ol&gt;
+&lt;a name=&quot;Sample_run&quot;&gt;&lt;/a&gt;&lt;h3&gt; &lt;span class=&quot;mw-headline&quot;&gt; Sample run &lt;/span&gt;&lt;/h3&gt;
+&lt;ol&gt;&lt;li&gt; If all the previous steps were successful, then running &lt;span class=&quot;geshifilter&quot;&gt;&lt;code class=&quot;text geshifilter-text&quot;&gt;&amp;nbsp;start.bat&lt;/code&gt;&lt;/span&gt; will open the main window. From there, Start, then Tracking -&amp;gt; Sequence/Tracking will be the fastest way of checking it. At the end, Tracking -&amp;gt; Show trajectories should show something of the kind:
+&lt;/li&gt;&lt;/ol&gt;
+&lt;a name=&quot;Prepare_calibration&quot;&gt;&lt;/a&gt;&lt;h3&gt; &lt;span class=&quot;mw-headline&quot;&gt; Prepare calibration &lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;div class=&quot;geshifilter&quot;&gt;&lt;div class=&quot;geshifilter-text&quot; style=&quot;font-family: monospace;&quot;&gt;&lt;ol&gt;&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;function ptc999_to_man_ori_377(dir1,dir2,midplane)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% PTC999_TO_MAN_ORI_377(DIRNAME1,DIRNAME2,MIDPLANE)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% takes the PTC999.DAT file from DIRNAME1 as an input&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% and generates all the necessary files for the 3D-PTV software&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% (almost) automatic calibration in DIRNAME2:&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% MAN_ORI.DAT &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% MAN_ORI.PAR in /parameters&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% CAL377.TXT &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% CAM1.TIF, CAM2.TIF, CAM3.TIF in /cal&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;%&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% There is only CAM1-3.TIF.ORI files are missing. &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;%&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% MIDPLANE = 0 or 1 (false or true) - useful if only the midplane&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% points are used for the calibration. &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% Author: Alex Liberzon&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% &lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;if ~nargin&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; dir1 = &#039;c:\PTV\benchmarks\piv_std_377\ptc\&#039;;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; dir2 = &#039;c:\PTV\Software\sortgrid_from_initial_guess_Oct09\case377\&#039;;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; midplane = 0;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;end&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% PTC999_TO_MAN_ORI_377&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% read ptc999.dat file from the case 377&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;d = load(fullfile(dir1,&#039;ptc999.dat&#039;));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;cal = fullfile(dir2,&#039;cal377mid.txt&#039;);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;dat = fullfile(dir2,&#039;man_ori.dat&#039;);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;par = fullfile(dir2,&#039;parameters&#039;,&#039;man_ori.par&#039;);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;cam1 = fullfile(dir2,&#039;cal&#039;,&#039;cam1.tif&#039;);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;cam2 = fullfile(dir2,&#039;cal&#039;,&#039;cam2.tif&#039;);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;cam3 = fullfile(dir2,&#039;cal&#039;,&#039;cam3.tif&#039;);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% cm -&amp;gt; mm&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;d(:,2:4) = d(:,2:4)*10;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% transform axis: x-&amp;gt;x y-&amp;gt;-z z -&amp;gt; y&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;tmp = d;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;d(:,3) = tmp(:,4);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;d(:,4) = -tmp(:,3);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% indices:&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% d(:,1) = d(:,1) + 1;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% if one plane only:&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;if midplane&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;midplane = find(d(:,4) == 0);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;d = d(midplane,:);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;d(:,1) = 1:size(d,1);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;id = [1,5,21,25];&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;else&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; d(:,1) = d(:,1) + 1;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; id = [1,5,121,125];&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;end&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% write cal377.txt&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;fid = fopen(cal,&#039;w&#039;);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;fprintf(fid,&#039;%5d %9.4f %9.4f %9.4f\n&#039;,d(:,1:4)&#039;);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;fclose(fid);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% choose points&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;id = [1,5,21,25];&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;fidpar = fopen(par,&#039;w&#039;);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;fiddat = fopen(dat,&#039;w&#039;);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;for i = 1:4&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; fprintf(fidpar,&#039;%3d\n&#039;,d(id,1));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;end&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;for i = 1:4&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; fprintf(fiddat,&#039;%6.3f %6.3f\n&#039;,d(id(i),5:6));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;end&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;for i=1:4&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; fprintf(fiddat,&#039;%6.3f %6.3f\n&#039;,d(id(i),7:8));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;end&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;for i=1:4&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; fprintf(fiddat,&#039;%6.3f %6.3f\n&#039;,d(id(i),9:10));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;end&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;fclose(fidpar);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;fclose(fiddat);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% generate images:&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% Image generation parameters&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;Radius = 2;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;sx = 256;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;sy = 256;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;%% Cam1&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;x = d(:,5);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;y = d(:,6);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% figure, scatter(x,y)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;bw = uint8(zeros(sx,sy));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;for j = 1:length(x)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; output_coord = plot_circle(x(j),y(j),Radius);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; bw = imadd(bw,uint8(poly2mask(output_coord(:,1),output_coord(:,2),sx,sy)));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;end&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;bw(bw&amp;gt;0) = 255;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% figure, imshow(bw)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;imwrite(bw,cam1,&#039;tiff&#039;,&#039;compression&#039;,&#039;none&#039;)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;%% Cam1&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;x = d(:,7);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;y = d(:,8);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% figure, scatter(x,y)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;bw = uint8(zeros(sx,sy));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;for j = 1:length(x)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; output_coord = plot_circle(x(j),y(j),Radius);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; bw = imadd(bw,uint8(poly2mask(output_coord(:,1),output_coord(:,2),sx,sy)));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;end&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;bw(bw&amp;gt;0) = 255;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% figure, imshow(bw)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;imwrite(bw,cam2,&#039;tiff&#039;,&#039;compression&#039;,&#039;none&#039;)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;%% Cam1&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;x = d(:,9);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;y = d(:,10);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% figure, scatter(x,y)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;bw = uint8(zeros(sx,sy));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;for j = 1:length(x)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; output_coord = plot_circle(x(j),y(j),Radius);&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;&amp;nbsp; &amp;nbsp; bw = imadd(bw,uint8(poly2mask(output_coord(:,1),output_coord(:,2),sx,sy)));&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;end&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;bw(bw&amp;gt;0) = 255;&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;% figure, imshow(bw)&lt;/div&gt;&lt;/li&gt;
+&lt;li style=&quot;font-family: monospace; font-weight: normal;&quot;&gt;&lt;div style=&quot;font-family: monospace; font-weight: normal; font-style: normal&quot;&gt;imwrite(bw,cam3,&#039;tiff&#039;,&#039;compression&#039;,&#039;none&#039;)&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/p&gt;&lt;p&gt;&lt;br /&gt;
+&lt;/p&gt;&lt;table id=&quot;attachments&quot; class=&quot;sticky-enabled&quot;&gt;
+ &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Attachment&lt;/th&gt;&lt;th&gt;Size&lt;/th&gt; &lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+ &lt;tr class=&quot;odd&quot;&gt;&lt;td&gt;&lt;a href=&quot;http://ptv.origo.ethz.ch/system/files/ptc999_to_man_ori_377.m.txt&quot;&gt;ptc999_to_man_ori_377.m.txt&lt;/a&gt;&lt;/td&gt;&lt;td&gt;2.96 KB&lt;/td&gt; &lt;/tr&gt;
+ &lt;tr class=&quot;even&quot;&gt;&lt;td&gt;&lt;a href=&quot;http://ptv.origo.ethz.ch/system/files/cam1.tif_.ori_.txt&quot;&gt;cam1.tif_.ori_.txt&lt;/a&gt;&lt;/td&gt;&lt;td&gt;303 bytes&lt;/td&gt; &lt;/tr&gt;
+ &lt;tr class=&quot;odd&quot;&gt;&lt;td&gt;&lt;a href=&quot;http://ptv.origo.ethz.ch/system/files/cam2.tif_.ori_.txt&quot;&gt;cam2.tif_.ori_.txt&lt;/a&gt;&lt;/td&gt;&lt;td&gt;303 bytes&lt;/td&gt; &lt;/tr&gt;
+ &lt;tr class=&quot;even&quot;&gt;&lt;td&gt;&lt;a href=&quot;http://ptv.origo.ethz.ch/system/files/cam3.tif_.ori_.txt&quot;&gt;cam3.tif_.ori_.txt&lt;/a&gt;&lt;/td&gt;&lt;td&gt;303 bytes&lt;/td&gt; &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+     <comments>http://ptv.origo.ethz.ch/wiki/benchmark_of_3d_ptv_software_using_piv_standard_images_project#comments</comments>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/benchmark">benchmark</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/piv">piv</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/ptv">ptv</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/standard_images">standard images</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/tutorial">tutorial</category>
+ <enclosure url="http://ptv.origo.ethz.ch/system/files/ptc999_to_man_ori_377.m.txt" length="3033" type="text/plain" />
+ <pubDate>Wed, 28 Oct 2009 20:15:58 +0000</pubDate>
+ <dc:creator>alexl</dc:creator>
+ <guid isPermaLink="false">18 at http://ptv.origo.ethz.ch</guid>
+  </item>
+  <item>
+    <title>case 371 is processed up to the 3D position comparison</title>
+    <link>http://ptv.origo.ethz.ch/blog/%5Buser-raw%5D/case_371_is_processed_up_to_the_3d_position_comparison</link>
+    <description>&lt;p&gt;&lt;img src=&quot;http://ptv.origo.ethz.ch/system/files/images/3derror_case371.preview.jpg&quot; alt=&quot;3derror_case371.preview.jpg&quot; /&gt;
+&lt;/p&gt;</description>
+     <comments>http://ptv.origo.ethz.ch/blog/%5Buser-raw%5D/case_371_is_processed_up_to_the_3d_position_comparison#comments</comments>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/benchmark">benchmark</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/comparison">comparison</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/ptv">ptv</category>
+ <pubDate>Fri, 06 Nov 2009 23:00:40 +0000</pubDate>
+ <dc:creator>alexl</dc:creator>
+ <guid isPermaLink="false">22 at http://ptv.origo.ethz.ch</guid>
+  </item>
+  <item>
+    <title>Wesleyan data</title>
+    <link>http://ptv.origo.ethz.ch/wiki/wesleyan_data</link>
+    <description>&lt;a name=&quot;Wesleyan_University_experimental_data&quot;&gt;&lt;/a&gt;&lt;h1&gt; &lt;span class=&quot;mw-headline&quot;&gt; Wesleyan University experimental data &lt;/span&gt;&lt;/h1&gt;
+&lt;a name=&quot;Comparison&quot;&gt;&lt;/a&gt;&lt;h2&gt; &lt;span class=&quot;mw-headline&quot;&gt; Comparison &lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;http://lh4.ggpht.com/_Ehhk1abDUqc/SwLhWV-4RqI/AAAAAAAAIUM/81SbAR8bEGY/s800/screen%5B8%5D.jpg&quot; alt=&quot;screen%5B8%5D.jpg&quot; /&gt;
+&lt;/p&gt;</description>
+     <comments>http://ptv.origo.ethz.ch/wiki/wesleyan_data#comments</comments>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/benchmark">benchmark</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/data">data</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/greg">greg</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/ptv">ptv</category>
+ <category domain="http://ptv.origo.ethz.ch/category/tags/wesleyan">wesleyan</category>
+ <pubDate>Tue, 17 Nov 2009 17:59:35 +0000</pubDate>
+ <dc:creator>alexl</dc:creator>
+ <guid isPermaLink="false">24 at http://ptv.origo.ethz.ch</guid>
+  </item>
+  </channel>
+</rss>

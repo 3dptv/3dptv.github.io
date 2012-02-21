@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>3D-PTV benchmark program | ptv</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../sites/all/themes/oxymoron/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/origo_home/css/origo_home-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/geshifilter/geshifilter-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/google_cse/google_cse-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mediawiki_filter/mediawiki_filter-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/forum/forum-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/mainmenu-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/iconsmenu-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/night-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/day-36200.css" />
+<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/oxymoron/css/print-36200.css" />
+  <script type="text/javascript" src="../../misc/jquery.js?n"></script>
+<script type="text/javascript" src="../../misc/drupal.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/mediawiki_filter/mediawiki_filter.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/jquery_example/jquery.example.min.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/oxymoron.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/mainmenu.js?n"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": "1", "trackMailto": "1", "trackDownload": "1", "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+Drupal.behaviors.issue_tracker = function(context) {
+        $('a[class=extiw issue]').each(function() {
+          // extract issue number from the URL
+          var issueURL = $(this)[0].href;
+          var issueURLSplitted = issueURL.split('/')
+          var issueNumber = issueURLSplitted[issueURLSplitted.length - 1];
+
+          var target= $(this);
+          $.get(Drupal.settings.basePath + "ajax/issue_get_status/" + issueNumber, null, function(response) {
+            var result = Drupal.parseJson(response);
+
+            var decorationString = "";
+            if (result.issueClosedStatus == true) {
+              decorationString = 'line-through';
+            }
+            $(target).css('text-decoration', decorationString);
+          });
+        });
+      }
+//--><!]]>
+</script>
+  <style type="text/css" media="print">@import "../../sites/all/themes/oxymoron/css/print.css";</style>
+  <script type="text/javascript"> </script>
+  <!--[if IE 7]>
+  	<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style_ie7.css" />
+  <![endif]-->
+
+</head>
+
+<body>
+
+<!-- START HEADER -->
+    <div id="mainheader">
+    
+        <div id="logo">
+			            <a class="logo_link" href="../../index.html" title="Home" rel="home" id="logo">
+                <img src="../../sites/ptv/files/ptv_0.jpg" alt="Home"/>
+            </a>
+						            <div id="site-name-frame">
+				                <h1 class='site-name'><a href="../../index.html" title="Home">3D-PTV</a></h1>
+				            </div>
+        </div>
+
+        <ul id="user-info">
+                                  <li><a href="../../user/register/index-45280.html">Register</a></li>
+                    <li><a href="../../user/index-45280.html">Sign in</a></li>
+                      </ul>
+        <div id='search-box'><form action="/wiki/3d_ptv_benchmark_program"  accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-38fe2580928d49fe7ed56f39d04cca4d" value="form-38fe2580928d49fe7ed56f39d04cca4d"  />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+<input type="hidden" name="3" id="edit-3" value=""  />
+
+</div></form>
+</div>
+	
+		<div id="iconsmenu">
+		  <!-- START TOP NAV -->
+					  					  
+<ul id='navlist'>
+	<li><a href="../../index.html" title="Home" class="home"><div class="home"><span class="notext">Home</span></div></a></li>
+	<li><a href="../../download/index.html" title="Download" class="download"><div class="download"><span class="notext">Download</span></div></a></li>
+	<li><a href="../../forum/index.html" title="Forum" class="forum"><div class="forum"><span class="notext">Forum</span></div></a></li>
+	<li><a href="../../blog/index.html" title="Issues" class="blog"><div class="blog"><span class="notext">Blog</span></div></a></li>
+	<li><a href="../../issues/index.html" title="Issues" class="issues"><div class="issues"><span class="notext">Issues</span></div></a></li>
+	<li><a href="../../statistics/index.html" title="Statistics" class="statistics"><div class="statistics"><span class="notext">Statistics</span></div></a></li>
+</ul>
+					  					  <br class="clear" />
+			  <!-- END TOP NAV -->
+		</div>
+				<div class='main_navi'>
+			<div class="clear-block block block-origo_home" id="block-origo_home-0">
+  
+  <div class="content"><ul class="menu"><li class="collapsed"><a href="../../search_global/index.html">Global Search</a></li></ul></div>
+</div>
+		</div>
+			
+    </div>
+<!-- END HEADER -->
+
+<!-- START MAIN -->
+	<div class="tabs"></div>
+
+	<div id="main">
+		<!-- START TITLE -->
+				   <h1 class="title">
+			 			 3D-PTV benchmark program			 		   </h1>
+				<!-- END TITLE -->
+
+		
+		
+		<!-- CONTENT START -->
+		     <div class="node">
+        <div class="clear-block">
+        <span class="submitted"></span>
+    <span class="taxonomy"><ul class="links inline"><li class="first taxonomy_term_17"><a href="../../category/tags/3d_ptv/index.html" rel="tag" title="" class="taxonomy_term_17 3d-ptv">3d-ptv</a></li>
+<li class="taxonomy_term_13"><a href="../../category/tags/benchmark/index.html" rel="tag" title="" class="taxonomy_term_13 benchmark">benchmark</a></li>
+<li class="taxonomy_term_16"><a href="../../category/tags/comparison/index.html" rel="tag" title="" class="taxonomy_term_16 comparison">comparison</a></li>
+<li class="last taxonomy_term_15"><a href="../../category/tags/test/index.html" rel="tag" title="" class="taxonomy_term_15 test">test</a></li>
+</ul></span>
+    <div class="content"><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><strong>Contents</strong></div>
+<div id="tocbody">
+<ul>
+<li class="toclevel-1"><a href="#_3D-PTV_benchmark_program"><span class="tocnumber">1</span> <span class="toctext">3D-PTV benchmark program</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Introduction"><span class="tocnumber">1.1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-2"><a href="#Test_cases"><span class="tocnumber">1.2</span> <span class="toctext">Test cases</span></a></li>
+<li class="toclevel-2"><a href="#Synthetic_images_test_cases"><span class="tocnumber">1.3</span> <span class="toctext">Synthetic images test cases</span></a>
+<ul>
+<li class="toclevel-3"><a href="#How_to_prepare_and_post_the_test_case"><span class="tocnumber">1.3.1</span> <span class="toctext">How to prepare and post the test case</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div>
+</td></tr></table><a name="_3D-PTV_benchmark_program"></a><h1> <span class="mw-headline">3D-PTV benchmark program</span></h1>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/blackboard_of_wg1_meeting/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/28082009718.preview.jpg" width="180" height="103.1625" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/blackboard_of_wg1_meeting/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div>
+<a name="Introduction"></a><h2> <span class="mw-headline">Introduction</span></h2>
+<p>Recent WG1 meeting in Zurich (August 2009) concluded that the three-dimensional particle tracking velocimetry (3D-PTV) is one of the established experimental approaches in the field of Particles in Turbulence. As a consequence, many algorithms, software packages have been developed over years by various research groups worldwide. This action is an attempt to learn best practices from each and to develop the open source particle tracking velocimetry that will combine the know-how of all the involved parties.
+</p><p>The first step, proposed during that meeting, was to develop few test cases that different research groups can use to test their own algorithms and software. The report of the groups will help to identify those performing best at different stages of the analysis and to expose the best practices to the other members of the action. There is a single important condition - open science. The codes, algorithms, data should be open to all the members of the action. The main goal is to make particle tracking better and accessible. 
+</p><p><br /> 
+</p>
+<a name="Test_cases"></a><h2> <span class="mw-headline">Test cases</span></h2>
+<p>At the moment there are few test cases available. These are of the two major types:
+</p>
+<ol><li> Synthetic images - for the demonstration purposes, we use the Standard PIV Images project. Specifically, we use the 3D standard images: <a href="http://www.piv.jp/image3d/image-e.html" class="external free" title="http://www.piv.jp/image3d/image-e.html">http://www.piv.jp/image3d/image-e.html</a>. 
+</li><li> Real experimental data
+</li></ol>
+<p><br />
+</p>
+<a name="Synthetic_images_test_cases"></a><h2> <span class="mw-headline"> Synthetic images test cases </span></h2>
+<p>There are four cases on the Standard 3D Images website <a href="http://www.piv.jp/image3d/image-e.html" class="external autonumber" title="http://www.piv.jp/image3d/image-e.html">[1]</a> that seem to fit our purpose of testing the tracking software packages:
+</p>
+<blockquote>
+<b>Transient 3D flow field from 3 angles with wall refrection</b><br />
+
+Case <b>351</b> (Jet Shear flow)
+<ul><li> Number of particles = 2000
+</li><li> Camera calibration Images are imX999.raw
+</li></ul>
+(x,y,z) = (-0.8:0.0:0.8, -0.8:0.0:0.8, -0.8:0.0:0.8) 27 points
+<ul><li> Three-cameras are on the holizontal plane 
+</li></ul>
+
+Case <b>352</b> (Jet Shear flow)
+<ul><li> Number of particles = 300
+</li><li> Camera calibration Images are imX999.raw
+</li></ul>
+(x,y,z) = (-0.8:0.0:0.8, -0.8:0.0:0.8, -0.8:0.0:0.8) 27 points
+<ul><li> Three-cameras are on the holizontal plane 
+</li></ul>
+
+<b>Transient 3D flow field from 3 angles with unknown wall refrection</b>
+<br />
+Case <b>371</b> (Jet Shear flow)
+<ul><li> Number of particles = 500
+</li><li> Camera calibration Images are imX999.raw
+</li></ul>
+(x,y,z) = (-0.4:0.0:0.4, -0.4:0.0:0.4, -0.4:0.0:0.4) 27 points
+<ul><li> camera parameters are not known 
+</li></ul>
+
+Case <b>377</b> (Jet Impinging flow)
+<ul><li> Number of particles = 500
+</li><li> Camera calibration Images are imX999.raw
+</li></ul>
+(x,y,z) = (-0.2:0.0:0.2, -0.2:0.0:0.2, -0.2:0.0:0.2) 125 points
+<ul><li> cameras are set at the bottom of impinging plates 
+</li></ul>
+</blockquote>
+<p><br />
+As we see, we can process the various cases and compare our algorithms versus the 
+</p>
+<ul><li> given particle positions (aspects of stereo-matching, center-of-gravity, calibration and camera models, etc.)
+</li><li> given tracking (aspects of tracking, length of trajectory, filters along the trajectory, post-tracking "gluing" algorithms, etc.)
+</li></ul>
+<p>For example, comparing the case 352 and 371 will show if the effect of "known" vs "unknown" wall reflections on your camera model, comparing case 351 wit 352 will show the <b>traceability parameter</b> best, where the number of particles density is much higher in the "same" flow in case 351. 
+</p>
+<a name="How_to_prepare_and_post_the_test_case"></a><h3> <span class="mw-headline">How to prepare and post the test case</span></h3>
+<p>For the demonstration purposes, we use the test case no 352: "Transient 3D flow field from 3 angles with wall refrection". We find that the way Standard PIV Images project defined the test cases is simple and comprehensible. We suggest to adopt this way of formatting your experimental data for the test case. Below we report the way 3D-PTV software (ETH Zurich) is used to analyze the case #352 and to report the results for further analysis.
+</p><p><br /> 
+General description
+</p><p>1. Demo images - to provide a quick overview
+</p><p>Source: <img src="http://www.piv.jp/image3d/jpeg/im352.jpg" alt="im352.jpg" />
+</p><p><br /> 
+2. Textual information of the authors:
+</p><p>PIV Three-dimensional Standard Images    #352
+</p><p><br />
+Generator:  K. Okamoto  (Univ. Tokyo)
+Program:    ddr.c
+Date:       March 27, 1998
+</p><p><br /> 
+</p><p>3. Parameters:
+</p>
+<pre>Target Flow Field:  Jet impinging on the Wall
+Reynolds Number:    3000
+</pre>
+<pre>                     2cm
+        ------------|   |------------
+                      |  15cm/s
+                      V
+</pre>
+<pre>                   XXX
+                   XXX
+</pre>
+<pre>        -----------------------------
+</pre>
+<pre>Number of Particles inserted in the field       1000 Particles
+Number of Particles visualized in one Image      320 Particles (average)
+</pre>
+<pre>Diameter of Particles      5 pixel (average)
+                           2       (standard deviation)
+                           1       (minimum)
+</pre>
+<pre>Maximum Velocity                 12 cm/s
+Target Flow field                2cm x 2cm x 2cm
+Time Interval between images     5 msec
+</pre>
+<pre>Laser Illumination               Cylindrical from bottom (radius = 5cm)
+                                    [almost whole illumination]
+</pre>
+<pre>Water refractive index           1.33
+Wall distance                    3 cm from center
+     orientation                 parallel to #1 camera image
+</pre>
+<p>4. Camera positions
+</p>
+<pre>   #0  Distance from center      20 cm
+       angle to X axis          -30 degree
+</pre>
+<pre>   #1  Distance from center      20 cm
+       angle to X axis            0 degree
+</pre>
+<pre>   #2  Distance from center      20 cm
+       angle to X axis           30 degree
+</pre>
+<pre> No orientation variations were considered.
+</pre>
+<p>5. Sketch of the coordinate system
+</p>
+<pre>                                  ^ y
+                                   |
+                                   |/
+                       ------------+---------------&gt; x
+                                  /|
+                                 / |
+                                /
+                               /z
+                              L
+</pre>
+<pre>           TOP VIEW
+                                 |
+                                O| Particles
+                   --------------+-----------------&gt; x-axis
+                                /|
+                               / |
+                              /  |        n=1.33(water)
+                   ==============|===================== WALL
+                            /    |        n=1.00(air)
+                           /theta|
+                          / (-30)|(30)
+                         /       |
+                       #0        |        #2 camera
+                    camera       |
+                                #1 camera
+                                 |
+                                 | z-axis
+                                 V 
+</pre>
+<p>6. Data description 
+</p><p>Image Files (imX???.raw)
+</p>
+<pre> X:    camera# (0-2)
+&nbsp;???:  serial# (000-144)   Total 720msec
+</pre>
+<pre> Image size  256x256 pixel (8bit:256)
+</pre>
+<p><br />
+</p>
+<pre>Calibration File (imX999.raw)
+  Particles (Total 27 particles)
+    x = -0.8, 0, 0.8 cm
+    y = -0.8, 0, 0.8 cm
+    z = -0.8, 0, 0.8 cm
+</pre>
+<p><br />
+</p><p>Vector files  (vec???.dat)
+</p>
+<pre>  x      y      z        u         v         w
+-0.80  -0.80  -0.80   0.17542  -4.51977   0.01204
+-0.80  -0.80  -0.60  -0.18245  -4.11870  -0.26516
+-0.80  -0.80  -0.40  -0.78761  -3.38484  -0.41633
+</pre>
+<pre>  unit: x,y,z  [cm]
+        u,v,w  [cm/s]
+</pre>
+<p><br />
+Particle Files  (ptc???.dat)
+</p>
+<pre>                            #1 camera     #2 camera     #3 camera  intensity
+  ID    x      y      z      X      Y      X      Y      X      Y
+   4 -0.301  0.584  0.893 147.61  64.91  95.55  65.10  53.07  65.92 208.18
+   6 -0.898  1.266 -0.258   0.00   0.00   0.00   0.00  46.22   0.15 208.69
+   8  1.178  0.886  0.149 249.88  38.07 251.10  35.42 219.99  32.46 191.52
+   9  0.720 -1.242 -0.530 183.76 252.88 201.24 254.40   0.00   0.00 211.21
+</pre>
+<pre>  unit: x,y,z  [cm]
+        X,Y    [pixel]
+</pre>
+<pre>  The particle ID is unique number, therefore, the same particle could
+  be easily tracked with checking the ID for serial particle files.
+</pre>
+<pre>Thanks to the authors of the Standard 3D PIV Images: Dr. Okamoto (okamoto@tokai.t.u-tokyo.ac.jp)
+</pre>
+<p><br />
+</p></div>
+    </div>
+          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f15%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f15%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-30260.html">Login</a> or <a href="../../user/register/index-30260.html">register</a> to post comments</span></li>
+</ul></div>
+      </div>
+<div id="comments">
+  <a id="comment-22"></a>
+  <div class="comment">
+      <div class="clear-block">
+<h3 class="title"><a href="index.html#comment-22" class="active">#352</a></h3>
+    <div class="submitted">Submitted by luethib on Wed, 2010-05-26 19:05.</div>
+  <div class="content">
+      <p>unfortunately I also fail using the ftp site given above...
+</p>        </div>
+  </div>
+  <div class="links">
+    &raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f15%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f15%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-30260.html">Login</a> or <a href="../../user/register/index-30260.html">register</a> to post comments</span></li>
+</ul>  </div>
+</div>
+</div>
+		<!-- CONTENT END -->
+
+		
+	</div>
+<!-- END MAIN -->
+
+<!-- START FOOTER -->
+	<div id="footer">
+		<a href="http://oriact.com">Powered by</a><br/>
+		<a href="http://oriact.com"><img width="85" height="20" src="../../sites/all/themes/oxymoron/oriact_button.png" alt="Powered by Oriact"/></a><br/>
+		<div class="clear-block block block-origo_eth" id="block-origo_eth-0">
+  
+  <div class="content"><a href="http://origo.ethz.ch">Hosted on </a><br/><a href="http://origo.ethz.ch"><img width="85" height="20" src="../../sites/all/themes/oxymoron/origo_button_1.png" alt="Hosted on Origo"/></a><br/><a href="http://origo.ethz.ch">a project by ETH Zürich</a><br/>&copy;<a href="http://origo.ethz.ch"> 2006 - 2010</a><br/><a href="../../global/terms_of_use/index.html">Terms of Use</a><br/></div>
+</div>
+	</div>
+<!-- END FOOTER -->
+
+  <!-- CLOSURE (e.g. javascript) -->
+    <script type="text/javascript" src="../../sites/all/modules/google_cse/google_cse.js?n"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "googleCSE": { "language": "en" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) {
+      $(document).ready(function() {
+        $('a.origo-private').each(function() {
+          $(this).append('&nbsp;<img src="/sites/all/themes/oxymoron/private-page-link.png" alt="private"/>');
+        });
+      });
+    }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) {
+      $(document).ready(function() {
+        $('a.external').each(function() {
+          $(this).append('&nbsp;<img src="/sites/all/modules/mediawiki_filter/external.png" alt="external"/>');
+        });
+      });
+    }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-1676928-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+
+</body>
+
+</html>
+<!-- Localized -->

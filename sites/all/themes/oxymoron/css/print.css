@@ -1,0 +1,21 @@
+/* $Id: print.css 3782 2010-10-21 11:16:23Z bherlig $ */
+
+#mainheader, #sidebar-left, .tabs, .links, #footer, #issue_header, #issue-subscription-form, #content-min-height { 
+	display: none; 
+}
+
+#mainbox, html, body { 
+    background: none; 
+}
+
+#main {
+    padding: 0px 0px 0px 0px;
+    margin-left:5%;
+    margin-right:5%;
+    width:89%;	
+}
+
+#sidebar-middle {
+    margin-left: 0px;
+}
+

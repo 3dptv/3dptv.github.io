@@ -1,0 +1,65 @@
+/* $Id: projects.css 3782 2010-10-21 11:16:23Z bherlig $ */
+
+/*
+ * Summary has to be wrapped into a span or else the overflow
+ * wont work.
+ */
+.project-summary > span{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    height: 16px;
+}
+
+/*
+ * Two classes to indicate wether the description for the
+ * project has been expanded or not.
+ */
+.summary-collapsed {
+	background-image: url(img/open.gif);
+	background-position: right center;
+	background-repeat: no-repeat; 
+}
+
+.summary-expanded {
+	background-image: url(img/close.gif);
+	background-position: right center;
+	background-repeat: no-repeat; 
+}
+
+.project-description {
+  background-color: #EEEEEE !important;
+  padding: 5px;
+}
+
+.project-description > img {
+    float: left;
+    margin-right: 5px;
+}
+
+td.release_file {
+  background-color: #EEEEEE !important;
+}
+td.release_description {
+  background-color: #DEDEDE !important;
+}
+/*
+ * The spinner image when loading the project description.
+ */
+.spinner {
+	text-align: center !important;
+	left: 45%;
+	position: relative;
+}
+.project-description > ul {
+	padding: 3px;
+	margin: 0px;
+}
+.project-description li {
+	margin: 5px;
+	float: left;
+	display: block;
+	padding: 2px;
+	border: 1px solid #C0C0C0;
+}
+

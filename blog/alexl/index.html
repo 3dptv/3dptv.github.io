@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>alexl's blog | ptv</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" type="application/rss+xml" title="RSS - alexl&#039;s blog" href="feed/index.html" />
+<link rel="shortcut icon" href="../../sites/all/themes/oxymoron/favicon.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/origo_home/css/origo_home-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/geshifilter/geshifilter-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/google_cse/google_cse-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mediawiki_filter/mediawiki_filter-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../modules/forum/forum-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/mainmenu-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/iconsmenu-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/night-36200.css" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/day-36200.css" />
+<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/oxymoron/css/print-36200.css" />
+  <script type="text/javascript" src="../../misc/jquery.js?n"></script>
+<script type="text/javascript" src="../../misc/drupal.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/mediawiki_filter/mediawiki_filter.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js?n"></script>
+<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/jquery_example/jquery.example.min.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/oxymoron.js?n"></script>
+<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/mainmenu.js?n"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": "1", "trackMailto": "1", "trackDownload": "1", "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+Drupal.behaviors.issue_tracker = function(context) {
+        $('a[class=extiw issue]').each(function() {
+          // extract issue number from the URL
+          var issueURL = $(this)[0].href;
+          var issueURLSplitted = issueURL.split('/')
+          var issueNumber = issueURLSplitted[issueURLSplitted.length - 1];
+
+          var target= $(this);
+          $.get(Drupal.settings.basePath + "ajax/issue_get_status/" + issueNumber, null, function(response) {
+            var result = Drupal.parseJson(response);
+
+            var decorationString = "";
+            if (result.issueClosedStatus == true) {
+              decorationString = 'line-through';
+            }
+            $(target).css('text-decoration', decorationString);
+          });
+        });
+      }
+//--><!]]>
+</script>
+  <style type="text/css" media="print">@import "../../sites/all/themes/oxymoron/css/print.css";</style>
+  <script type="text/javascript"> </script>
+  <!--[if IE 7]>
+  	<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style_ie7.css" />
+  <![endif]-->
+
+</head>
+
+<body>
+
+<!-- START HEADER -->
+    <div id="mainheader">
+    
+        <div id="logo">
+			            <a class="logo_link" href="../../index.html" title="Home" rel="home" id="logo">
+                <img src="../../sites/ptv/files/ptv_0.jpg" alt="Home"/>
+            </a>
+						            <div id="site-name-frame">
+				                <h1 class='site-name'><a href="../../index.html" title="Home">3D-PTV</a></h1>
+				            </div>
+        </div>
+
+        <ul id="user-info">
+                                  <li><a href="../../user/register/index-7751.html">Register</a></li>
+                    <li><a href="../../user/index-7751.html">Sign in</a></li>
+                      </ul>
+        <div id='search-box'><form action="/blog/alexl"  accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
+</div>
+<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
+<input type="hidden" name="form_build_id" id="form-f3f0590b1ce21b021b283ff3bc6a4af6" value="form-f3f0590b1ce21b021b283ff3bc6a4af6"  />
+<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
+<input type="hidden" name="3" id="edit-3" value=""  />
+
+</div></form>
+</div>
+	
+		<div id="iconsmenu">
+		  <!-- START TOP NAV -->
+					  					  
+<ul id='navlist'>
+	<li><a href="../../index.html" title="Home" class="home"><div class="home"><span class="notext">Home</span></div></a></li>
+	<li><a href="../../download/index.html" title="Download" class="download"><div class="download"><span class="notext">Download</span></div></a></li>
+	<li><a href="../../forum/index.html" title="Forum" class="forum"><div class="forum"><span class="notext">Forum</span></div></a></li>
+	<li><a href="../index.html" title="Issues" class="blog"><div class="blog"><span class="notext">Blog</span></div></a></li>
+	<li><a href="../../issues/index.html" title="Issues" class="issues"><div class="issues"><span class="notext">Issues</span></div></a></li>
+	<li><a href="../../statistics/index.html" title="Statistics" class="statistics"><div class="statistics"><span class="notext">Statistics</span></div></a></li>
+</ul>
+					  					  <br class="clear" />
+			  <!-- END TOP NAV -->
+		</div>
+				<div class='main_navi'>
+			<div class="clear-block block block-origo_home" id="block-origo_home-0">
+  
+  <div class="content"><ul class="menu"><li class="collapsed"><a href="../../search_global/index.html">Global Search</a></li></ul></div>
+</div>
+		</div>
+			
+    </div>
+<!-- END HEADER -->
+
+<!-- START MAIN -->
+	<div class="tabs"></div>
+
+	<div id="main">
+		<!-- START TITLE -->
+				   <h1 class="title">
+			 			 alexl's blog			 		   </h1>
+				<!-- END TITLE -->
+
+		
+		
+		<!-- CONTENT START -->
+		   <div class="item-list"></div>  <div class="node">
+        <div class="clear-block">
+          <h2 class="title"><a href="our_support_is_working_visit_forums/index.html">Our support is working, visit forums</a></h2>
+        <span class="submitted">Submitted by alexl on Thu, 2010-09-30 20:06</span>
+    <span class="taxonomy"><ul class="links inline"><li class="first taxonomy_term_41"><a href="../../taxonomy/term/41/index.html" rel="tag" title="" class="taxonomy_term_41 communication">communication</a></li>
+<li class="taxonomy_term_40"><a href="../../taxonomy/term/40/index.html" rel="tag" title="" class="taxonomy_term_40 forum">forum</a></li>
+<li class="last taxonomy_term_39"><a href="../../taxonomy/term/39/index.html" rel="tag" title="" class="taxonomy_term_39 support">support</a></li>
+</ul></span>
+    <div class="content"><p>If you have a problem or you don't know where to ask questions, look in forums (the link is in the top right menu). E.g. <a href="../../node/239/index.html#comment-31" class="external free" title="http://ptv.origo.ethz.ch/node/239#comment-31">http://ptv.origo.ethz.ch/node/239#comment-31</a>
+</p><p><br />
+</p></div>
+    </div>
+          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_comments"><a href="our_support_is_working_visit_forums/index.html#comments" title="Jump to the first comment of this posting." class="comment_comments 1 comment">1 comment</a></li>
+</ul></div>
+      </div>
+  <div class="node">
+        <div class="clear-block">
+          <h2 class="title"><a href="new_batteries_included_windows_installer_package_is_created/index.html">New, batteries included Windows installer package is created</a></h2>
+        <span class="submitted">Submitted by alexl on Fri, 2010-04-30 22:35</span>
+    <span class="taxonomy"><ul class="links inline"><li class="first taxonomy_term_28"><a href="../../taxonomy/term/28/index.html" rel="tag" title="" class="taxonomy_term_28 3dptv">3dptv</a></li>
+<li class="taxonomy_term_29"><a href="../../taxonomy/term/29/index.html" rel="tag" title="" class="taxonomy_term_29 installation">installation</a></li>
+<li class="last taxonomy_term_27"><a href="../../taxonomy/term/27/index.html" rel="tag" title="" class="taxonomy_term_27 windows">windows</a></li>
+</ul></span>
+    <div class="content"><p>We found a way to create a setup.exe file that will install 3D-PTV software without ActiveTcl being pre-installed. So it's a "batteries included" package that will not include the source code, but can be easily deployed on any computer that runs Windows XP (we haven't test it on other platforms). It seems to be possible to run 3D-PTV from the external hard drive or memory card.
+</p><p><i><b>Indeed</b></i>, I have just installed it on my disk-on-key and it RUNS&nbsp;!!!
+</p><p><br />
+</p><p><br />
+</p></div>
+    </div>
+          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f62%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f62%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-27653.html">Login</a> or <a href="../../user/register/index-27653.html">register</a> to post comments</span></li>
+</ul></div>
+      </div>
+  <div class="node">
+        <div class="clear-block">
+          <h2 class="title"><a href="../%5Buser-raw%5D/new_version_is_tagged_3dptv_v102/index.html">new version is tagged 3DPTV_v1.02</a></h2>
+        <span class="submitted">Submitted by alexl on Tue, 2009-12-08 11:36</span>
+    <span class="taxonomy"><ul class="links inline"><li class="first last taxonomy_term_22"><a href="../../category/tags/new_release_ptv_version_tag_quadruplets/index.html" rel="tag" title="" class="taxonomy_term_22 new release ptv version tag quadruplets">new release PTV version tag quadruplets</a></li>
+</ul></span>
+    <div class="content"><p>Beat has developed the option to track only quadruplets. I debugged it and released the version 1.02 (that includes this option, see inside Main Parameters window). You can find the download information on the wiki <a href="http://ptvwiki.netcipia.net/xwiki/bin/view/Main/GettingStarted" class="external autonumber" title="http://ptvwiki.netcipia.net/xwiki/bin/view/Main/GettingStarted">[1]</a>
+</p><p>the zip file <a href="http://drop.io/krz2a2r/asset/3dptv-v1-02-zip" class="external autonumber" title="http://drop.io/krz2a2r/asset/3dptv-v1-02-zip">[2]</a> is hosted on drop.io <a href="http://drop.io" class="external autonumber" title="http://drop.io">[3]</a> you probably used before. see the wiki for the passwords (we prefer not to disclose it over the e-mails).
+</p><p><br />
+Best regards,
+Alex
+</p></div>
+    </div>
+          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f25%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f25%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-18194.html">Login</a> or <a href="../../user/register/index-18194.html">register</a> to post comments</span></li>
+</ul></div>
+      </div>
+  <div class="node">
+        <div class="clear-block">
+          <h2 class="title"><a href="../%5Buser-raw%5D/case_371_is_processed_up_to_the_3d_position_comparison/index.html">case 371 is processed up to the 3D position comparison</a></h2>
+        <span class="submitted">Submitted by alexl on Fri, 2009-11-06 23:00</span>
+    <span class="taxonomy"><ul class="links inline"><li class="first taxonomy_term_13"><a href="../../category/tags/benchmark/index.html" rel="tag" title="" class="taxonomy_term_13 benchmark">benchmark</a></li>
+<li class="taxonomy_term_16"><a href="../../category/tags/comparison/index.html" rel="tag" title="" class="taxonomy_term_16 comparison">comparison</a></li>
+<li class="last taxonomy_term_11"><a href="../../category/tags/ptv/index.html" rel="tag" title="" class="taxonomy_term_11 ptv">ptv</a></li>
+</ul></span>
+    <div class="content"><p><img src="../../system/files/images/3derror_case371.preview.jpg" alt="3derror_case371.preview.jpg" />
+</p></div>
+    </div>
+          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f22%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f22%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-12173.html">Login</a> or <a href="../../user/register/index-12173.html">register</a> to post comments</span></li>
+</ul></div>
+      </div>
+  <div class="node">
+        <div class="clear-block">
+          <h2 class="title"><a href="../%5Buser-raw%5D/we_slowly_move/index.html">We slowly move</a></h2>
+        <span class="submitted">Submitted by alexl on Fri, 2009-10-02 22:23</span>
+    <span class="taxonomy"><ul class="links inline"><li class="first last taxonomy_term_6"><a href="../../category/tags/news/index.html" rel="tag" title="" class="taxonomy_term_6 news">news</a></li>
+</ul></span>
+    <div class="content"><p>We slowly move from netcipia wiki to the great Origo project by ETH Zurich
+</p></div>
+    </div>
+          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f8%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f8%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-7444.html">Login</a> or <a href="../../user/register/index-7444.html">register</a> to post comments</span></li>
+</ul></div>
+      </div>
+		<!-- CONTENT END -->
+
+		<a href="feed/index.html" class="feed-icon"><img src="../../misc/feed.png" alt="Syndicate content" title="RSS - alexl&#039;s blog" width="16" height="16" /></a>
+	</div>
+<!-- END MAIN -->
+
+<!-- START FOOTER -->
+	<div id="footer">
+		<a href="http://oriact.com">Powered by</a><br/>
+		<a href="http://oriact.com"><img width="85" height="20" src="../../sites/all/themes/oxymoron/oriact_button.png" alt="Powered by Oriact"/></a><br/>
+		<div class="clear-block block block-origo_eth" id="block-origo_eth-0">
+  
+  <div class="content"><a href="http://origo.ethz.ch">Hosted on </a><br/><a href="http://origo.ethz.ch"><img width="85" height="20" src="../../sites/all/themes/oxymoron/origo_button_1.png" alt="Hosted on Origo"/></a><br/><a href="http://origo.ethz.ch">a project by ETH Zürich</a><br/>&copy;<a href="http://origo.ethz.ch"> 2006 - 2010</a><br/><a href="../../global/terms_of_use/index.html">Terms of Use</a><br/></div>
+</div>
+	</div>
+<!-- END FOOTER -->
+
+  <!-- CLOSURE (e.g. javascript) -->
+    <script type="text/javascript" src="../../sites/all/modules/google_cse/google_cse.js?n"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "googleCSE": { "language": "en" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) {
+      $(document).ready(function() {
+        $('a.origo-private').each(function() {
+          $(this).append('&nbsp;<img src="/sites/all/themes/oxymoron/private-page-link.png" alt="private"/>');
+        });
+      });
+    }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+if (Drupal.jsEnabled) {
+      $(document).ready(function() {
+        $('a.external').each(function() {
+          $(this).append('&nbsp;<img src="/sites/all/modules/mediawiki_filter/external.png" alt="external"/>');
+        });
+      });
+    }
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-1676928-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+
+</body>
+
+</html>
+<!-- Localized -->
