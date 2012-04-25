@@ -1,307 +1,304 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>An introduction to 3D-PTV: | ptv</title>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+  
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="../../sites/all/themes/oxymoron/favicon.ico" type="image/x-icon" />
-  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/origo_home/css/origo_home-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/geshifilter/geshifilter-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/google_cse/google_cse-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mediawiki_filter/mediawiki_filter-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/forum/forum-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/mainmenu-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/iconsmenu-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/night-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/day-36200.css" />
-<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/oxymoron/css/print-36200.css" />
-  <script type="text/javascript" src="../../misc/jquery.js?n"></script>
-<script type="text/javascript" src="../../misc/drupal.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/mediawiki_filter/mediawiki_filter.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/jquery_example/jquery.example.min.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/oxymoron.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/mainmenu.js?n"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": "1", "trackMailto": "1", "trackDownload": "1", "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-Drupal.behaviors.issue_tracker = function(context) {
-        $('a[class=extiw issue]').each(function() {
-          // extract issue number from the URL
-          var issueURL = $(this)[0].href;
-          var issueURLSplitted = issueURL.split('/')
-          var issueNumber = issueURLSplitted[issueURLSplitted.length - 1];
+  <title>An introduction to 3D-PTV: | ptv</title>
 
-          var target= $(this);
-          $.get(Drupal.settings.basePath + "ajax/issue_get_status/" + issueNumber, null, function(response) {
-            var result = Drupal.parseJson(response);
-
-            var decorationString = "";
-            if (result.issueClosedStatus == true) {
-              decorationString = 'line-through';
-            }
-            $(target).css('text-decoration', decorationString);
-          });
-        });
-      }
-//--><!]]>
-</script>
-  <style type="text/css" media="print">@import "../../sites/all/themes/oxymoron/css/print.css";</style>
-  <script type="text/javascript"> </script>
-  <!--[if IE 7]>
-  	<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style_ie7.css" />
-  <![endif]-->
-
-</head>
-
-<body>
-
-<!-- START HEADER -->
-    <div id="mainheader">
-    
-        <div id="logo">
-			            <a class="logo_link" href="../../index.html" title="Home" rel="home" id="logo">
-                <img src="../../sites/ptv/files/ptv_0.jpg" alt="Home"/>
-            </a>
-						            <div id="site-name-frame">
-				                <h1 class='site-name'><a href="../../index.html" title="Home">3D-PTV</a></h1>
-				            </div>
-        </div>
-
-        <ul id="user-info">
-                                  <li><a href="../../user/register/index-3267.html">Register</a></li>
-                    <li><a href="../../user/index-3267.html">Sign in</a></li>
-                      </ul>
-        <div id='search-box'><form action="/wiki/an_introduction_to_3d_ptv"  accept-charset="UTF-8" method="post" id="search-theme-form">
-<div><div class="form-item" id="edit-search-theme-form-1-wrapper">
- <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
-</div>
-<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
-<input type="hidden" name="form_build_id" id="form-5c098af6d0b84cd303e40ac6c8d487fd" value="form-5c098af6d0b84cd303e40ac6c8d487fd"  />
-<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
-<input type="hidden" name="3" id="edit-3" value=""  />
-
-</div></form>
-</div>
-	
-		<div id="iconsmenu">
-		  <!-- START TOP NAV -->
-					  					  
-<ul id='navlist'>
-	<li><a href="../../index.html" title="Home" class="home"><div class="home"><span class="notext">Home</span></div></a></li>
-	<li><a href="../../download/index.html" title="Download" class="download"><div class="download"><span class="notext">Download</span></div></a></li>
-	<li><a href="../../forum/index.html" title="Forum" class="forum"><div class="forum"><span class="notext">Forum</span></div></a></li>
-	<li><a href="../../blog/index.html" title="Issues" class="blog"><div class="blog"><span class="notext">Blog</span></div></a></li>
-	<li><a href="../../issues/index.html" title="Issues" class="issues"><div class="issues"><span class="notext">Issues</span></div></a></li>
-	<li><a href="../../statistics/index.html" title="Statistics" class="statistics"><div class="statistics"><span class="notext">Statistics</span></div></a></li>
-</ul>
-					  					  <br class="clear" />
-			  <!-- END TOP NAV -->
-		</div>
-				<div class='main_navi'>
-			<div class="clear-block block block-origo_home" id="block-origo_home-0">
   
-  <div class="content"><ul class="menu"><li class="collapsed"><a href="../../search_global/index.html">Global Search</a></li></ul></div>
-</div>
-		</div>
-			
-    </div>
-<!-- END HEADER -->
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<!-- START MAIN -->
-	<div class="tabs"></div>
+</head><body>
+<br style="font-family: Helvetica,Arial,sans-serif;" />
 
-	<div id="main">
-		<!-- START TITLE -->
-				   <h1 class="title">
-			 			 An introduction to 3D-PTV:			 		   </h1>
-				<!-- END TITLE -->
-
-		
-		
-		<!-- CONTENT START -->
-		     <div class="node">
-        <div class="clear-block">
-        <span class="submitted"></span>
-    <span class="taxonomy"></span>
-    <div class="content"><table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><strong>Contents</strong></div>
-<div id="tocbody">
-<ul>
-<li class="toclevel-1"><a href="#Objectives"><span class="tocnumber">1</span> <span class="toctext">Objectives</span></a></li>
-<li class="toclevel-1"><a href="#Introduction"><span class="tocnumber">2</span> <span class="toctext">Introduction</span></a></li>
-<li class="toclevel-1"><a href="#Data_acquisition"><span class="tocnumber">3</span> <span class="toctext">Data acquisition</span></a></li>
-<li class="toclevel-1"><a href="#Data_Processing"><span class="tocnumber">4</span> <span class="toctext">Data Processing</span></a></li>
-<li class="toclevel-1"><a href="#Potential"><span class="tocnumber">5</span> <span class="toctext">Potential</span></a></li>
-<li class="toclevel-1"><a href="#Real_time_image_processing_schemes"><span class="tocnumber">6</span> <span class="toctext">Real time image processing schemes</span></a></li>
-<li class="toclevel-1"><a href="#Collaboration"><span class="tocnumber">7</span> <span class="toctext">Collaboration</span></a></li>
-<li class="toclevel-1"><a href="#See_also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
-<li class="toclevel-1"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
-</ul></div>
-</td></tr></table><a name="Objectives"></a><h2> <span class="mw-headline"> <b><font color="steelblue">Objectives</font> </span></h2></b>
-<p>Our main goal is to promote the 3D-PTV experimental technology and open it for the worldwide use. We are convinced that this technique can make an impact in various applications, allowing for the researchers and industry to get a deeper insight into their flows. Most of the flows are highly complex and turbulent and only few of them can get a limited low-dimensional or analytical description that explains the different flow phenomena. Experimental research is inevitable in observing the flow and discovering new phenomena, in addition to assisting to explain the old ones. 
-</p>
-<a name="Introduction"></a><h2> <span class="mw-headline"><b><font color="steelblue">Introduction </font></b></span></h2>
-<p>The <u><b>3D Particle Tracking Velocimetry</b></u> (PTV) offers a flexible technique for the determination of velocity fields in flows. It is based on the visualization of a flow with small, neutrally buoyant particles and a stereoscopic recording image sequences of the particles. In the past decade the successful research work performed by the Institute of Geodesy and Photogrammetry at ETH Zurich led to an operational and reliable measurement tool used in hydrodynamics and space applications. In cooperation with the Institute of Hydromechanics and Water Resources Management at ETH Zurich further progress has been achieved in the improvement of the existing hard- and software solutions. Regarding the hardware setup the acquisition system used at the ETH Zurich was upgraded from offline to online image digitization.
-</p><p><br />
-</p><p><img src="../../system/files/3dptv.png" alt="3dptv.png" />
-</p>
-<a name="Data_acquisition"></a><h2> <span class="mw-headline"><b><font color="steelblue">Data acquisition</font></b></span></h2>
-<ul><li> Seed a flow with tracer particles
-</li><li> Illuminate a 3-D observation volume inside the flow by a pulsed lightsource
-</li><li> Image the scene by 2 (or rather 3-4) synchronized
-</li><li> Length of image sequences depending from imaging rate and storage device 
-</li></ul>
-<p>The system used at the ETH Zurich was upgraded from offline to online image digitization. In the previous system, the image sequences were firstly recorded on analogue videotapes and digitized afterwards, while in the new system two frame grabbers (Matrox Genesis) are used to provide online digitization and storage. The length of the recorded digital image sequences is nowadays restricted by the storage device capabilities. The data rate for a 60 Hz full-frame camera with a resolution of 640 x 480 pixels is about 19 MB/sec, and hence in an experiment which lasts for 1 minute four cameras deliver a total amount of about 4.5 GB image data.
-</p><p><br />
-<b>The Particle Tracking Velocimetry software performs the following tasks:</b>
-</p>
-<ul><li> Calibration of the multi-camera system (determination of camera exterior and interior orientations, lens distortion and further disturbances, (e.g. [PDF of Willneff and Maas,2000&gt;<a href="http://www.tu-dresden.de/fghgipf/forschung/material/publ2000/JoWi_paper.pdf" class="external free" title="http://www.tu-dresden.de/fghgipf/forschung/material/publ2000/JoWi_paper.pdf">http://www.tu-dresden.de/fghgipf/forschung/material/publ2000/JoWi_paper.pdf</a>]) and the exact geometric modelling (&quot;multimedia geometry&quot; - each beam from a particle to the sensor passes the three optical media water, glass, air with different refractive indices, which leads to a twice broken beam).
-</li><li> Image preprocessing: perform highpass filtering due to non-uniformities in the background illumination
-</li><li> Detect particles in the images by a modified thresholding operator, localize particles with subpixel accuracy by a centroid operator
-</li><li> Establish stereoscopic correspondences
-</li><li> Determine 3-D particle coordinates
-</li><li> Storage of all relevant object and image space information
-</li><li> Perform tracking in 2-D image and 3-D object space
-</li></ul>
-<p><br /> 
-</p>
-<a name="Data_Processing"></a><h2> <span class="mw-headline"><b><font color="steelblue">Data Processing</font></b></span></h2>
-<ul><li> Image preprocessing: perform highpass filtering due to non-uniformities in the background illumination
-</li><li> Detect particles in the images by a modified thresholding operator, localize particles with subpixel accuracy by a centroid operator
-</li><li> Establish stereoscopic correspondences
-</li><li> Determine 3-D particle coordinates
-</li><li> Storage of all relevant object and image space information
-</li><li> Perform tracking in 2-D image and 3-D object space 
-</li></ul>
-<p><b>A crucial point is the handling of ambiguities occuring in different steps of the data processing chain:</b>
-</p>
-<ul><li> Particles may overlap in the images. For that reason a modified thresholding/centroid operator was developed searching for local maxima in the images and dividing particle images at local minima under certain conditions.
-</li><li> Due to the fact that particle images cannot be distinguished by features like size, shape or color, the only criterion for the establishment of stereoscopic correspondences is the epipolar line. Ambiguities occur when multiple candidates are found in a search area defined by the epipolar line. These ambiguities can only be solved if a third (or even a fourth) camera is being used.
-</li><li> Ambiguities may also occur in the tracking procedure. Criteria like local correlation and smoothness of the velocity field are employed to solve these criteria.
-</li></ul>
-<p>Another important issue is an accurate calibration of the system (determination of camera exterior and interior orientations, lens distortion and further disturbances) and the exact geometric modelling ("multimedia geometry" - each beam from a particle to the sensor passes the three optical media water, glass, air with different refractive indices, which leads to a twice broken beam).
-</p><p><br />
-</p>
-<a name="Potential"></a><h2> <span class="mw-headline"><b><font color="steelblue">Potential</font></b></span></h2>
-<ul><li> Truely 3-D technique: all three components of the velocity field are determined in a 3-D observation volume
-</li><li> Delivers 3-D vector field for Eulerian analysis plus 3-D trajectories for Lagrangian analysis
-</li><li> A system based on 4 CCD progressive scan cameras (digitized to 640 x 480 pixels) is capable of tracking more than 1000 particles
-</li><li> The ralative accuracy of the velocity vectors is ~ 1:4000 of the field of view 
-</li></ul>
-<p><br />
-</p>
-<a name="Real_time_image_processing_schemes"></a><h2> <span class="mw-headline"> <b><font color="steelblue">Real time image processing schemes</font></b> </span></h2>
-<ul><li> Real time image compression using a customized FPGA design, <a href="http://link.aip.org/link/?RSINAK/78/023704/1" class="external free" title="http://link.aip.org/link/?RSINAK/78/023704/1">http://link.aip.org/link/?RSINAK/78/023704/1</a>
-</li><li> Real time image <b>processing</b> using a on-camera FPGA, <a href="http://adsabs.harvard.edu/abs/2010ExFl...48..105K" class="external free" title="http://adsabs.harvard.edu/abs/2010ExFl...48..105K">http://adsabs.harvard.edu/abs/2010ExFl...48..105K</a>
-</li></ul>
-<a name="Collaboration"></a><h2> <span class="mw-headline"> <b><font color="steelblue">Collaboration</font></b> </span></h2>
-<ul><li> <a href="http://www.ifu.ethz.ch" class="external text" title="http://www.ifu.ethz.ch">Institute of Environmental Engineering, ETH Zurich</a>
-</li><li> <a href="http://www.igp.ethz.ch" class="external text" title="http://www.igp.ethz.ch">Institute of Photogrammetry, ETH Zurich</a>
-</li><li> <a href="http://www.eng.tau.ac.il/efdl" class="external text" title="http://www.eng.tau.ac.il/efdl">Turbulence Structure Laboratory, Tel Aviv University</a>
-</li><li> <a href="http://www.fluid.tue.nl/" class="external text" title="http://www.fluid.tue.nl/">Technical University Eidnhoven, Applied Physics</a>
-</li><li> <a href="http://www.risoe.dk/About_risoe/research_departments/VEA/CV/jmsq.aspx" class="external text" title="http://www.risoe.dk/About_risoe/research_departments/VEA/CV/jmsq.aspx">Riso National Laboratory</a>
-</li></ul>
-<hr />
-<ul><li> <a href="http://www.ictr.eu" class="external text" title="http://www.ictr.eu">International Collaboration for Turbulence Research, ICTR</a>
-</li></ul>
-<hr />
-<ul><li><a href="http://mp0806.cineca.it" class="external text" title="http://mp0806.cineca.it">COST action "Particles in Turbulence"</a> is the place for collaboration. 
-</li></ul>
-<p>We organize the PTV benchmarking (open, free and user-friendly, we'll publish only what you want to be published) in order to make our algorithms validated versus each other and improve our particle tracking abilities worldwide. Write to <a href="mailto:alex.liberzon@gmail.com" class="external text" title="mailto:alex.liberzon@gmail.com">Alex</a> if you want to <b>join</b> with your own version of particle tracking software or with your data test case (e.g. that you find difficult to track or to improve).
-</p>
-<hr />
-<a name="See_also"></a><h2> <span class="mw-headline"><b><font color="steelblue">See also</font></b></span></h2>
-<ul><li><a href="http://en.wikipedia.org/wiki/Particle_tracking_velocimetry" class="external text" title="http://en.wikipedia.org/wiki/Particle_tracking_velocimetry">3D-PTV on Wikipedia</a>
-</li><li><a href="http://en.wikipedia.org/wiki/Particle_image_velocimetry" class="external text" title="http://en.wikipedia.org/wiki/Particle_image_velocimetry">Particle image velocimetry</a>
-</li><li><a href="http://en.wikipedia.org/wiki/Particle_image_velocimetry" class="external text" title="http://en.wikipedia.org/wiki/Particle_image_velocimetry">Laser Doppler velocimetry</a>
-</li><li><a href="http://en.wikipedia.org/wiki/Hot-wire_anemometry#Hot-wire_anemometers" class="external text" title="http://en.wikipedia.org/wiki/Hot-wire_anemometry#Hot-wire_anemometers">Hot-wire anemometry</a>
-</li><li><a href="http://en.wikipedia.org/wiki/Molecular_tagging_velocimetry" class="external text" title="http://en.wikipedia.org/wiki/Molecular_tagging_velocimetry">Molecular tagging velocimetry</a>
-</li></ul>
-<p><br />
-</p>
-<a name="References"></a><h2> <span class="mw-headline"><b><font color="steelblue">References</font></b></span></h2>
-<ul><li> Maas, H.-G., 1992. Digitale Photogrammetrie in der dreidimensionalen Strömungsmesstechnik, ETH Zürich Dissertation Nr. 9665
-</li><li> Malik, N., Dracos, T., Papantoniou, D., 1993. Particle Tracking in three dimensional turbulent flows - Part II: Particle tracking. Experiments in Fluids Vol. 15, pp. 279-294 
-</li><li> Maas, H.-G., Grün, A., Papantoniou, D., 1993. Particle Tracking in three dimensional turbulent flows - Part I: Photogrammetric determination of particle coordinates. Experiments in Fluids Vol. 15, pp. 133-146
-</li><li> Srdic, Andjelka, 1998. Interaction of dense particles with stratified and turbulent environments. Ph.D. Dissertation, Arizona State University.
-</li><li> Lüthi, B., Tsinober, A., Kinzelbach W. (2005)- Lagrangian Measurement of Vorticity Dynamics in Turbulent Flow. Journal of Fluid Mechanics. (528), p. 87-118 
-</li><li> Nicholas T. Ouellette, Haitao Xu, Eberhard Bodenschatz, A quantitative study of three-dimensional Lagrangian particle tracking algorithms, Experiments in Fluids, Volume 40, Issue 2, Feb 2006, Pages 301 - 313.
-</li><li> Kreizer Mark, Ratner David and Alex Liberzon Real-time image processing for particle tracking velocimetry, Experiments in Fluids, Volume 48, Issue 1, pp.105-110, <a href="http://adsabs.harvard.edu/abs/2010ExFl...48..105K" class="external free" title="http://adsabs.harvard.edu/abs/2010ExFl...48..105K">http://adsabs.harvard.edu/abs/2010ExFl...48..105K</a>
-</li></ul>
-<p><br />
-</p></div>
-    </div>
-          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f52%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f52%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-23843.html">Login</a> or <a href="../../user/register/index-23843.html">register</a> to post comments</span></li>
-</ul></div>
+<div style="font-family: Helvetica,Arial,sans-serif;" id="main">
+<h1 class="title"> An introduction to 3D-PTV: </h1>
+<br />
+&nbsp;
+<div class="node">
+<div class="clear-block"> <span class="submitted"> <span class="taxonomy">
+<div class="content">
+<table id="toc" class="toc" summary="Contents">
+  <tbody>
+    <tr>
+      <td>
+      <div id="toctitle"><strong>Contents</strong></div>
+      <div id="tocbody">
+      <ul>
+        <li class="toclevel-1"><a href="#Objectives"><span class="tocnumber">1</span> <span class="toctext">Objectives</span></a></li>
+        <li class="toclevel-1"><a href="#Introduction"><span class="tocnumber">2</span> <span class="toctext">Introduction</span></a></li>
+        <li class="toclevel-1"><a href="#Data_acquisition"><span class="tocnumber">3</span> <span class="toctext">Data acquisition</span></a></li>
+        <li class="toclevel-1"><a href="#Data_Processing"><span class="tocnumber">4</span> <span class="toctext">Data Processing</span></a></li>
+        <li class="toclevel-1"><a href="#Potential"><span class="tocnumber">5</span> <span class="toctext">Potential</span></a></li>
+        <li class="toclevel-1"><a href="#Real_time_image_processing_schemes"><span class="tocnumber">6</span>
+          <span class="toctext">Real time image processing schemes</span></a></li>
+        <li class="toclevel-1"><a href="#Collaboration"><span class="tocnumber">7</span> <span class="toctext">Collaboration</span></a></li>
+        <li class="toclevel-1"><a href="#See_also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+        <li class="toclevel-1"><a href="#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+      </ul>
       </div>
-		<!-- CONTENT END -->
-
-		
-	</div>
-<!-- END MAIN -->
-
-<!-- START FOOTER -->
-	<div id="footer">
-		<a href="http://oriact.com">Powered by</a><br/>
-		<a href="http://oriact.com"><img width="85" height="20" src="../../sites/all/themes/oxymoron/oriact_button.png" alt="Powered by Oriact"/></a><br/>
-		<div class="clear-block block block-origo_eth" id="block-origo_eth-0">
-  
-  <div class="content"><a href="http://origo.ethz.ch">Hosted on </a><br/><a href="http://origo.ethz.ch"><img width="85" height="20" src="../../sites/all/themes/oxymoron/origo_button_1.png" alt="Hosted on Origo"/></a><br/><a href="http://origo.ethz.ch">a project by ETH Zürich</a><br/>&copy;<a href="http://origo.ethz.ch"> 2006 - 2010</a><br/><a href="../../global/terms_of_use/index.html">Terms of Use</a><br/></div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<h2> <span class="mw-headline"> <b><font color="steelblue">Objectives</font>
+</b></span></h2>
+<p>Our main goal is to promote the 3D-PTV experimental technology and
+open it for the worldwide use. We are convinced that this technique can
+make an impact in various applications, allowing for the researchers
+and industry to get a deeper insight into their flows. Most of the
+flows are highly complex and turbulent and only few of them can get a
+limited low-dimensional or analytical description that explains the
+different flow phenomena. Experimental research is inevitable in
+observing the flow and discovering new phenomena, in addition to
+assisting to explain the old ones. </p>
+<br />
+<h2> <span class="mw-headline"><b><font color="steelblue">Introduction
+</font></b></span></h2>
+<p>The <u><b>3D Particle Tracking Velocimetry</b></u> (PTV) offers a
+flexible technique for the determination of velocity fields in flows.
+It is based on the visualization of a flow with small, neutrally
+buoyant particles and a stereoscopic recording image sequences of the
+particles. In the past decade the successful research work performed by
+the Institute of Geodesy and Photogrammetry at ETH Zurich led to an
+operational and reliable measurement tool used in hydrodynamics and
+space applications. In cooperation with the Institute of Hydromechanics
+and Water Resources Management at ETH Zurich further progress has been
+achieved in the improvement of the existing hard- and software
+solutions. Regarding the hardware setup the acquisition system used at
+the ETH Zurich was upgraded from offline to online image digitization.
+</p>
+<p><br />
+</p>
+<p><img src="../../system/files/3dptv.png" alt="3dptv.png" /></p>
+<br />
+<h2> <span class="mw-headline"><b><font color="steelblue">Data
+acquisition</font></b></span></h2>
+<ul>
+  <li> Seed a flow with tracer particles
+  </li>
+  <li> Illuminate a 3-D observation volume inside the flow by a pulsed
+lightsource
+  </li>
+  <li> Image the scene by 2 (or rather 3-4) synchronized
+  </li>
+  <li> Length of image sequences depending from imaging rate and
+storage device </li>
+</ul>
+<p>The system used at the ETH Zurich was upgraded from offline to
+online image digitization. In the previous system, the image sequences
+were firstly recorded on analogue videotapes and digitized afterwards,
+while in the new system two frame grabbers (Matrox Genesis) are used to
+provide online digitization and storage. The length of the recorded
+digital image sequences is nowadays restricted by the storage device
+capabilities. The data rate for a 60 Hz full-frame camera with a
+resolution of 640 x 480 pixels is about 19 MB/sec, and hence in an
+experiment which lasts for 1 minute four cameras deliver a total amount
+of about 4.5 GB image data.
+</p>
+<p><br />
+<b>The Particle Tracking Velocimetry software performs the following
+tasks:</b>
+</p>
+<ul>
+  <li> Calibration of the multi-camera system (determination of camera
+exterior and interior orientations, lens distortion and further
+disturbances, (e.g. [PDF of Willneff and Maas,2000&gt;<a href="http://www.tu-dresden.de/fghgipf/forschung/material/publ2000/JoWi_paper.pdf" class="external free" title="http://www.tu-dresden.de/fghgipf/forschung/material/publ2000/JoWi_paper.pdf">http://www.tu-dresden.de/fghgipf/forschung/material/publ2000/JoWi_paper.pdf</a>])
+and the exact geometric modelling ("multimedia geometry" - each beam
+from a particle to the sensor passes the three optical media water,
+glass, air with different refractive indices, which leads to a twice
+broken beam).
+  </li>
+  <li> Image preprocessing: perform highpass filtering due to
+non-uniformities in the background illumination
+  </li>
+  <li> Detect particles in the images by a modified thresholding
+operator, localize particles with subpixel accuracy by a centroid
+operator
+  </li>
+  <li> Establish stereoscopic correspondences
+  </li>
+  <li> Determine 3-D particle coordinates
+  </li>
+  <li> Storage of all relevant object and image space information
+  </li>
+  <li> Perform tracking in 2-D image and 3-D object space
+  </li>
+</ul>
+<p><br />
+</p>
+<br />
+<h2> <span class="mw-headline"><b><font color="steelblue">Data
+Processing</font></b></span></h2>
+<ul>
+  <li> Image preprocessing: perform highpass filtering due to
+non-uniformities in the background illumination
+  </li>
+  <li> Detect particles in the images by a modified thresholding
+operator, localize particles with subpixel accuracy by a centroid
+operator
+  </li>
+  <li> Establish stereoscopic correspondences
+  </li>
+  <li> Determine 3-D particle coordinates
+  </li>
+  <li> Storage of all relevant object and image space information
+  </li>
+  <li> Perform tracking in 2-D image and 3-D object space </li>
+</ul>
+<p><b>A crucial point is the handling of ambiguities occuring in
+different steps of the data processing chain:</b>
+</p>
+<ul>
+  <li> Particles may overlap in the images. For that reason a modified
+thresholding/centroid operator was developed searching for local maxima
+in the images and dividing particle images at local minima under
+certain conditions.
+  </li>
+  <li> Due to the fact that particle images cannot be distinguished by
+features like size, shape or color, the only criterion for the
+establishment of stereoscopic correspondences is the epipolar line.
+Ambiguities occur when multiple candidates are found in a search area
+defined by the epipolar line. These ambiguities can only be solved if a
+third (or even a fourth) camera is being used.
+  </li>
+  <li> Ambiguities may also occur in the tracking procedure. Criteria
+like local correlation and smoothness of the velocity field are
+employed to solve these criteria.
+  </li>
+</ul>
+<p>Another important issue is an accurate calibration of the system
+(determination of camera exterior and interior orientations, lens
+distortion and further disturbances) and the exact geometric modelling
+("multimedia geometry" - each beam from a particle to the sensor passes
+the three optical media water, glass, air with different refractive
+indices, which leads to a twice broken beam).
+</p>
+<p><br />
+</p>
+<br />
+<h2> <span class="mw-headline"><b><font color="steelblue">Potential</font></b></span></h2>
+<ul>
+  <li> Truely 3-D technique: all three components of the velocity field
+are determined in a 3-D observation volume
+  </li>
+  <li> Delivers 3-D vector field for Eulerian analysis plus 3-D
+trajectories for Lagrangian analysis
+  </li>
+  <li> A system based on 4 CCD progressive scan cameras (digitized to
+640 x 480 pixels) is capable of tracking more than 1000 particles
+  </li>
+  <li> The ralative accuracy of the velocity vectors is ~ 1:4000 of the
+field of view </li>
+</ul>
+<p><br />
+</p>
+<br />
+<h2> <span class="mw-headline"> <b><font color="steelblue">Real time
+image processing schemes</font></b> </span></h2>
+<ul>
+  <li> Real time image compression using a customized FPGA design, <a href="http://link.aip.org/link/?RSINAK/78/023704/1" class="external free" title="http://link.aip.org/link/?RSINAK/78/023704/1">http://link.aip.org/link/?RSINAK/78/023704/1</a>
+  </li>
+  <li> Real time image <b>processing</b> using a on-camera FPGA, <a href="http://adsabs.harvard.edu/abs/2010ExFl...48..105K" class="external free" title="http://adsabs.harvard.edu/abs/2010ExFl...48..105K">http://adsabs.harvard.edu/abs/2010ExFl...48..105K</a>
+  </li>
+</ul>
+<br />
+<h2> <span class="mw-headline"> <b><font color="steelblue">Collaboration</font></b>
+</span></h2>
+<ul>
+  <li> <a href="http://www.ifu.ethz.ch" class="external text" title="http://www.ifu.ethz.ch">Institute of Environmental Engineering,
+ETH Zurich</a>
+  </li>
+  <li> <a href="http://www.igp.ethz.ch" class="external text" title="http://www.igp.ethz.ch">Institute of Photogrammetry, ETH Zurich</a>
+  </li>
+  <li> <a href="http://www.eng.tau.ac.il/efdl" class="external text" title="http://www.eng.tau.ac.il/efdl">Turbulence Structure Laboratory,
+Tel Aviv University</a>
+  </li>
+  <li> <a href="http://www.fluid.tue.nl/" class="external text" title="http://www.fluid.tue.nl/">Technical University Eidnhoven,
+Applied Physics</a>
+  </li>
+  <li> <a href="http://www.risoe.dk/About_risoe/research_departments/VEA/CV/jmsq.aspx" class="external text" title="http://www.risoe.dk/About_risoe/research_departments/VEA/CV/jmsq.aspx">Riso
+National Laboratory</a>
+  </li>
+</ul>
+<hr />
+<ul>
+  <li> <a href="http://www.ictr.eu" class="external text" title="http://www.ictr.eu">International Collaboration for Turbulence
+Research, ICTR</a>
+  </li>
+</ul>
+<hr />
+<ul>
+  <li><a href="http://mp0806.cineca.it" class="external text" title="http://mp0806.cineca.it">COST action "Particles in Turbulence"</a>
+is the place for collaboration. </li>
+</ul>
+<p>We organize the PTV benchmarking (open, free and user-friendly,
+we'll publish only what you want to be published) in order to make our
+algorithms validated versus each other and improve our particle
+tracking abilities worldwide. Write to <a href="mailto:alex.liberzon@gmail.com" class="external text" title="mailto:alex.liberzon@gmail.com">Alex</a> if you want to <b>join</b>
+with your own version of particle tracking software or with your data
+test case (e.g. that you find difficult to track or to improve).
+</p>
+<hr />
+<br />
+<h2> <span class="mw-headline"><b><font color="steelblue">See also</font></b></span></h2>
+<ul>
+  <li><a href="http://en.wikipedia.org/wiki/Particle_tracking_velocimetry" class="external text" title="http://en.wikipedia.org/wiki/Particle_tracking_velocimetry">3D-PTV
+on Wikipedia</a>
+  </li>
+  <li><a href="http://en.wikipedia.org/wiki/Particle_image_velocimetry" class="external text" title="http://en.wikipedia.org/wiki/Particle_image_velocimetry">Particle
+image velocimetry</a>
+  </li>
+  <li><a href="http://en.wikipedia.org/wiki/Particle_image_velocimetry" class="external text" title="http://en.wikipedia.org/wiki/Particle_image_velocimetry">Laser
+Doppler velocimetry</a>
+  </li>
+  <li><a href="http://en.wikipedia.org/wiki/Hot-wire_anemometry#Hot-wire_anemometers" class="external text" title="http://en.wikipedia.org/wiki/Hot-wire_anemometry#Hot-wire_anemometers">Hot-wire
+anemometry</a>
+  </li>
+  <li><a href="http://en.wikipedia.org/wiki/Molecular_tagging_velocimetry" class="external text" title="http://en.wikipedia.org/wiki/Molecular_tagging_velocimetry">Molecular
+tagging velocimetry</a>
+  </li>
+</ul>
+<p><br />
+</p>
+<br />
+<h2> <span class="mw-headline"><b><font color="steelblue">References</font></b></span></h2>
+<ul>
+  <li> Maas, H.-G., 1992. Digitale Photogrammetrie in der
+dreidimensionalen Strömungsmesstechnik, ETH Zürich Dissertation Nr.
+9665
+  </li>
+  <li> Malik, N., Dracos, T., Papantoniou, D., 1993. Particle Tracking
+in three dimensional turbulent flows - Part II: Particle tracking.
+Experiments in Fluids Vol. 15, pp. 279-294 </li>
+  <li> Maas, H.-G., Grün, A., Papantoniou, D., 1993. Particle Tracking
+in three dimensional turbulent flows - Part I: Photogrammetric
+determination of particle coordinates. Experiments in Fluids Vol. 15,
+pp. 133-146
+  </li>
+  <li> Srdic, Andjelka, 1998. Interaction of dense particles with
+stratified and turbulent environments. Ph.D. Dissertation, Arizona
+State University.
+  </li>
+  <li> Lüthi, B., Tsinober, A., Kinzelbach W. (2005)- Lagrangian
+Measurement of Vorticity Dynamics in Turbulent Flow. Journal of Fluid
+Mechanics. (528), p. 87-118 </li>
+  <li> Nicholas T. Ouellette, Haitao Xu, Eberhard Bodenschatz, A
+quantitative study of three-dimensional Lagrangian particle tracking
+algorithms, Experiments in Fluids, Volume 40, Issue 2, Feb 2006, Pages
+301 - 313.
+  </li>
+  <li> Kreizer Mark, Ratner David and Alex Liberzon Real-time image
+processing for particle tracking velocimetry, Experiments in Fluids,
+Volume 48, Issue 1, pp.105-110, <a href="http://adsabs.harvard.edu/abs/2010ExFl...48..105K" class="external free" title="http://adsabs.harvard.edu/abs/2010ExFl...48..105K">http://adsabs.harvard.edu/abs/2010ExFl...48..105K</a>
+  </li>
+</ul>
+<p><br />
+</p>
 </div>
-	</div>
-<!-- END FOOTER -->
+</span></span></div>
+</div>
+</div>
 
-  <!-- CLOSURE (e.g. javascript) -->
-    <script type="text/javascript" src="../../sites/all/modules/google_cse/google_cse.js?n"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "googleCSE": { "language": "en" } });
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-if (Drupal.jsEnabled) {
-      $(document).ready(function() {
-        $('a.origo-private').each(function() {
-          $(this).append('&nbsp;<img src="/sites/all/themes/oxymoron/private-page-link.png" alt="private"/>');
-        });
-      });
-    }
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-if (Drupal.jsEnabled) {
-      $(document).ready(function() {
-        $('a.external').each(function() {
-          $(this).append('&nbsp;<img src="/sites/all/modules/mediawiki_filter/external.png" alt="external"/>');
-        });
-      });
-    }
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-1676928-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
-//--><!]]>
-</script>
-
-</body>
-
-</html>
-<!-- Localized -->
+</body></html>
