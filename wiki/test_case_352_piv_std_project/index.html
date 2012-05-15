@@ -1,146 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Test case #352 PIV STD project | ptv</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="../../sites/all/themes/oxymoron/favicon.ico" type="image/x-icon" />
-  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/origo_home/css/origo_home-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/geshifilter/geshifilter-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/google_cse/google_cse-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mediawiki_filter/mediawiki_filter-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/forum/forum-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/mainmenu-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/iconsmenu-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/night-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/day-36200.css" />
-<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/oxymoron/css/print-36200.css" />
-  <script type="text/javascript" src="../../misc/jquery.js?n"></script>
-<script type="text/javascript" src="../../misc/drupal.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/mediawiki_filter/mediawiki_filter.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/jquery_example/jquery.example.min.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/oxymoron.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/mainmenu.js?n"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": "1", "trackMailto": "1", "trackDownload": "1", "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-Drupal.behaviors.issue_tracker = function(context) {
-        $('a[class=extiw issue]').each(function() {
-          // extract issue number from the URL
-          var issueURL = $(this)[0].href;
-          var issueURLSplitted = issueURL.split('/')
-          var issueNumber = issueURLSplitted[issueURLSplitted.length - 1];
-
-          var target= $(this);
-          $.get(Drupal.settings.basePath + "ajax/issue_get_status/" + issueNumber, null, function(response) {
-            var result = Drupal.parseJson(response);
-
-            var decorationString = "";
-            if (result.issueClosedStatus == true) {
-              decorationString = 'line-through';
-            }
-            $(target).css('text-decoration', decorationString);
-          });
-        });
-      }
-//--><!]]>
-</script>
-  <style type="text/css" media="print">@import "../../sites/all/themes/oxymoron/css/print.css";</style>
-  <script type="text/javascript"> </script>
-  <!--[if IE 7]>
-  	<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style_ie7.css" />
-  <![endif]-->
-
-</head>
-
-<body>
-
-<!-- START HEADER -->
-    <div id="mainheader">
-    
-        <div id="logo">
-			            <a class="logo_link" href="../../index.html" title="Home" rel="home" id="logo">
-                <img src="../../sites/ptv/files/ptv_0.jpg" alt="Home"/>
-            </a>
-						            <div id="site-name-frame">
-				                <h1 class='site-name'><a href="../../index.html" title="Home">3D-PTV</a></h1>
-				            </div>
-        </div>
-
-        <ul id="user-info">
-                                  <li><a href="../../user/register/index-32899.html">Register</a></li>
-                    <li><a href="../../user/index-32899.html">Sign in</a></li>
-                      </ul>
-        <div id='search-box'><form action="/wiki/test_case_352_piv_std_project"  accept-charset="UTF-8" method="post" id="search-theme-form">
-<div><div class="form-item" id="edit-search-theme-form-1-wrapper">
- <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
-</div>
-<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
-<input type="hidden" name="form_build_id" id="form-464a35e2f0a61165441cbe8761017d63" value="form-464a35e2f0a61165441cbe8761017d63"  />
-<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
-<input type="hidden" name="3" id="edit-3" value=""  />
-
-</div></form>
-</div>
-	
-		<div id="iconsmenu">
-		  <!-- START TOP NAV -->
-					  					  
-<ul id='navlist'>
-	<li><a href="../../index.html" title="Home" class="home"><div class="home"><span class="notext">Home</span></div></a></li>
-	<li><a href="../../download/index.html" title="Download" class="download"><div class="download"><span class="notext">Download</span></div></a></li>
-	<li><a href="../../forum/index.html" title="Forum" class="forum"><div class="forum"><span class="notext">Forum</span></div></a></li>
-	<li><a href="../../blog/index.html" title="Issues" class="blog"><div class="blog"><span class="notext">Blog</span></div></a></li>
-	<li><a href="../../issues/index.html" title="Issues" class="issues"><div class="issues"><span class="notext">Issues</span></div></a></li>
-	<li><a href="../../statistics/index.html" title="Statistics" class="statistics"><div class="statistics"><span class="notext">Statistics</span></div></a></li>
-</ul>
-					  					  <br class="clear" />
-			  <!-- END TOP NAV -->
-		</div>
-				<div class='main_navi'>
-			<div class="clear-block block block-origo_home" id="block-origo_home-0">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
   
-  <div class="content"><ul class="menu"><li class="collapsed"><a href="../../search_global/index.html">Global Search</a></li></ul></div>
-</div>
-		</div>
-			
-    </div>
-<!-- END HEADER -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Test case #352 PIV STD project | ptv</title>
 
-<!-- START MAIN -->
-	<div class="tabs"></div>
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-	<div id="main">
-		<!-- START TITLE -->
-				   <h1 class="title">
-			 			 Test case #352 PIV STD project			 		   </h1>
-				<!-- END TITLE -->
+</head><body>
+<br />
 
-		
-		
-		<!-- CONTENT START -->
-		     <div class="node">
-        <div class="clear-block">
-        <span class="submitted"></span>
-    <span class="taxonomy"></span>
-    <div class="content"><blockquote>
-Synthetic data were used to validate the algorithm. The
+
+<h1 class="title"> Test case #352 PIV STD project </h1>
+
+
+<blockquote>Synthetic data were used to validate the algorithm. The
 synthetic data were from the PIV-STD library that was
 developed by the Visualization Society of Japan and served as
 the benchmark for many PIV/PTV research efforts (Okamoto
@@ -160,528 +35,565 @@ compared to the left half of the images, the right half contained
 denser particles and larger particle displacement (see figures 4
 and 5), which results in a lower PSDR. The PSDR is about
 2.6 for the right half of the image domain and about 2.2 for
-the right quarter of the image domain. Such a small value makes it hard to track particles through 90 frames (Malik et al
+the right quarter of the image domain. Such a small value makes it hard
+to track particles through 90 frames (Malik et al
 1993).
-</blockquote> 
-<p>[A multi-frame particle tracking algorithm robust against input noise, by Dongning Li, Yuanhui Zhang, Yigang Sun andWei Yan, Meas. Sci. Technol. 19 (2008) 105401 ]
-</p><p>3D-PTV software applied to the test case #352 (Standard PIV Images project)
-</p><p><br /> 
-</p><p>Here we report the technical procedures, the results and the analysis of the case #352 processed using 3D-PTV software (ETH Zurich, Tel Aviv University). 
+</blockquote>
+
+<p>[A multi-frame particle tracking algorithm robust against input
+noise, by Dongning Li, Yuanhui Zhang, Yigang Sun andWei Yan, Meas. Sci.
+Technol. 19 (2008) 105401 ]
 </p>
-<pre>Download
-</pre>
-<p>1. Download images and the data for the test case #352 from the original web site <a href="http://piv.vsj.or.jp/piv/image3d/image352.html" class="external free" title="http://piv.vsj.or.jp/piv/image3d/image352.html">http://piv.vsj.or.jp/piv/image3d/image352.html</a> (just in case the website/data will disappear, we'll keep a local copy on our web server) 
-</p><p>2. Obtain 3D-PTV software from the website: <a href="../../index.html" class="external free" title="http://ptv.origo.ethz.ch">http://ptv.origo.ethz.ch</a> (for Windows platforms, if no source is needed, the ZIP file below includes the executable, so it's plug-n-play ready test case)
-</p><p><br /> 
+
+<p>3D-PTV software applied to the test case #352 (Standard PIV Images
+project)
+</p>
+
+<p><br />
+</p>
+
+<p>Here we report the technical procedures, the results and the
+analysis of the case #352 processed using 3D-PTV software (ETH Zurich,
+Tel Aviv University). </p>
+
+<pre>Download<br /></pre>
+
+<p>1. Download images and the data for the test case #352 from the
+original web site <a href="http://piv.vsj.or.jp/piv/image3d/image352.html" class="external free" title="http://piv.vsj.or.jp/piv/image3d/image352.html">http://piv.vsj.or.jp/piv/image3d/image352.html</a>
+(just in case the website/data will disappear, we'll keep a local copy
+on our web server) </p>
+
+<p>2. Obtain 3D-PTV software from the website: <a href="../../index.html" class="external free" title="http://ptv.origo.ethz.ch">http://ptv.origo.ethz.ch</a> (for
+Windows platforms, if no source is needed, the ZIP file below includes
+the executable, so it's plug-n-play ready test case)
+</p>
+
+<p><br />
 Pre-processing procedure
-</p><p>Download the ZIP file with the directory ready for use with the software. Extract the file  into the experiment directory, e.g. C:/PTV/test352
-</p><p>verify it has the directory structure: 
-</p><p>C:/PTV/test352
 </p>
-<pre>       /img
-</pre>
-<pre>       /res
-</pre>
-<pre>       /cal
-</pre>
-<pre>       /parameters
-</pre>
+
+<p>Download the ZIP file with the directory ready for use with the
+software. Extract the file into the experiment directory, e.g.
+C:/PTV/test352
+</p>
+
+<p>verify it has the directory structure: </p>
+
+<p>C:/PTV/test352
+</p>
+
+<pre>       /img<br /></pre>
+
+<pre>       /res<br /></pre>
+
+<pre>       /cal<br /></pre>
+
+<pre>       /parameters<br /></pre>
+
 <pre>read more about the software handling on <a href="../handling_ptv_software/index.html" class="external free" title="http://ptv.origo.ethz.ch/wiki/handling_ptv_software">http://ptv.origo.ethz.ch/wiki/handling_ptv_software</a>
 </pre>
-<pre>1. convert RAW images to TIFF images (no compression, 8 bit). On Windows , IrfanView (with plugins) used for batch image conversion and rename. 
-</pre>
-<p>image0XXX.raw  -&gt; cam1.1XXX (1XXX= 1000 to 1144). Note that we also name our cameras: 1,2,3 as the PIV STD project calls them 0,1,2
-</p><p>move the images into the  the sub-directory  /img
-</p><p>2. We already converted the calibration images:  im0999.raw -&gt; cam1.tif,  im1999.raw -&gt; cam2.tif,  im2999.raw -&gt; cam3.tif
-</p><p>and added the calibration images to the sub-directory /cal
-</p><p>Basically, we convert the information provided for this test case into the calibration files, compatible with the 3D-PTV software. The camera configuration is well explained on the Evaluation of standard PIV images website by Georges Quenot: 
+
+<pre>1. convert RAW images to TIFF images (no compression, 8 bit). On Windows , IrfanView (with plugins) used for batch image conversion and rename. <br /></pre>
+
+<p>image0XXX.raw -&gt; cam1.1XXX (1XXX= 1000 to 1144). Note that we
+also name our cameras: 1,2,3 as the PIV STD project calls them 0,1,2
 </p>
+
+<p>move the images into the the sub-directory /img
+</p>
+
+<p>2. We already converted the calibration images: im0999.raw -&gt;
+cam1.tif, im1999.raw -&gt; cam2.tif, im2999.raw -&gt; cam3.tif
+</p>
+
+<p>and added the calibration images to the sub-directory /cal
+</p>
+
+<p>Basically, we convert the information provided for this test case
+into the calibration files, compatible with the 3D-PTV software. The
+camera configuration is well explained on the Evaluation of standard
+PIV images website by Georges Quenot: </p>
+
 <pre>From: <a href="http://www-clips.imag.fr/mrim/georges.quenot/vsj-eval/evaluation3.html" class="external free" title="http://www-clips.imag.fr/mrim/georges.quenot/vsj-eval/evaluation3.html">http://www-clips.imag.fr/mrim/georges.quenot/vsj-eval/evaluation3.html</a>
 </pre>
+
 <p>or from the original web site:
-</p><p>This is precisely the same coordinate system as used by the 3D-PTV software. Therefore the conversion of the parameters is easy:
-</p><p><br /> 
-</p><p>in the /cal directory you'll find the *.ORI files for each camera. These consist of: 
 </p>
-<pre>   101.8263 -9.9019 65.1747 projective center X,Y,Z, [mm]
-   0.4151383 -0.0069793 1.5073263 omega, phi, kappa [rad]
-</pre>
-<p><br />     
+
+<p>This is precisely the same coordinate system as used by the 3D-PTV
+software. Therefore the conversion of the parameters is easy:
 </p>
-<pre>   0.0634259 -0.9979621 -0.0069792 rotation matrix (3x3)
-</pre>
-<pre>   0.9130395 0.0608491 -0.4033067 [no unit]
-</pre>
-<pre>   0.4029095 0.0192078 0.9150383
-</pre>
-<p><br />     
+
+<p><br />
 </p>
-<pre>   -0.6139 -0.0622 xp, yp [mm]
-</pre>
-<pre>   8.7308 principle distance [mm]
-</pre>
-<p><br />     
+
+<p>in the /cal directory you'll find the *.ORI files for each camera.
+These consist of: </p>
+
+<pre>   101.8263 -9.9019 65.1747 projective center X,Y,Z, [mm]<br />   0.4151383 -0.0069793 1.5073263 omega, phi, kappa [rad]<br /></pre>
+
+<p><br />
 </p>
-<pre>   0.0 0.0 30.0 window (glass) location [mm] 
-</pre>
-<p><br /> 
+
+<pre>   0.0634259 -0.9979621 -0.0069792 rotation matrix (3x3)<br /></pre>
+
+<pre>   0.9130395 0.0608491 -0.4033067 [no unit]<br /></pre>
+
+<pre>   0.4029095 0.0192078 0.9150383<br /></pre>
+
+<p><br />
 </p>
-<pre>so the three cameras are oriented approximately: 
-</pre>
+
+<pre>   -0.6139 -0.0622 xp, yp [mm]<br /></pre>
+
+<pre>   8.7308 principle distance [mm]<br /></pre>
+
+<p><br />
+</p>
+
+<pre>   0.0 0.0 30.0 window (glass) location [mm] <br /></pre>
+
+<p><br />
+</p>
+
+<pre>so the three cameras are oriented approximately: <br /></pre>
+
 <p>cam1.tif.ori (camera #0)
 </p>
-<pre>     -100.3781      0.0117    173.0085
-        0.0000154  -0.5432731  -0.0000624
-</pre>
-<pre>        0.8560213  0.0000534 -0.5169406
-       -0.0000704  1.0000000 -0.0000132
-        0.5169406  0.0000477  0.8560213
-</pre>
-<pre>         0.0000   0.0000
-        20.0000
-</pre>
-<pre>          0.000000000000000    0.000000000000000    30.000000000000000 
-</pre>
-<pre>cam2.tif.ori
-</pre>
-<pre>         0.4331     -0.0829    199.4893
-        0.0005046   0.0022530   0.0001731
-</pre>
-<pre>        0.9999974 -0.0001731  0.0022530
-        0.0001743  0.9999999 -0.0005046
-       -0.0022529  0.0005050  0.9999973
-</pre>
-<pre>         0.0000   0.0000
-        20.0000
-</pre>
-<pre>          0.000000000000000    0.000000000000000    30.000000000000000
-</pre>
-<p>cam3.tif.ori 
+
+<pre>     -100.3781      0.0117    173.0085<br />        0.0000154  -0.5432731  -0.0000624<br /></pre>
+
+<pre>        0.8560213  0.0000534 -0.5169406<br />       -0.0000704  1.0000000 -0.0000132<br />        0.5169406  0.0000477  0.8560213<br /></pre>
+
+<pre>         0.0000   0.0000<br />        20.0000<br /></pre>
+
+<pre>          0.000000000000000    0.000000000000000    30.000000000000000 <br /></pre>
+
+<pre>cam2.tif.ori<br /></pre>
+
+<pre>         0.4331     -0.0829    199.4893<br />        0.0005046   0.0022530   0.0001731<br /></pre>
+
+<pre>        0.9999974 -0.0001731  0.0022530<br />        0.0001743  0.9999999 -0.0005046<br />       -0.0022529  0.0005050  0.9999973<br /></pre>
+
+<pre>         0.0000   0.0000<br />        20.0000<br /></pre>
+
+<pre>          0.000000000000000    0.000000000000000    30.000000000000000<br /></pre>
+
+<p>cam3.tif.ori </p>
+
+<pre>      101.0432      0.0872    172.5569<br />       -0.0004084   0.5476053   0.0000590<br /></pre>
+
+<pre>        0.8537737 -0.0000503  0.5206442<br />       -0.0001537  0.9999999  0.0003487<br />       -0.5206442 -0.0003777  0.8537737<br /></pre>
+
+<pre>         0.0000   0.0000<br />        20.0000<br /></pre>
+
+<pre>          0.000000000000000    0.000000000000000    30.000000000000000<br /></pre>
+
+<p><br />
 </p>
-<pre>      101.0432      0.0872    172.5569
-       -0.0004084   0.5476053   0.0000590
-</pre>
-<pre>        0.8537737 -0.0000503  0.5206442
-       -0.0001537  0.9999999  0.0003487
-       -0.5206442 -0.0003777  0.8537737
-</pre>
-<pre>         0.0000   0.0000
-        20.0000
-</pre>
-<pre>          0.000000000000000    0.000000000000000    30.000000000000000
-</pre>
-<p><br />     
-</p><p>Calibration file:
+
+<p>Calibration file:
 </p>
-<pre>   Calibration File (imX999.raw)
-   Particles (Total 27 particles)
-   x = -0.8, 0, 0.8 cm
-   y = -0.8, 0, 0.8 cm
-   z = -0.8, 0, 0.8 cm
-</pre>
-<pre>is converted into a text file in the format, compatible with the 3D-PTV software - four columns of: ID, X, Y, Z, using the Matlab code (attached to the ZIP file):
-</pre>
-<pre>   1    -8    -8    -8
-   2    -8     0    -8
-   3    -8     8    -8
-   4     0    -8    -8
-   5     0     0    -8
-   6     0     8    -8
-   7     8    -8    -8
-   8     8     0    -8
-   9     8     8    -8
-  10    -8    -8     0
-  11    -8     0     0
-  12    -8     8     0
-  13     0    -8     0
-  14     0     0     0
-  15     0     8     0
-  16     8    -8     0
-  17     8     0     0
-  18     8     8     0
-  19    -8    -8     8
-  20    -8     0     8
-  21    -8     8     8
-  22     0    -8     8
-  23     0     0     8
-  24     0     8     8
-  25     8    -8     8
-  26     8     0     8
-  27     8     8     8
-</pre>
-<p><br /> 
-</p><p><br /> 
-</p><p><br />     
+
+<pre>   Calibration File (imX999.raw)<br />   Particles (Total 27 particles)<br />   x = -0.8, 0, 0.8 cm<br />   y = -0.8, 0, 0.8 cm<br />   z = -0.8, 0, 0.8 cm<br /></pre>
+
+<pre>is converted into a text file in the format, compatible with the 3D-PTV software - four columns of: ID, X, Y, Z, using the Matlab code (attached to the ZIP file):<br /></pre>
+
+<pre>   1    -8    -8    -8<br />   2    -8     0    -8<br />   3    -8     8    -8<br />   4     0    -8    -8<br />   5     0     0    -8<br />   6     0     8    -8<br />   7     8    -8    -8<br />   8     8     0    -8<br />   9     8     8    -8<br />  10    -8    -8     0<br />  11    -8     0     0<br />  12    -8     8     0<br />  13     0    -8     0<br />  14     0     0     0<br />  15     0     8     0<br />  16     8    -8     0<br />  17     8     0     0<br />  18     8     8     0<br />  19    -8    -8     8<br />  20    -8     0     8<br />  21    -8     8     8<br />  22     0    -8     8<br />  23     0     0     8<br />  24     0     8     8<br />  25     8    -8     8<br />  26     8     0     8<br />  27     8     8     8<br /></pre>
+
+<p><br />
 </p>
-<pre>Processing (particle locations, stereo-matching, 3D positions, tracking) is then according to the standard 3D-PTV procedure. All the parameters are given in the ZIP file and reproduced here as a snapshot of the respective menus:
-</pre>
-<p><br /> 
-</p><p><br /> 
+
+<p><br />
 </p>
-<pre>Following 3D-PTV tutorials (<a href="http://ptvwiki.netcipia.net" class="external free" title="http://ptvwiki.netcipia.net">http://ptvwiki.netcipia.net</a>) we proceed with:
-</pre>
-<pre>Start -&gt; Tracking -&gt; Sequence/Tracking to complete the full cycle of processing. The results appear in two subdirectories:
-</pre>
-<p>2D particle locations in pixels, per camera in /img directory, named cam?.1XXX_targets
-</p><p>3D particle locations and tracking information in /res directory named ptv_is.1XXX
-</p><p><br /> 
+
+<p><br />
+</p>
+
+<pre>Processing (particle locations, stereo-matching, 3D positions, tracking) is then according to the standard 3D-PTV procedure. All the parameters are given in the ZIP file and reproduced here as a snapshot of the respective menus:<br /></pre>
+
+<p><br />
+</p>
+
+<p><br />
+</p>
+
+<pre>Following 3D-PTV tutorials we proceed with:<br /></pre>
+
+<pre>Start -&gt; Tracking -&gt; Sequence/Tracking to complete the full cycle of processing. The results appear in two subdirectories:<br /></pre>
+
+<p>2D particle locations in pixels, per camera in /img directory, named
+cam?.1XXX_targets
+</p>
+
+<p>3D particle locations and tracking information in /res directory
+named ptv_is.1XXX
+</p>
+
+<p><br />
 Comparison of results
 </p>
-<pre>It's difficult to build very generic code for comparing the results of all the possible types of software and data. We suggest to develop the attached code further, so it will work for various data sets and software packages. The basic subroutine i:
-</pre>
+
+<pre>It's difficult to build very generic code for comparing the results of all the possible types of software and data. We suggest to develop the attached code further, so it will work for various data sets and software packages. The basic subroutine i:<br /></pre>
+
 <p>function compare_2d(dir1,dir2,type1,type2,num1,num2)
-</p><p>% COMPARE_2D(DIR1,DIR2,TYPE1,TYPE2,NUM1,NUM2) compares two ASCII files
-</p><p>% TYPE variable can be 'eth' or 'std'
-</p><p>% 
-</p><p>%
-</p><p>% Usage:
-</p><p><br />
-%  dir1 = 'c:\PTV\Software\sortgrid_from_initial_guess_Oct09\test\img';
-</p><p>%  type1 = 'eth';
-</p><p>%  dir2 = 'c:\PTV\Software\sortgrid_from_initial_guess_Oct09\ptc';
-</p><p>%  type2 = 'std';
-</p><p>%  num1 = 1; 
-</p><p>%  num2 = 144;
-</p><p><br />
-% &gt;&gt; pixelshift = [];&nbsp;% or 'shift' if 0.5 pixel shift is needed for ETH vs. Wesleyan
-</p><p>% &gt;&gt; compare_2d(fname1,fname2,pixelshift)
-</p><p>%
-</p><p><br />
+</p>
+
+<p>% COMPARE_2D(DIR1,DIR2,TYPE1,TYPE2,NUM1,NUM2) compares two ASCII
+files
+</p>
+
+<p>% TYPE variable can be 'eth' or 'std'
+</p>
+
+<p>% </p>
+
+<p>%
+</p>
+
+<p>% Usage:
+</p>
+
+<p><br />
+% dir1 = 'c:\PTV\Software\sortgrid_from_initial_guess_Oct09\test\img';
+</p>
+
+<p>% type1 = 'eth';
+</p>
+
+<p>% dir2 = 'c:\PTV\Software\sortgrid_from_initial_guess_Oct09\ptc';
+</p>
+
+<p>% type2 = 'std';
+</p>
+
+<p>% num1 = 1; </p>
+
+<p>% num2 = 144;
+</p>
+
+<p><br />
+% &gt;&gt; pixelshift = [];&nbsp;% or 'shift' if 0.5 pixel shift is
+needed for ETH vs. Wesleyan
+</p>
+
+<p>% &gt;&gt; compare_2d(fname1,fname2,pixelshift)
+</p>
+
+<p>%
+</p>
+
+<p><br />
 % Author: Greg Voth, Wesleyan Uni., August 2009.
-</p><p>% Modified: Alex Liberzon, 23.10.09
-</p><p>% for the PIV STD benchmark case
-</p><p>%
-</p><p><br />
+</p>
+
+<p>% Modified: Alex Liberzon, 23.10.09
+</p>
+
+<p>% for the PIV STD benchmark case
+</p>
+
+<p>%
+</p>
+
+<p><br />
 %%
-</p><p>% initialization
-</p><p>Y = 0;
-</p><p>output = [];
-</p><p><br />
+</p>
+
+<p>% initialization
+</p>
+
+<p>Y = 0;
+</p>
+
+<p>output = [];
+</p>
+
+<p><br />
 switch type1
 </p>
-<pre>   case{'eth'}
-</pre>
-<pre>      &nbsp;%         fname1 = 'ptv_is.1%03d';
-</pre>
-<pre>       fname1 = inline('fullfile(dir1,sprintf(<i>cam%d.1%03d_targets</i>,camid,i))','dir1','camid','i');
-</pre>
-<pre>       loadfun1 = @loadeth2d;
-</pre>
-<pre>   case{'std'}
-</pre>
-<pre>      &nbsp;%         fname1 = inline('fullfile(dir1,sprintf(<i>ptc%d%03d.dat</i>,camid-1,i))','dir1','camid','i');
-</pre>
-<pre>       fname1 = inline('fullfile(dir1,sprintf(<i>ptc%03d.dat</i>,i))','dir1','camid','i');
-</pre>
-<pre>       loadfun1 = @loadstd2d;
-</pre>
-<pre>   otherwise
-</pre>
-<pre>       error('Unknown type 1');
-</pre>
+
+<pre>   case{'eth'}<br /></pre>
+
+<pre>      &nbsp;%         fname1 = 'ptv_is.1%03d';<br /></pre>
+
+<pre>       fname1 = inline('fullfile(dir1,sprintf(<i>cam%d.1%03d_targets</i>,camid,i))','dir1','camid','i');<br /></pre>
+
+<pre>       loadfun1 = @loadeth2d;<br /></pre>
+
+<pre>   case{'std'}<br /></pre>
+
+<pre>      &nbsp;%         fname1 = inline('fullfile(dir1,sprintf(<i>ptc%d%03d.dat</i>,camid-1,i))','dir1','camid','i');<br /></pre>
+
+<pre>       fname1 = inline('fullfile(dir1,sprintf(<i>ptc%03d.dat</i>,i))','dir1','camid','i');<br /></pre>
+
+<pre>       loadfun1 = @loadstd2d;<br /></pre>
+
+<pre>   otherwise<br /></pre>
+
+<pre>       error('Unknown type 1');<br /></pre>
+
 <p>end
-</p><p><br />
+</p>
+
+<p><br />
 switch type2
 </p>
-<pre>   case{'eth'}
-</pre>
-<pre>      &nbsp;%         fname2 = 'ptv_is.1%03d';
-</pre>
-<pre>       fname2 = inline('fullfile(dir1,sprintf(<i>cam%d.1%03d_targets</i>,camid,i))','dir1','camid','i');
-</pre>
-<pre>       loadfun2 = @loadeth2d;
-</pre>
-<pre>   case{'std'}
-</pre>
-<pre>       fname2 = inline('fullfile(dir1,sprintf(<i>ptc%03d.dat</i>,i))','dir1','camid','i');
-</pre>
-<pre>       loadfun2 = @loadstd2d;
-</pre>
-<pre>   otherwise
-</pre>
-<pre>       error('Unknown type 2');
-</pre>
+
+<pre>   case{'eth'}<br /></pre>
+
+<pre>      &nbsp;%         fname2 = 'ptv_is.1%03d';<br /></pre>
+
+<pre>       fname2 = inline('fullfile(dir1,sprintf(<i>cam%d.1%03d_targets</i>,camid,i))','dir1','camid','i');<br /></pre>
+
+<pre>       loadfun2 = @loadeth2d;<br /></pre>
+
+<pre>   case{'std'}<br /></pre>
+
+<pre>       fname2 = inline('fullfile(dir1,sprintf(<i>ptc%03d.dat</i>,i))','dir1','camid','i');<br /></pre>
+
+<pre>       loadfun2 = @loadstd2d;<br /></pre>
+
+<pre>   otherwise<br /></pre>
+
+<pre>       error('Unknown type 2');<br /></pre>
+
 <p>end
-</p><p><br />
+</p>
+
+<p><br />
 for camid = 1:3
 </p>
-<pre>   for num = num1:num2
-</pre>
+
+<pre>   for num = num1:num2<br /></pre>
+
 <p><br />
 </p>
-<pre>       file1 = fname1(dir1,camid,num);
-</pre>
-<pre>       file2 = fname2(dir2,camid,num);
-</pre>
+
+<pre>       file1 = fname1(dir1,camid,num);<br /></pre>
+
+<pre>       file2 = fname2(dir2,camid,num);<br /></pre>
+
 <p><br />
 </p>
-<pre>       [x1,y1] = feval(loadfun1,file1,camid);
-</pre>
-<pre>       [x2,y2] = feval(loadfun2,file2,camid);&nbsp;% note there're zeros in STD data
-</pre>
-<pre>       npart1 = length(x1);
-</pre>
-<pre>       npart2 = length(x2);
-</pre>
+
+<pre>       [x1,y1] = feval(loadfun1,file1,camid);<br /></pre>
+
+<pre>       [x2,y2] = feval(loadfun2,file2,camid);&nbsp;% note there're zeros in STD data<br /></pre>
+
+<pre>       npart1 = length(x1);<br /></pre>
+
+<pre>       npart2 = length(x2);<br /></pre>
+
 <p><br />
 </p>
-<pre>       matchraw = zeros(npart1,1);
-</pre>
-<pre>       bestraw = 1.0e6*ones(npart1,1);
-</pre>
-<pre>       for i=1:npart1
-</pre>
-<pre>           for j=1:npart2
-</pre>
-<pre>               del=sqrt((x2(j)-x1(i))^2 + (y2(j)-y1(i))^2);
-</pre>
-<pre>               if del &lt; bestraw(i)
-</pre>
-<pre>                   bestraw(i) = del&nbsp;;
-</pre>
-<pre>                   matchraw(i) = j;
-</pre>
-<pre>               end
-</pre>
-<pre>           end
-</pre>
-<pre>       end
-</pre>
+
+<pre>       matchraw = zeros(npart1,1);<br /></pre>
+
+<pre>       bestraw = 1.0e6*ones(npart1,1);<br /></pre>
+
+<pre>       for i=1:npart1<br /></pre>
+
+<pre>           for j=1:npart2<br /></pre>
+
+<pre>               del=sqrt((x2(j)-x1(i))^2 + (y2(j)-y1(i))^2);<br /></pre>
+
+<pre>               if del &lt; bestraw(i)<br /></pre>
+
+<pre>                   bestraw(i) = del&nbsp;;<br /></pre>
+
+<pre>                   matchraw(i) = j;<br /></pre>
+
+<pre>               end<br /></pre>
+
+<pre>           end<br /></pre>
+
+<pre>       end<br /></pre>
+
 <p><br />
 </p>
-<pre>       matchbkg = zeros(npart2,1);
-</pre>
-<pre>       bestbkg = 1.0e6*ones(npart2,1);
-</pre>
-<pre>       for i=1:npart2
-</pre>
-<pre>           for j=1:npart1
-</pre>
-<pre>               del=sqrt((x1(j)-x2(i))^2 + (x1(j)-x2(i))^2);
-</pre>
-<pre>               if del &lt; bestbkg(i)
-</pre>
-<pre>                   bestbkg(i) = del&nbsp;;
-</pre>
-<pre>                   matchbkg(i) = j;
-</pre>
-<pre>               end
-</pre>
-<pre>           end
-</pre>
-<pre>       end
-</pre>
+
+<pre>       matchbkg = zeros(npart2,1);<br /></pre>
+
+<pre>       bestbkg = 1.0e6*ones(npart2,1);<br /></pre>
+
+<pre>       for i=1:npart2<br /></pre>
+
+<pre>           for j=1:npart1<br /></pre>
+
+<pre>               del=sqrt((x1(j)-x2(i))^2 + (x1(j)-x2(i))^2);<br /></pre>
+
+<pre>               if del &lt; bestbkg(i)<br /></pre>
+
+<pre>                   bestbkg(i) = del&nbsp;;<br /></pre>
+
+<pre>                   matchbkg(i) = j;<br /></pre>
+
+<pre>               end<br /></pre>
+
+<pre>           end<br /></pre>
+
+<pre>       end<br /></pre>
+
 <p><br />
 </p>
-<pre>       goodmatch=zeros(npart1,1);
-</pre>
-<pre>       for i=1:npart1
-</pre>
-<pre>           if matchraw(i) &gt; 0
-</pre>
-<pre>               if matchbkg(matchraw(i)) &gt; 0
-</pre>
-<pre>                   if matchbkg(matchraw(i)) == i
-</pre>
-<pre>                       goodmatch(i)=1;
-</pre>
-<pre>                   end
-</pre>
-<pre>               end
-</pre>
-<pre>           end
-</pre>
-<pre>       end
-</pre>
-<pre>       bestraw(goodmatch ~= 1) = -1;
-</pre>
-<pre>      &nbsp;% match(f) = 0;
-</pre>
+
+<pre>       goodmatch=zeros(npart1,1);<br /></pre>
+
+<pre>       for i=1:npart1<br /></pre>
+
+<pre>           if matchraw(i) &gt; 0<br /></pre>
+
+<pre>               if matchbkg(matchraw(i)) &gt; 0<br /></pre>
+
+<pre>                   if matchbkg(matchraw(i)) == i<br /></pre>
+
+<pre>                       goodmatch(i)=1;<br /></pre>
+
+<pre>                   end<br /></pre>
+
+<pre>               end<br /></pre>
+
+<pre>           end<br /></pre>
+
+<pre>       end<br /></pre>
+
+<pre>       bestraw(goodmatch ~= 1) = -1;<br /></pre>
+
+<pre>      &nbsp;% match(f) = 0;<br /></pre>
+
 <p><br />
 </p>
-<pre>       [y,xout] = hist(bestraw,31);&nbsp;% here some work is needed to update the x limits
-</pre>
+
+<pre>       [y,xout] = hist(bestraw,31);&nbsp;% here some work is needed to update the x limits<br /></pre>
+
 <p><br />
 </p>
-<pre>      &nbsp;%  accumulate the results for all the frames
-</pre>
-<pre>       Y = Y + y;
-</pre>
+
+<pre>      &nbsp;%  accumulate the results for all the frames<br /></pre>
+
+<pre>       Y = Y + y;<br /></pre>
+
 <p><br />
 </p>
-<pre>       fg = ((bestraw =0));
-</pre>
-<pre>       output = cat(1,output,[std(bestraw(fg)),sum(fg),npart1,npart2]);
-</pre>
+
+<pre>       fg = ((bestraw =0));<br /></pre>
+
+<pre>       output = cat(1,output,[std(bestraw(fg)),sum(fg),npart1,npart2]);<br /></pre>
+
 <p><br />
 </p>
-<pre>   end&nbsp;% of the loop for all frames
-</pre>
-<pre>  &nbsp;%% Report
-</pre>
-<pre>   figure
-</pre>
-<pre>   plot(xout(2:end-1),smooth(Y(2:end-1)),'b-','LineWidth',2)
-</pre>
-<pre>   title('Histogram of position differences');
-</pre>
-<pre>   xlabel('position difference (pixels)');
-</pre>
-<pre>   ylabel('counts');
-</pre>
+
+<pre>   end&nbsp;% of the loop for all frames<br /></pre>
+
+<pre>  &nbsp;%% Report<br /></pre>
+
+<pre>   figure<br /></pre>
+
+<pre>   plot(xout(2:end-1),smooth(Y(2:end-1)),'b-','LineWidth',2)<br /></pre>
+
+<pre>   title('Histogram of position differences');<br /></pre>
+
+<pre>   xlabel('position difference (pixels)');<br /></pre>
+
+<pre>   ylabel('counts');<br /></pre>
+
 <p><br />
 </p>
-<pre>   legend(sprintf('\n%f pixel error in&nbsp;%d positions matched out of \n%d particles in set 1 and&nbsp;%d in set 2\n\n',mean(output(:,1)),sum(output(:,2)),sum(output(:,3)),sum(output(:,4))));
-</pre>
-<pre>  &nbsp;%std_dev_good_matches = std(best(fg))
-</pre>
-<pre>  &nbsp;% diff = best(fg);
-</pre>
+
+<pre>   legend(sprintf('\n%f pixel error in&nbsp;%d positions matched out of \n%d particles in set 1 and&nbsp;%d in set 2\n\n',mean(output(:,1)),sum(output(:,2)),sum(output(:,3)),sum(output(:,4))));<br /></pre>
+
+<pre>  &nbsp;%std_dev_good_matches = std(best(fg))<br /></pre>
+
+<pre>  &nbsp;% diff = best(fg);<br /></pre>
+
 <p>end
-</p><p><br />
-With two subroutines to load the data from ETH format (camX.XXX_targets) and PIV STD format (ptcXXX.dat):
-</p><p>loadeth2d.m
 </p>
-<pre>       function [x,y] = loadeth2d(fname,camid)
-      &nbsp;% Loading ETH 2d format files
-       fid = fopen(fname,'r');
-       xy = textscan(fid,'%d%f%f%d%d%d%d%d','Headerlines',1);
-       x = xy{2};
-       y = xy{3};
-       fclose(fid);
-</pre>
-<p><br /> 
-</p><p>loadstd2d.m
+
+<p><br />
+With two subroutines to load the data from ETH format
+(camX.XXX_targets) and PIV STD format (ptcXXX.dat):
 </p>
-<pre>   function [x,y] = loadstd2d(fname,camid)
-</pre>
-<pre>      &nbsp;% Loading PIV STD 2d format files, ptc???.dat
-      &nbsp;%{ 
-      &nbsp;% from the project site
-       Particle Files  (ptc???.dat)
-                                #1 camera     #2 camera     #3 camera  intensity
-      ID    x      y      z      X      Y      X      Y      X      Y
-       4 -0.301  0.584  0.893 147.61  64.91  95.55  65.10  53.07  65.92 208.18
-       6 -0.898  1.266 -0.258   0.00   0.00   0.00   0.00  46.22   0.15 208.69
-       8  1.178  0.886  0.149 249.88  38.07 251.10  35.42 219.99  32.46 191.52
-       9  0.720 -1.242 -0.530 183.76 252.88 201.24 254.40   0.00   0.00 211.21
-</pre>
-<pre>      unit: x,y,z  [cm]
-            X,Y    [pixel]
-</pre>
-<pre>      The particle ID is unique number, therefore, the same particle could
-      be easily tracked with checking the ID for serial particle files.
-</pre>
-<pre>      &nbsp;%}
-       fid = fopen(fname,'r');
-       xy = textscan(fid,'%d%f%f%f%f%f%f%f%f%f%f');
-       x = xy{(camid-1)*2+5};
-       y = xy{(camid-1)*2+6};
-       fclose(fid); 
-</pre>
-<p><br /> 
-</p><p>The comparison of the 2D results is presented in the form of histograms of the pixel differences between the two files, and textual information regarding the number of particles found, related to the number of particles in 'theory'.
-</p><p><br /> 
-</p><p><br /> 
-</p></div>
-    </div>
-          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f16%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f16%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-40569.html">Login</a> or <a href="../../user/register/index-40569.html">register</a> to post comments</span></li>
-</ul></div>
-      </div>
-<div id="comments">
-  <a id="comment-21"></a>
-  <div class="comment">
-      <div class="clear-block">
-<h3 class="title"><a href="index.html#comment-21" class="active">case #352</a></h3>
-    <div class="submitted">Submitted by luethib on Wed, 2010-05-26 18:59.</div>
-  <div class="content">
-      <p>Hi Alex,
-</p><p>I finally tried to follow the case #352 to follow through the comparison (sorry it took so bloody long!). I find that the link below produces "URL not found...."?
-</p><p>1. Download images and the data for the test case #352 from the original web site <a href="http://piv.vsj.or.jp/piv/image3d/image352.html" class="external free" title="http://piv.vsj.or.jp/piv/image3d/image352.html">http://piv.vsj.or.jp/piv/image3d/image352.html</a> external (just in case the website/data will disappear, we'll keep a local copy on our web server)
-</p><p>also, I don't find the "...the ZIP file below includes the executable, so it's plug-n-play ready test case) ..".
-</p><p><br />
-I will no proceed and see how far I get. 
-Thanks and Best
+
+<p>loadeth2d.m
+</p>
+
+<pre>       function [x,y] = loadeth2d(fname,camid)<br />      &nbsp;% Loading ETH 2d format files<br />       fid = fopen(fname,'r');<br />       xy = textscan(fid,'%d%f%f%d%d%d%d%d','Headerlines',1);<br />       x = xy{2};<br />       y = xy{3};<br />       fclose(fid);<br /></pre>
+
+<p><br />
+</p>
+
+<p>loadstd2d.m
+</p>
+
+<pre>   function [x,y] = loadstd2d(fname,camid)<br /></pre>
+
+<pre>      &nbsp;% Loading PIV STD 2d format files, ptc???.dat<br />      &nbsp;%{ <br />      &nbsp;% from the project site<br />       Particle Files  (ptc???.dat)<br />                                #1 camera     #2 camera     #3 camera  intensity<br />      ID    x      y      z      X      Y      X      Y      X      Y<br />       4 -0.301  0.584  0.893 147.61  64.91  95.55  65.10  53.07  65.92 208.18<br />       6 -0.898  1.266 -0.258   0.00   0.00   0.00   0.00  46.22   0.15 208.69<br />       8  1.178  0.886  0.149 249.88  38.07 251.10  35.42 219.99  32.46 191.52<br />       9  0.720 -1.242 -0.530 183.76 252.88 201.24 254.40   0.00   0.00 211.21<br /></pre>
+
+<pre>      unit: x,y,z  [cm]<br />            X,Y    [pixel]<br /></pre>
+
+<pre>      The particle ID is unique number, therefore, the same particle could<br />      be easily tracked with checking the ID for serial particle files.<br /></pre>
+
+<pre>      &nbsp;%}<br />       fid = fopen(fname,'r');<br />       xy = textscan(fid,'%d%f%f%f%f%f%f%f%f%f%f');<br />       x = xy{(camid-1)*2+5};<br />       y = xy{(camid-1)*2+6};<br />       fclose(fid); <br /></pre>
+
+<p><br />
+</p>
+
+<p>The comparison of the 2D results is presented in the form of
+histograms of the pixel differences between the two files, and textual
+information regarding the number of particles found, related to the
+number of particles in 'theory'.
+</p>
+
+<p><br />
+</p>
+<div id="comments"> <a id="comment-21">
+</a><div class="comment">
+<div class="clear-block">
+<h3 class="title"><a href="index.html#comment-21" class="active">case
+#352</a></h3>
+<div class="submitted">Submitted by luethib on Wed, 2010-05-26 18:59.</div>
+<div class="content">
+<p>Hi Alex,
+</p>
+<p>I finally tried to follow the case #352 to follow through the
+comparison (sorry it took so bloody long!). I find that the link below
+produces "URL not found...."?
+</p>
+<p>1. Download images and the data for the test case #352 from the
+original web site <a href="http://piv.vsj.or.jp/piv/image3d/image352.html" class="external free" title="http://piv.vsj.or.jp/piv/image3d/image352.html">http://piv.vsj.or.jp/piv/image3d/image352.html</a>
+external (just in case the website/data will disappear, we'll keep a
+local copy on our web server)
+</p>
+<p>also, I don't find the "...the ZIP file below includes the
+executable, so it's plug-n-play ready test case) ..".
+</p>
+<p><br />
+I will no proceed and see how far I get. Thanks and Best
 Beat
-</p><p><br />
-</p>        </div>
-  </div>
-  <div class="links">
-    &raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f16%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f16%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-40569.html">Login</a> or <a href="../../user/register/index-40569.html">register</a> to post comments</span></li>
-</ul>  </div>
+</p>
+<p><br />
+</p>
 </div>
-<div class="indented"><a id="comment-23"></a>
-  <div class="comment">
-      <div class="clear-block">
-<h3 class="title"><a href="index.html#comment-23" class="active">PIV standard images new link</a></h3>
-    <div class="submitted">Submitted by alexl on Thu, 2010-05-27 05:42.</div>
-  <div class="content">
-      <p>Hi Beat
-</p><p>Sorry for not updating it everywhere. the correct link now is: <a href="http://www.piv.jp/image3d/image352.html" class="external free" title="http://www.piv.jp/image3d/image352.html">http://www.piv.jp/image3d/image352.html</a>
-</p><p>just in case the data is not there, i keep a copy on <a href="http://dl.dropbox.com/u/5266698/piv_std_352.tgz" class="external free" title="http://dl.dropbox.com/u/5266698/piv_std_352.tgz">http://dl.dropbox.com/u/5266698/piv_std_352.tgz</a>
-</p><p>and my processed data is on <a href="http://dl.dropbox.com/u/5266698/3dptv_testcase_352.zip" class="external free" title="http://dl.dropbox.com/u/5266698/3dptv_testcase_352.zip">http://dl.dropbox.com/u/5266698/3dptv_testcase_352.zip</a>
-</p><p><br />
-</p><p><br />
-</p>        </div>
-  </div>
-  <div class="links">
-    &raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f16%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f16%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-40569.html">Login</a> or <a href="../../user/register/index-40569.html">register</a> to post comments</span></li>
-</ul>  </div>
 </div>
-</div></div>
-		<!-- CONTENT END -->
 
-		
-	</div>
-<!-- END MAIN -->
-
-<!-- START FOOTER -->
-	<div id="footer">
-		<a href="http://oriact.com">Powered by</a><br/>
-		<a href="http://oriact.com"><img width="85" height="20" src="../../sites/all/themes/oxymoron/oriact_button.png" alt="Powered by Oriact"/></a><br/>
-		<div class="clear-block block block-origo_eth" id="block-origo_eth-0">
-  
-  <div class="content"><a href="http://origo.ethz.ch">Hosted on </a><br/><a href="http://origo.ethz.ch"><img width="85" height="20" src="../../sites/all/themes/oxymoron/origo_button_1.png" alt="Hosted on Origo"/></a><br/><a href="http://origo.ethz.ch">a project by ETH Zürich</a><br/>&copy;<a href="http://origo.ethz.ch"> 2006 - 2010</a><br/><a href="../../global/terms_of_use/index.html">Terms of Use</a><br/></div>
 </div>
-	</div>
-<!-- END FOOTER -->
-
-  <!-- CLOSURE (e.g. javascript) -->
-    <script type="text/javascript" src="../../sites/all/modules/google_cse/google_cse.js?n"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "googleCSE": { "language": "en" } });
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-if (Drupal.jsEnabled) {
-      $(document).ready(function() {
-        $('a.origo-private').each(function() {
-          $(this).append('&nbsp;<img src="/sites/all/themes/oxymoron/private-page-link.png" alt="private"/>');
-        });
-      });
-    }
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-if (Drupal.jsEnabled) {
-      $(document).ready(function() {
-        $('a.external').each(function() {
-          $(this).append('&nbsp;<img src="/sites/all/modules/mediawiki_filter/external.png" alt="external"/>');
-        });
-      });
-    }
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-1676928-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
-//--><!]]>
-</script>
-
-</body>
-
-</html>
-<!-- Localized -->
+<div class="indented"><a id="comment-23">
+</a><div class="comment">
+<div class="clear-block">
+<h3 class="title"><a href="index.html#comment-23" class="active">PIV
+standard images new link</a></h3>
+<div class="submitted">Submitted by alexl on Thu, 2010-05-27 05:42.</div>
+<div class="content">
+<p>Hi Beat
+</p>
+<p>Sorry for not updating it everywhere. the correct link now is: <a href="http://www.piv.jp/image3d/image352.html" class="external free" title="http://www.piv.jp/image3d/image352.html">http://www.piv.jp/image3d/image352.html</a>
+</p>
+<p>just in case the data is not there, i keep a copy on <a href="http://dl.dropbox.com/u/5266698/piv_std_352.tgz" class="external free" title="http://dl.dropbox.com/u/5266698/piv_std_352.tgz">http://dl.dropbox.com/u/5266698/piv_std_352.tgz</a>
+</p>
+<p>and my processed data is on <a href="http://dl.dropbox.com/u/5266698/3dptv_testcase_352.zip" class="external free" title="http://dl.dropbox.com/u/5266698/3dptv_testcase_352.zip">http://dl.dropbox.com/u/5266698/3dptv_testcase_352.zip</a>
+</p>
+<p></p></div>
+</div>
+</div></div></div>
+</body></html>

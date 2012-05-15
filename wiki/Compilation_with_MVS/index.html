@@ -1,18 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+
   
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Compilation with MVS | ptv</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Compilation with MVS | ptv</title>
+  
 
   
   
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-</head><body>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head><body>
 <br style="font-family: Helvetica,Arial,sans-serif;" />
 
 <div style="font-family: Helvetica,Arial,sans-serif;" id="main">
-<h1 class="title"> Compilation with MVS </h1>
+<h1 class="title"> Compilation with Microsoft Visual Studio<br />
+ </h1>
 <br />
 &nbsp;
 <div class="node">
@@ -20,45 +20,43 @@
 <div class="content">
 <p style="font-size: large;">MVS environment</p>
 <p>We recommend you use the Microsoft Visual Studio environment, we use
-Microsoft Visual C++ 2005. (e.g. free Express version <a href="http://www.microsoft.com/express/" class="external free" title="http://www.microsoft.com/express/">http://www.microsoft.com/express/</a>
-)
-</p><a name="We_re_in_process_of_moving_our_development_to_Github_more_news_soon" /><br />
-<p><a name="We_re_in_process_of_moving_our_development_to_Github_more_news_soon"><br />
-</a><a href="http://tortoisesvn.net/downloads" class="external free" title="http://tortoisesvn.net/downloads"></a>
-</p>
-<p style="font-size: large;">Checkout the 3D-PTV project from Github:</p>
+Microsoft Visual C++ Express.&nbsp; <a href="http://www.microsoft.com/express/" class="external free" title="http://www.microsoft.com/express/">http://www.microsoft.com/express</a></p><p style="font-size: large;">Checkout the 3D-PTV project from Github:</p>
 <p style="font-size: large;">http://github.com/3dptv/3dpv</p>
 <p style="font-size: large;">or download the zip of the latest development version: <a href="https://github.com/3dptv/3dptv/zipball/master">https://github.com/3dptv/3dptv/zipball/master</a><br />
-</p>
-
-<div class="thumb tright">
-<div class="thumbinner" style="width: 182px;"><a href="../../image/checkout/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/checkout.jpg" class="thumbimage" border="0" height="279" width="180" /></a>
-<div class="thumbcaption">
-<div class="magnify" style="float: right;"><a href="../../image/checkout/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div>
-</div>
-</div>
-</div><br />
+</p><br />
+Check that:<br />
 <br />
-Prepare an empty folder on your hard drive, for example <span class="geshifilter"><code class="text geshifilter-text">D:\svn-ptv</code></span>.
-Right click this folder and then select <span class="geshifilter"><code class="text geshifilter-text">SVN checkout...</code></span>. As <span class="geshifilter"><code class="text geshifilter-text">URL of
-repository</code></span> we recommend to use either <span class="geshifilter"><code class="text geshifilter-text">https://svn.origo.ethz.ch/ptv/branches/stable_Sept09</code></span>
-or <span class="geshifilter"><code class="text geshifilter-text">https://svn.origo.ethz.ch/ptv/</code></span>.
-The former is tested and stable and the latter guaranties that you will
-always have the latest version.
-<p>If you use the <span class="geshifilter"><code class="text geshifilter-text">trunk</code></span> version make sure
-that whenever you work again with 3D-PTV right-click your <span class="geshifilter"><code class="text geshifilter-text">D:\svn-ptv</code></span>
-folder and update it to the most current version. <b>If you make a
-useful modification to the code yourself use the <span class="geshifilter"><code class="text geshifilter-text">SVN Update</code></span>
-function and we will all profit from it</b>. You may also choose to
-create a <span class="geshifilter"><code class="text geshifilter-text">branch</code></span>
-so you can develop your own version of the code.
-</p>
-<p style="font-size: large;">Download the project file</p>
-<p>Download (by right-clicking, <span class="geshifilter"><code class="text geshifilter-text">Save Link As...</code></span>) the <a href="../../system/files/3dptv.vcproj" class="external text" title="http://ptv.origo.ethz.ch/system/files/3dptv.vcproj">project file</a>
-and store it inside the <span class="geshifilter"><code class="text geshifilter-text">src_c</code></span> folder. Of course
-you can create your own project on other platforms than MVS, but for
-MVS this is the easiest way.
-</p>
+1. You install Tcl/Tk - note that you must install 8.4 branch (and not
+the newer ones as these were never tested). Download one from ActiveTcl
+website. We also recommend to install it in C:\Tcl (rather than
+C:\Program Files\Tcl)<br />
+<br />
+2. download the latest version of 3D-PTV from here: https://github.com/3dptv/3dptv/zipball/master, extract it to C:\PTV<br />
+<br />
+3. download the 3dptv.vcproj file (from here http://3dptv.github.com/system/files/3dptv.vcproj), put it in C:\PTV<br />
+<br />
+4. Open your C++ Express -&gt; Open Project -&gt; Use
+C:/PTV/3dptv.vcproj file. It's an old file and probably needs to be
+converted, I do not know if it works or how it will proceed from here.
+If it works, so things might work just out of the box. <br />
+<br />
+If it doesn't, I give you the major points to be done:<br />
+<br />
+1. Open a new project in C++ Express, use Command Line project option (no windows graphics, not win32, nothing like that)<br />
+2. Add the header files (.h) and source files (.cpp) to the project via Add Source<br />
+3. Set up directories (see below the screenshot):<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp; a) add C:/Tcl/include (or something like that under
+C:/Tcl/) to the Include directories under the general settings or under
+Configuration Properties - &gt; Linker -&gt; Include Dir<br />
+&nbsp;&nbsp;&nbsp; b) Set your working directory path correctly under
+Configuration Properties -&gt; Debugging -&gt; Working Directory
+(Working directory is the test directory in your folder)<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp; c) add C:/PTV/ptv.tcl file as an input to Configuration Properties -&gt; Debugging -&gt; Command Arguments <br />
+(steps 1,2, and 3a were supposed to be included in the 3dptv.vcproj file)<br />
+<br />
+<br />
 <p style="font-size: large;">Set two paths in the project settings</p>
 <div class="thumb tright">
 <div class="thumbinner" style="width: 182px;"><a href="../../image/paths_to_be_adapted/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/paths.preview.jpg" class="thumbimage" border="0" height="130" width="180" /></a>
@@ -87,6 +85,10 @@ and <span class="geshifilter"><code class="text geshifilter-text">cal</code></sp
 </div><br />
 <br />
 <br />
+<span class="submitted"><span class="taxonomy"><br />
+Now if all is installed correctly, pressing <span style="font-weight: bold;">Run</span> (green arrow) button should compile and execute the software. <br />
+</span></span><br />
+<br />
 Run the code by clicking the green arrow. You should see the main
 window of the 3D-PTV GUI.
 <div class="thumb tright">
@@ -102,38 +104,4 @@ window of the 3D-PTV GUI.
 <p><br />
 <a href="../Download_and_install_3D-PTV/index.html" class="extiw path" title="path:wiki/Download and install 3D-PTV"> back to Download and
 install 3D-PTV</a>
-</p>
-<p><br />
-</p>
-<table id="attachments" class="sticky-enabled">
-  <thead><tr>
-    <th>Attachment</th>
-    <th>Size</th>
-  </tr>
-  </thead><tbody>
-    <tr class="odd">
-      <td><a href="../../system/files/3dptv.vcproj">3dptv.vcproj</a></td>
-      <td>5.54 KB</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</span></span></div>
-</div><div id="comments"><div class="indented"><div class="comment"><div class="clear-block"><div class="content">
-<p>download this file <a href="../../system/files/3dptv.vcproj" class="external free" title="http://ptv.origo.ethz.ch/system/files/3dptv.vcproj">http://ptv.origo.ethz.ch/system/files/3dptv.vcproj</a>
-and if you have Microsoft Visual Studio installed, double-click on this
-file should open the Solution Explorer. See the snapshots above on the
-right side of this web page.
-</p>
-</div>
-</div>
-
-</div>
-</div>
-</div>
- </div>
-
-
-
-
-</body></html>
+</p></div></span></span></div></div></div></body></html>
