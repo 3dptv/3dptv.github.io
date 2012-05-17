@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
 
   
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Compilation with MVS | ptv</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Compilation with Visual C++ 2010 Express | ptv</title>
   
 
   
@@ -18,90 +18,31 @@
 <div class="node">
 <div class="clear-block"> <span class="submitted"> <span class="taxonomy">
 <div class="content">
-<p style="font-size: large;">MVS environment</p>
-<p>We recommend you use the Microsoft Visual Studio environment, we use
-Microsoft Visual C++ Express.&nbsp; <a href="http://www.microsoft.com/express/" class="external free" title="http://www.microsoft.com/express/">http://www.microsoft.com/express</a></p><p style="font-size: large;">Checkout the 3D-PTV project from Github:</p>
-<p style="font-size: large;">http://github.com/3dptv/3dpv</p>
-<p style="font-size: large;">or download the zip of the latest development version: <a href="https://github.com/3dptv/3dptv/zipball/master">https://github.com/3dptv/3dptv/zipball/master</a><br />
-</p><br />
-Check that:<br />
-<br />
-1. You install Tcl/Tk - note that you must install 8.4 branch (and not
-the newer ones as these were never tested). Download one from ActiveTcl
-website. We also recommend to install it in C:\Tcl (rather than
-C:\Program Files\Tcl)<br />
-<br />
-2. download the latest version of 3D-PTV from here: https://github.com/3dptv/3dptv/zipball/master, extract it to C:\PTV<br />
-<br />
-3. download the 3dptv.vcproj file (from here http://3dptv.github.com/system/files/3dptv.vcproj), put it in C:\PTV<br />
-<br />
-4. Open your C++ Express -&gt; Open Project -&gt; Use
-C:/PTV/3dptv.vcproj file. It's an old file and probably needs to be
-converted, I do not know if it works or how it will proceed from here.
-If it works, so things might work just out of the box. <br />
-<br />
-If it doesn't, I give you the major points to be done:<br />
-<br />
-1. Open a new project in C++ Express, use Command Line project option (no windows graphics, not win32, nothing like that)<br />
-2. Add the header files (.h) and source files (.cpp) to the project via Add Source<br />
-3. Set up directories (see below the screenshot):<br />
-&nbsp;<br />
-&nbsp;&nbsp;&nbsp; a) add C:/Tcl/include (or something like that under
-C:/Tcl/) to the Include directories under the general settings or under
-Configuration Properties - &gt; Linker -&gt; Include Dir<br />
-&nbsp;&nbsp;&nbsp; b) Set your working directory path correctly under
-Configuration Properties -&gt; Debugging -&gt; Working Directory
-(Working directory is the test directory in your folder)<br />
-&nbsp;<br />
-&nbsp;&nbsp;&nbsp; c) add C:/PTV/ptv.tcl file as an input to Configuration Properties -&gt; Debugging -&gt; Command Arguments <br />
-(steps 1,2, and 3a were supposed to be included in the 3dptv.vcproj file)<br />
-<br />
-<br />
-<p style="font-size: large;">Set two paths in the project settings</p>
-<div class="thumb tright">
-<div class="thumbinner" style="width: 182px;"><a href="../../image/paths_to_be_adapted/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/paths.preview.jpg" class="thumbimage" border="0" height="130" width="180" /></a>
-<div class="thumbcaption">
-<div class="magnify" style="float: right;"><a href="../../image/paths_to_be_adapted/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div>
-</div>
-</div>
-</div><br />
-<br />
-Open the project and in the &lt;Solution Explorer&gt; at the top of the
-file tree you will see <span class="geshifilter"><code class="text geshifilter-text">3D-PTV</code></span>. Right-click it and
-go to <span class="geshifilter"><code class="text geshifilter-text">Configuration
-Porperties-&gt;Debugging-&gt;Command Arguments/Working Directory</code></span>.
-Enter the paths according to your file structure that they point to <span class="geshifilter"><code class="text geshifilter-text">ptv.tcl</code></span>
-and the the folder where you have your folders <span class="geshifilter"><code class="text geshifilter-text">res</code></span>,
-<span class="geshifilter"><code class="text geshifilter-text">img</code></span>,
-<span class="geshifilter"><code class="text geshifilter-text">parameters</code></span>
-and <span class="geshifilter"><code class="text geshifilter-text">cal</code></span>.
-<p style="font-size: large;">And off you go...</p>
-<div class="thumb tright">
-<div class="thumbinner" style="width: 182px;"><a href="../../image/start/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/start.preview.jpg" class="thumbimage" border="0" height="104" width="180" /></a>
-<div class="thumbcaption">
-<div class="magnify" style="float: right;"><a href="../../image/start/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div>
-</div>
-</div>
-</div><br />
-<br />
-<br />
-<span class="submitted"><span class="taxonomy"><br />
-Now if all is installed correctly, pressing <span style="font-weight: bold;">Run</span> (green arrow) button should compile and execute the software. <br />
-</span></span><br />
-<br />
-Run the code by clicking the green arrow. You should see the main
-window of the 3D-PTV GUI.
-<div class="thumb tright">
-<div class="thumbinner" style="width: 182px;"><br />
-<br />
-<br />
-<a href="../../image/maingui/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/mainGui.preview.jpg" class="thumbimage" border="0" height="69" width="180" /></a>
-<div class="thumbcaption">
-<div class="magnify" style="float: right;"><a href="../../image/maingui/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div>
-</div>
-</div>
-</div>
-<p><br />
-<a href="../Download_and_install_3D-PTV/index.html" class="extiw path" title="path:wiki/Download and install 3D-PTV"> back to Download and
-install 3D-PTV</a>
+
+Prerequisities:
+
+1. Download and install ActiveTCL 8.4 ( not 8.5 or 8.6) e.g. 
+http://downloads.activestate.com/ActiveTcl/releases/8.4.19.6/ActiveTcl8.4.19.6.295590-win32-ix86-threaded.exe 
+
+Install it to C:\Tcl (the path is important)
+
+2. Download Visual C++  2010 Express http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express
+
+Install it anywhere, e.g. C:\Program Files\VC2010
+
+3. Download and unpack the newest version of 3DPTV software from our tarball on Github:
+https://github.com/3dptv/3dptv/zipball/master
+
+Install it to C:\PTV (the path is important)
+
+4. Double-click the C:\PTV\3dptv_vc2010\3dptv_vc2010.sln to open the 3DPTV package in Visual C++ 2010 Express. 
+
+5. If all the paths are the same as ours, Build the solution and you should see the 3DPTV software up and running
+
+If you use different paths it is important to:
+a) add \Tcl\Include to the list of included directories
+b) add \Tcl\tcl84.lib and \Tcl\tk84.lib to the additional libraries
+c) on Windows XP it is important to ignore LIBC.LIB and also to use MFC as Static Library
+
+
 </p></div></span></span></div></div></div></body></html>
