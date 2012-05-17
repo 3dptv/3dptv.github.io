@@ -15,61 +15,30 @@
 <h1 class="title"> Download and install 3D-PTV </h1>
 <br />
 
-<h2><a name="Subscribe"> </a><a name="Subscribe"><br />
-</a></h2>
-<p>
-</p>
-<a name="Download_Tcl_tk_software">
-</a>
-<h2><a name="Download_Tcl_tk_software"> <span class="mw-headline"><b>3D-PTV
-dependencies:</b></span></a></h2>
-<h3><a name="Download_Tcl_tk_software"><span class="mw-headline"><b><span class="">Download Tcl/tk software</span></b></span></a></h3>
-<p><a name="Download_Tcl_tk_software">We recommend the
-'batteries-included' ActiveTcl. Use the version </a><a href="http://www.tcl.tk/software/tcltk/8.4.html" class="external text" title="http://www.tcl.tk/software/tcltk/8.4.html">8.4.x</a>. 8.5.x has
-few function calls different so we compile our versions with the
-8.4.19. Install it at the location: <span class="geshifilter"><code class="text geshifilter-text">C:/Tcl</code></span>.
-</p>
-<p><br />
-</p>
-<a name="Follow_the_instructions:">
-</a>
-<h2><a name="Follow_the_instructions:"> <span class="mw-headline"><b>Follow
-the instructions:</b></span></a></h2>
-<ul>
-  <a name="Follow_the_instructions:"> </a>
-  <li><a href="../Compilation_with_MVS/index.html" class="extiw path" title="path:wiki/Compilation with MVS"> Compilation with MVS</a> </li>
-</ul>
-<p><br />
-</p>
-</div>
+Prerequisities:
+
+1. Download and install ActiveTCL 8.4 ( not 8.5 or 8.6) e.g. 
+http://downloads.activestate.com/ActiveTcl/releases/8.4.19.6/ActiveTcl8.4.19.6.295590-win32-ix86-threaded.exe 
+
+Install it to C:\Tcl (the path is important)
+
+2. Download Visual C++  2010 Express http://www.microsoft.com/visualstudio/en-us/products/2010-editions/visual-cpp-express
+
+Install it anywhere, e.g. C:\Program Files\VC2010
+
+3. Download and unpack the newest version of 3DPTV software from our tarball on Github:
+https://github.com/3dptv/3dptv/zipball/master
+
+Install it to C:\PTV (the path is important)
+
+4. Double-click the C:\PTV\3dptv_vc2010\3dptv_vc2010.sln to open the 3DPTV package in Visual C++ 2010 Express. 
+
+5. If all the paths are the same as ours, Build the solution and you should see the 3DPTV software up and running
+
+If you use different paths it is important to:
+a) add \Tcl\Include to the list of included directories
+b) add \Tcl\tcl84.lib and \Tcl\tk84.lib to the additional libraries
+c) on Windows XP it is important to ignore LIBC.LIB and also to use MFC as Static Library
 
 
-
-<div id="comments"> <a id="comment-76">
-</a>
-<div class="comment">
-<div class="clear-block">
-<h3 class="title"><a href="index.html#comment-76" class="active">"Batteries
-included" is outdated - use the SVN option</a></h3>
-<div class="submitted">Submitted by alexl on Thu, 2011-09-22 19:51.</div>
-<div class="content">
-<p>"Batteries included" is outdated - use the SVN option to get the
-most recent software.
-</p>
-<p>In short: </p>
-<p>1. Download Tcl/Tk (8.4 version)
-</p>
-<p>2. Download SVN client (TortoiseSVN on Windows, SVNX on Mac OS X)
-</p>
-<p>3. Download compiler - Microsoft Visual C Express is the best choice
-on Windows, *nix has g++ included
-</p>
-<p>4. Using SVN client get the software by <span class="geshifilter"><code class="text geshifilter-text">&nbsp;svn checkout ...</code></span>
-(see the instructions) TRUNK is recommended
-</p>
-<p>5. Follow the compilation instructions to get the source code
-compiled together with the Tcl/Tk includes and libraries.
-</p>
-
-</div></div></div></div>
 </body></html>
