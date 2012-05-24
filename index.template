@@ -9,10 +9,10 @@
 
   
   
-  <link rel="stylesheet" href="stylesheets/styles.css">
+  <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/styles.css">
 
   
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/pygment_trac.css">
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -24,10 +24,10 @@
 <div class="wrapper"> 
 <header> 
 <h1>3D PTV</h1>
-<img style="width: 200px; " alt="3D-PTV" src="./image/ptv_0.jpg">
+<img style="width: 200px; " alt="3D-PTV" src="http://3dptv.github.com/image/ptv_0.jpg">
 
 <p>3D Particle Tracking Velocimetry software on Github
-(http://3dptv.github.com)</p>
+(<a href="http://3dptv.github.com/">http://3dptv.github.com</a>)</p>
 <p class="view"><a href="https://github.com/3dptv/3dptv">View the
 Project on GitHub <small>3dptv/3dptv</small></a></p>
 <ul>
@@ -78,5 +78,5 @@ acceleration and its spatial derivatives of higher moments.
 
 </div>
 
-<script src="javascripts/scale.fix.js"></script>
+<script src="http://3dptv.github.com/javascripts/scale.fix.js"></script>
 </body></html>
