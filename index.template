@@ -27,7 +27,7 @@
 <img style="width: 200px; " alt="3D-PTV" src="./image/ptv_0.jpg">
 
 <p>3D Particle Tracking Velocimetry software on Github
-(<a href="http://3dptv.github.com"> http://3dptv.github.com </a>)</p>
+(http://3dptv.github.com)</p>
 <p class="view"><a href="https://github.com/3dptv/3dptv">View the
 Project on GitHub <small>3dptv/3dptv</small></a></p>
 <ul>
@@ -60,7 +60,7 @@ acceleration and its spatial derivatives of higher moments.
   <li><a href="https://github.com/3dptv/3dptv/blob/master/INSTALL.rst"> How to install 3D-PTV?</a> </li>
   <li><a target="_blank" href="https://github.com/3dptv/3dptv"> How to contribute to 3D-PTV? </a> </li>
   <li> <a href="wiki/Documentation_and_manual/index.html"> Documentation </a> </li>
-  <li><a href="wiki/3d_ptv_projects.html"> Showcases of the 3D-PTV
+  <li><a href="wiki/3D-PTV_projects/index.html"> Showcases of the 3D-PTV
 	projects </a> </li>
   <li> <a href="http://www.photrack.ch/"><font size="3"> New:
 	Professional consulting by Beat Lüthi's startup  photrack
