@@ -1,133 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Trouble shooting the laser | ptv</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="../../sites/all/themes/oxymoron/favicon.ico" type="image/x-icon" />
-  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/origo_home/css/origo_home-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/geshifilter/geshifilter-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/google_cse/google_cse-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mediawiki_filter/mediawiki_filter-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/forum/forum-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/mainmenu-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/iconsmenu-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/night-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/day-36200.css" />
-<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/oxymoron/css/print-36200.css" />
-  <script type="text/javascript" src="../../misc/jquery.js?n"></script>
-<script type="text/javascript" src="../../misc/drupal.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/mediawiki_filter/mediawiki_filter.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/jquery_example/jquery.example.min.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/oxymoron.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/mainmenu.js?n"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": "1", "trackMailto": "1", "trackDownload": "1", "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-Drupal.behaviors.issue_tracker = function(context) {
-        $('a[class=extiw issue]').each(function() {
-          // extract issue number from the URL
-          var issueURL = $(this)[0].href;
-          var issueURLSplitted = issueURL.split('/')
-          var issueNumber = issueURLSplitted[issueURLSplitted.length - 1];
-
-          var target= $(this);
-          $.get(Drupal.settings.basePath + "ajax/issue_get_status/" + issueNumber, null, function(response) {
-            var result = Drupal.parseJson(response);
-
-            var decorationString = "";
-            if (result.issueClosedStatus == true) {
-              decorationString = 'line-through';
-            }
-            $(target).css('text-decoration', decorationString);
-          });
-        });
-      }
-//--><!]]>
-</script>
-  <style type="text/css" media="print">@import "../../sites/all/themes/oxymoron/css/print.css";</style>
-  <script type="text/javascript"> </script>
-  <!--[if IE 7]>
-  	<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style_ie7.css" />
-  <![endif]-->
-
-</head>
-
-<body>
-
-<!-- START HEADER -->
-    <div id="mainheader">
-    
-        <div id="logo">
-			            <a class="logo_link" href="../../index.html" title="Home" rel="home" id="logo">
-                <img src="../../sites/ptv/files/ptv_0.jpg" alt="Home"/>
-            </a>
-						            <div id="site-name-frame">
-				                <h1 class='site-name'><a href="../../index.html" title="Home">3D-PTV</a></h1>
-				            </div>
-        </div>
-
-        <ul id="user-info">
-                                  <li><a href="../../user/register/index-58396.html">Register</a></li>
-                    <li><a href="../../user/index-58396.html">Sign in</a></li>
-                      </ul>
-        <div id='search-box'><form action="/wiki/Trouble_shooting_the_laser"  accept-charset="UTF-8" method="post" id="search-theme-form">
-<div><div class="form-item" id="edit-search-theme-form-1-wrapper">
- <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
-</div>
-<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
-<input type="hidden" name="form_build_id" id="form-e0b1b3b00ff3cb4f0569b8c2ac4d0a90" value="form-e0b1b3b00ff3cb4f0569b8c2ac4d0a90"  />
-<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
-<input type="hidden" name="3" id="edit-3" value=""  />
-
-</div></form>
-</div>
-	
-		<div id="iconsmenu">
-		  <!-- START TOP NAV -->
-					  					  
-<ul id='navlist'>
-	<li><a href="../../index.html" title="Home" class="home"><div class="home"><span class="notext">Home</span></div></a></li>
-	<li><a href="../../download/index.html" title="Download" class="download"><div class="download"><span class="notext">Download</span></div></a></li>
-	<li><a href="../../forum/index.html" title="Forum" class="forum"><div class="forum"><span class="notext">Forum</span></div></a></li>
-	<li><a href="../../blog/index.html" title="Issues" class="blog"><div class="blog"><span class="notext">Blog</span></div></a></li>
-	<li><a href="../../issues/index.html" title="Issues" class="issues"><div class="issues"><span class="notext">Issues</span></div></a></li>
-	<li><a href="../../statistics/index.html" title="Statistics" class="statistics"><div class="statistics"><span class="notext">Statistics</span></div></a></li>
-</ul>
-					  					  <br class="clear" />
-			  <!-- END TOP NAV -->
-		</div>
-				<div class='main_navi'>
-			<div class="clear-block block block-origo_home" id="block-origo_home-0">
-  
-  <div class="content"><ul class="menu"><li class="collapsed"><a href="../../search_global/index.html">Global Search</a></li></ul></div>
-</div>
-		</div>
-			
-    </div>
-<!-- END HEADER -->
-
-<!-- START MAIN -->
-	<div class="tabs"></div>
-
-	<div id="main">
-		<!-- START TITLE -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>3D PTV</title>
+    <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/styles.css">
+    <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>3D PTV</h1>
+        <img style="width: 200px; " alt="3D-PTV" src="http://3dptv.github.com/image/ptv_0.jpg">
+        <p>3D Particle Tracking Velocimetry software on Github (<a href="http://3dptv.github.com">
+            http://3dptv.github.com </a>)</p>
+        <p class="view"><a href="https://github.com/3dptv/3dptv">View the
+            Project on GitHub <small>3dptv/3dptv</small></a></p>
+        <ul>
+          <li><a href="https://github.com/3dptv/3dptv/zipball/master">Download <strong>ZIP
+                File</strong></a></li>
+          <li><a href="https://github.com/3dptv/3dptv/tarball/master">Download <strong>TAR
+                Ball</strong></a></li>
+          <li><a href="https://github.com/3dptv/3dptv">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
 				   <h1 class="title">
 			 			 Trouble shooting the laser			 		   </h1>
 				<!-- END TITLE -->
@@ -141,42 +42,42 @@ Drupal.behaviors.issue_tracker = function(context) {
     <span class="taxonomy"></span>
     <div class="content"><p>Light source is the hardware backbone of the 3D-PTV experiment. Sporadic problem of shutting down the laser during an experiment and/or malfunctioning from the very beginning inspire one to unveil the problem and fix the error.
 </p>
-<div class="center"><div class="floatnone"><span><a href="../../image/laser/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/laser.jpg" width="1000" height="169.099756691" border="0" /></a></span></div></div> 
+<div class="center"><div class="floatnone"><span><a href="../../image/laser/index.html" class="image" title=""><img alt="" src="../../image/laser.jpg" width="1000" height="169.099756691" border="0" /></a></span></div></div> 
 <p><br />
 </p><p>Frequently encountered problems include when  <b><font color="orange">flow rate is inadequate,cover interlock and auxiliary interlock are open</font></b>.
 </p><p>Specifically what triggers the laser shut down can be figured out from the <b><font color="orange"> Interlock STATUS indicators</font></b> warning displayed on the <b><font color="orange"> Remote Control Module</font></b> shown below. 
 </p>
-<div class="center"><div class="floatnone"><span><a href="../../image/meter/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/meter.jpg" width="250" height="426.646706587" border="0" /></a></span></div></div> 
+<div class="center"><div class="floatnone"><span><a href="../../image/meter/index.html" class="image" title=""><img alt="" src="../../image/meter.jpg" width="250" height="426.646706587" border="0" /></a></span></div></div> 
 <p>Here is the pictorial demonstration that will guide one to address the problem and the way to solve it.
 </p>
 <b><font color="steelblue"><p style="font-size:large;">Flow indicator is on</p></font></b>
 <hr />
-<p><a href="../../image/big_cover_unlock/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/big%20cover%20unlock.preview.jpg" width="200" height="170" border="0" /></a>
-<a href="../../image/big_cover_uplift2/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/big%20cover%20uplift2.jpg" width="200" height="170" border="0" /></a> 
-<a href="../../image/yk/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/keep%20yellow%20key%20in%20place_2.preview.jpg" width="200" height="170" border="0" /></a> 
-<a href="../../image/yellow_key_placement/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/yellow%20key%20placement_0.jpg" width="200" height="170" border="0" /></a> 
-<a href="../../image/press_and_rotate/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/press%20and%20rotate.preview.jpg" width="200" height="170" border="0" /></a> 
-<a href="../../image/yellow_key_zoomed/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/yellow%20key%20zoomed.jpg" width="200" height="170" border="0" /></a> 
-<a href="../../image/final_look_yeloow_key2/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/final%20look%20yeloow%20key2_0.jpg" width="200" height="170" border="0" /></a> 
-<a href="../../image/inside_laser/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/inside%20laser.preview.jpg" width="200" height="170" border="0" /></a> 
-<a href="../../image/black_cover_unlock2/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/black%20cover%20unlock2.preview.jpg" width="200" height="170" border="0" /></a>
-<a href="../../image/black_cover_remove3/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/black%20cover%20remove3.preview.jpg" width="200" height="170" border="0" /></a>  
+<p><a href="../../image/big_cover_unlock/index.html" class="image" title=""><img alt="" src="../../image/big%20cover%20unlock.preview.jpg" width="200" height="170" border="0" /></a>
+<a href="../../image/big_cover_uplift2/index.html" class="image" title=""><img alt="" src="../../image/big%20cover%20uplift2.jpg" width="200" height="170" border="0" /></a> 
+<a href="../../image/yk/index.html" class="image" title=""><img alt="" src="../../image/keep%20yellow%20key%20in%20place_2.preview.jpg" width="200" height="170" border="0" /></a> 
+<a href="../../image/yellow_key_placement/index.html" class="image" title=""><img alt="" src="../../image/yellow%20key%20placement_0.jpg" width="200" height="170" border="0" /></a> 
+<a href="../../image/press_and_rotate/index.html" class="image" title=""><img alt="" src="../../image/press%20and%20rotate.preview.jpg" width="200" height="170" border="0" /></a> 
+<a href="../../image/yellow_key_zoomed/index.html" class="image" title=""><img alt="" src="../../image/yellow%20key%20zoomed.jpg" width="200" height="170" border="0" /></a> 
+<a href="../../image/final_look_yeloow_key2/index.html" class="image" title=""><img alt="" src="../../image/final%20look%20yeloow%20key2_0.jpg" width="200" height="170" border="0" /></a> 
+<a href="../../image/inside_laser/index.html" class="image" title=""><img alt="" src="../../image/inside%20laser.preview.jpg" width="200" height="170" border="0" /></a> 
+<a href="../../image/black_cover_unlock2/index.html" class="image" title=""><img alt="" src="../../image/black%20cover%20unlock2.preview.jpg" width="200" height="170" border="0" /></a>
+<a href="../../image/black_cover_remove3/index.html" class="image" title=""><img alt="" src="../../image/black%20cover%20remove3.preview.jpg" width="200" height="170" border="0" /></a>  
 </p><p>Here one point is worth mentioning regarding the yellow key. This key has to be <b><font color="green">carefully press down and then twist</font></b> in a fashion such that it acts as a proxy cover interlock switch in the laser head.
 </p><p><br />   
 </p><p>The last picture in the image matrix above makes the laser fully naked and its time to find out a tiny little screw in a horde of electronic circuits.
-</p><p><a href="../../image/clean_in_deep1/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/clean%20in%20deep%201_compressed.preview.jpg" width="200" height="170" border="0" /></a>  
-<a href="../../image/clean_in_deep3/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/clean%20in%20deep%203.preview.jpg" width="200" height="170" border="0" /></a>
-<a href="../../image/clean_in_deep6/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/clean%20in%20deep%206.preview.jpg" width="200" height="170" border="0" /></a> 
-<a href="../../image/clean_in_deep4/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/clean%20in%20deep4.preview.jpg" width="200" height="170" border="0" /></a> 
+</p><p><a href="../../image/clean_in_deep1/index.html" class="image" title=""><img alt="" src="../../image/clean%20in%20deep%201_compressed.preview.jpg" width="200" height="170" border="0" /></a>  
+<a href="../../image/clean_in_deep3/index.html" class="image" title=""><img alt="" src="../../image/clean%20in%20deep%203.preview.jpg" width="200" height="170" border="0" /></a>
+<a href="../../image/clean_in_deep6/index.html" class="image" title=""><img alt="" src="../../image/clean%20in%20deep%206.preview.jpg" width="200" height="170" border="0" /></a> 
+<a href="../../image/clean_in_deep4/index.html" class="image" title=""><img alt="" src="../../image/clean%20in%20deep4.preview.jpg" width="200" height="170" border="0" /></a> 
 </p><p>The figures above are taken from slightly different angle trying to throw light on the very little part of interest where the desired screw is staying. The screw is almost obscure but <b><font color="green">one easy way to detect it is to focus on the warranty seal</font></b> where it is written <b><font color="mediumvioletred">"WARRANTY VOID IF THE SEAL IS BROKEN"</font></b> with Spectra Physics trademark. Here is the magnified view for better observation.
 </p><p><br />
 </p>
-<div class="center"><div class="floatnone"><span><a href="../../image/clean_in_deep6/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/clean%20in%20deep%206.preview.jpg" width="500" height="375" border="0" /></a></span></div></div>
+<div class="center"><div class="floatnone"><span><a href="../../image/clean_in_deep6/index.html" class="image" title=""><img alt="" src="../../image/clean%20in%20deep%206.preview.jpg" width="500" height="375" border="0" /></a></span></div></div>
 <p><br />
 After learning where the screw is,one has to <b><font color="green">gently</font></b> move the screw head <b><font color="red">anti clockwise and about half a rotation</font></b>.
 </p><p><br />
-<a href="../../image/screwing/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/screwing%20the%20knot.preview.jpg" width="525" height="480" border="0" /></a> 
-<a href="../../image/close_rotation/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/close%20rotation%20of%20screw.preview.jpg" width="525" height="480" border="0" /></a>
+<a href="../../image/screwing/index.html" class="image" title=""><img alt="" src="../../image/screwing%20the%20knot.preview.jpg" width="525" height="480" border="0" /></a> 
+<a href="../../image/close_rotation/index.html" class="image" title=""><img alt="" src="../../image/close%20rotation%20of%20screw.preview.jpg" width="525" height="480" border="0" /></a>
 </p><p>That should eventually switch off the glow of the flow indicator on the control module and make the laser ready to shoot. 
 </p><p><br />
 </p><p><br />
@@ -185,10 +86,10 @@ After learning where the screw is,one has to <b><font color="green">gently</font
 <hr />
 <p>Cover indicator glows when the cover interlock switch in the laser head or power supply is on and one can heal the problem by opening the small window on the big hatch on the far left side where <b><font color="black">BeamLok</font></b> is marked on it. This window should close down in such a way that the extruded part from it  <b><font color="green">comes down pushes the black button properly</font></b>. (One can remember that yellow key did the same job while discussing the flow indicator problem)
 </p>
-<div class="floatleft"><span><a href="../../image/beamlock1/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/beamlock1.preview.jpg" width="425" height="280" border="0" /></a></span></div>
-<div class="floatright"><span><a href="../../image/unlock_beamlock2/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/unlock%20beamlock2.preview.jpg" width="425" height="280" border="0" /></a></span></div>
-<div class="floatleft"><span><a href="../../image/uplift_cover/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/uplift%20cover.preview.jpg" width="425" height="280" border="0" /></a></span></div>
-<div class="floatright"><span><a href="../../image/cover_zoomed2/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/cover%20zoomed%202.preview.jpg" width="425" height="280" border="0" /></a></span></div>
+<div class="floatleft"><span><a href="../../image/beamlock1/index.html" class="image" title=""><img alt="" src="../../image/beamlock1.preview.jpg" width="425" height="280" border="0" /></a></span></div>
+<div class="floatright"><span><a href="../../image/unlock_beamlock2/index.html" class="image" title=""><img alt="" src="../../image/unlock%20beamlock2.preview.jpg" width="425" height="280" border="0" /></a></span></div>
+<div class="floatleft"><span><a href="../../image/uplift_cover/index.html" class="image" title=""><img alt="" src="../../image/uplift%20cover.preview.jpg" width="425" height="280" border="0" /></a></span></div>
+<div class="floatright"><span><a href="../../image/cover_zoomed2/index.html" class="image" title=""><img alt="" src="../../image/cover%20zoomed%202.preview.jpg" width="425" height="280" border="0" /></a></span></div>
 <p><br />
 </p><p><br />
 </p><p><br />
@@ -214,77 +115,20 @@ After learning where the screw is,one has to <b><font color="green">gently</font
 <b><font color="steelblue"><p style="font-size:large;">Auxiliary indicator is on</p></font></b>
 <hr />
 <p>Auxiliary indicator glows when the auxiliary interlock circuit is open. The auxiliary interlock connector (AUX INTLK) is located on the connector panel of the power supply. Often this AUX indicator also glows if the cable on the cooler is displaced/disturbed due to careless movement near the cooler. Taking out the cable or tighten it a bit can help to solve the problem.
-</p><p><a href="../../image/cooler_full/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/cooler%20full.jpg" width="350" height="280" border="0" /></a>
-<a href="../../image/indicator/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/indicator.preview.jpg" width="350" height="280" border="0" /></a>
-<a href="../../image/shoe/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/shoe.preview.jpg" width="350" height="280" border="0" /></a>
+</p><p><a href="../../image/cooler_full/index.html" class="image" title=""><img alt="" src="../../image/cooler%20full.jpg" width="350" height="280" border="0" /></a>
+<a href="../../image/indicator/index.html" class="image" title=""><img alt="" src="../../image/indicator.preview.jpg" width="350" height="280" border="0" /></a>
+<a href="../../image/shoe/index.html" class="image" title=""><img alt="" src="../../image/shoe.preview.jpg" width="350" height="280" border="0" /></a>
 </p><p><br />
-</p><p><br />
-</p><p><br />
-</p><p><br />
-</p><p><br />
-</p><p><br />
-</p><p><br />
-</p><p><br />
-</p><p><br />
-</p><p><br />
-</p></div>
-    </div>
-          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f210%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f210%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-30471.html">Login</a> or <a href="../../user/register/index-30471.html">register</a> to post comments</span></li>
-</ul></div>
-      </div>
-		<!-- CONTENT END -->
-
-		
-	</div>
-<!-- END MAIN -->
-
-<!-- START FOOTER -->
-	<div id="footer">
-		<a href="http://oriact.com">Powered by</a><br/>
-		<a href="http://oriact.com"><img width="85" height="20" src="../../sites/all/themes/oxymoron/oriact_button.png" alt="Powered by Oriact"/></a><br/>
-		<div class="clear-block block block-origo_eth" id="block-origo_eth-0">
-  
-  <div class="content"><a href="http://origo.ethz.ch">Hosted on </a><br/><a href="http://origo.ethz.ch"><img width="85" height="20" src="../../sites/all/themes/oxymoron/origo_button_1.png" alt="Hosted on Origo"/></a><br/><a href="http://origo.ethz.ch">a project by ETH Zürich</a><br/>&copy;<a href="http://origo.ethz.ch"> 2006 - 2010</a><br/><a href="../../global/terms_of_use/index.html">Terms of Use</a><br/></div>
-</div>
-	</div>
-<!-- END FOOTER -->
-
-  <!-- CLOSURE (e.g. javascript) -->
-    <script type="text/javascript" src="../../sites/all/modules/google_cse/google_cse.js?n"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "googleCSE": { "language": "en" } });
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-if (Drupal.jsEnabled) {
-      $(document).ready(function() {
-        $('a.origo-private').each(function() {
-          $(this).append('&nbsp;<img src="/sites/all/themes/oxymoron/private-page-link.png" alt="private"/>');
-        });
-      });
-    }
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-if (Drupal.jsEnabled) {
-      $(document).ready(function() {
-        $('a.external').each(function() {
-          $(this).append('&nbsp;<img src="/sites/all/modules/mediawiki_filter/external.png" alt="external"/>');
-        });
-      });
-    }
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-1676928-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
-//--><!]]>
-</script>
-
-</body>
-
+   
+      </section>
+      <font size="3">
+        <footer>
+          <p>This project is maintained by <a href="https://github.com/3dptv">3D
+              PTV </a> </p>
+          <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        </footer>
+      </font></div>
+    <font size="3">
+      <script src="http://3dptv.github.com/javascripts/scale.fix.js"></script> </font>
+  </body>
 </html>
-<!-- Localized -->

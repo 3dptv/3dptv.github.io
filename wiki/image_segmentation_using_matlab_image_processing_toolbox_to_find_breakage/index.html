@@ -1,186 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>3D PTV</title>
+    <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/styles.css">
+    <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>3D PTV</h1>
+        <img style="width: 200px; " alt="3D-PTV" src="http://3dptv.github.com/image/ptv_0.jpg">
+        <p>3D Particle Tracking Velocimetry software on Github (<a href="http://3dptv.github.com">
+            http://3dptv.github.com </a>)</p>
+        <p class="view"><a href="https://github.com/3dptv/3dptv">View the
+            Project on GitHub <small>3dptv/3dptv</small></a></p>
+        <ul>
+          <li><a href="https://github.com/3dptv/3dptv/zipball/master">Download <strong>ZIP
+                File</strong></a></li>
+          <li><a href="https://github.com/3dptv/3dptv/tarball/master">Download <strong>TAR
+                Ball</strong></a></li>
+          <li><a href="https://github.com/3dptv/3dptv">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+      
+ 
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Image segmentation using Matlab Image Processing Toolbox to find breakage | ptv</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="../../sites/all/themes/oxymoron/favicon.ico" type="image/x-icon" />
-  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/origo_home/css/origo_home-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/geshifilter/geshifilter-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/google_cse/google_cse-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mediawiki_filter/mediawiki_filter-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/forum/forum-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/mainmenu-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/iconsmenu-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/night-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/day-36200.css" />
-<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/oxymoron/css/print-36200.css" />
-  <script type="text/javascript" src="../../misc/jquery.js?n"></script>
-<script type="text/javascript" src="../../misc/drupal.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/mediawiki_filter/mediawiki_filter.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist.js?n"></script>
-<script type="text/javascript" src="../../misc/tableheader.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/jquery_example/jquery.example.min.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/oxymoron.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/mainmenu.js?n"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": "1", "trackMailto": "1", "trackDownload": "1", "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-Drupal.behaviors.issue_tracker = function(context) {
-        $('a[class=extiw issue]').each(function() {
-          // extract issue number from the URL
-          var issueURL = $(this)[0].href;
-          var issueURLSplitted = issueURL.split('/')
-          var issueNumber = issueURLSplitted[issueURLSplitted.length - 1];
 
-          var target= $(this);
-          $.get(Drupal.settings.basePath + "ajax/issue_get_status/" + issueNumber, null, function(response) {
-            var result = Drupal.parseJson(response);
 
-            var decorationString = "";
-            if (result.issueClosedStatus == true) {
-              decorationString = 'line-through';
-            }
-            $(target).css('text-decoration', decorationString);
-          });
-        });
-      }
-//--><!]]>
-</script>
-  <style type="text/css" media="print">@import "../../sites/all/themes/oxymoron/css/print.css";</style>
-  <script type="text/javascript"> </script>
-  <!--[if IE 7]>
-  	<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style_ie7.css" />
-  <![endif]-->
-
-</head>
-
-<body>
-
-<!-- START HEADER -->
-    <div id="mainheader">
-    
-        <div id="logo">
-			            <a class="logo_link" href="../../index.html" title="Home" rel="home" id="logo">
-                <img src="../../sites/ptv/files/ptv_0.jpg" alt="Home"/>
-            </a>
-						            <div id="site-name-frame">
-				                <h1 class='site-name'><a href="../../index.html" title="Home">3D-PTV</a></h1>
-				            </div>
-        </div>
-
-        <ul id="user-info">
-                                  <li><a href="../../user/register/index-1839.html">Register</a></li>
-                    <li><a href="../../user/index-1839.html">Sign in</a></li>
-                      </ul>
-        <div id='search-box'><form action="/wiki/image_segmentation_using_matlab_image_processing_toolbox_to_find_breakage"  accept-charset="UTF-8" method="post" id="search-theme-form">
-<div><div class="form-item" id="edit-search-theme-form-1-wrapper">
- <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
-</div>
-<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
-<input type="hidden" name="form_build_id" id="form-9d00d8dbfda30754fc6df5d32926a8a3" value="form-9d00d8dbfda30754fc6df5d32926a8a3"  />
-<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
-<input type="hidden" name="3" id="edit-3" value=""  />
-
-</div></form>
-</div>
-	
-		<div id="iconsmenu">
-		  <!-- START TOP NAV -->
-					  					  
-<ul id='navlist'>
-	<li><a href="../../index.html" title="Home" class="home"><div class="home"><span class="notext">Home</span></div></a></li>
-	<li><a href="../../download/index.html" title="Download" class="download"><div class="download"><span class="notext">Download</span></div></a></li>
-	<li><a href="../../forum/index.html" title="Forum" class="forum"><div class="forum"><span class="notext">Forum</span></div></a></li>
-	<li><a href="../../blog/index.html" title="Issues" class="blog"><div class="blog"><span class="notext">Blog</span></div></a></li>
-	<li><a href="../../issues/index.html" title="Issues" class="issues"><div class="issues"><span class="notext">Issues</span></div></a></li>
-	<li><a href="../../statistics/index.html" title="Statistics" class="statistics"><div class="statistics"><span class="notext">Statistics</span></div></a></li>
-</ul>
-					  					  <br class="clear" />
-			  <!-- END TOP NAV -->
-		</div>
-				<div class='main_navi'>
-			<div class="clear-block block block-origo_home" id="block-origo_home-0">
-  
-  <div class="content"><ul class="menu"><li class="collapsed"><a href="../../search_global/index.html">Global Search</a></li></ul></div>
-</div>
-		</div>
-			
-    </div>
-<!-- END HEADER -->
-
-<!-- START MAIN -->
-	<div class="tabs"></div>
-
-	<div id="main">
-		<!-- START TITLE -->
 				   <h1 class="title">
-			 			 Image segmentation using Matlab Image Processing Toolbox to find breakage			 		   </h1>
-				<!-- END TITLE -->
+			 			 Image segmentation using Matlab - search for breakage			 		   </h1>
 
-		
-		
-		<!-- CONTENT START -->
-		     <div class="node">
-        <div class="clear-block">
-        <span class="submitted"></span>
-    <span class="taxonomy"><ul class="links inline"><li class="first taxonomy_term_23"><a href="../../taxonomy/term/23/index.html" rel="tag" title="" class="taxonomy_term_23 breakage">breakage</a></li>
-<li class="taxonomy_term_24"><a href="../../taxonomy/term/24/index.html" rel="tag" title="" class="taxonomy_term_24 colloid">colloid</a></li>
-<li class="taxonomy_term_25"><a href="../../taxonomy/term/25/index.html" rel="tag" title="" class="taxonomy_term_25 image">image</a></li>
-<li class="taxonomy_term_7"><a href="../../category/tags/matlab/index.html" rel="tag" title="" class="taxonomy_term_7 matlab">matlab</a></li>
-<li class="last taxonomy_term_26"><a href="../../taxonomy/term/26/index.html" rel="tag" title="" class="taxonomy_term_26 segmentation">segmentation</a></li>
-</ul></span>
     <div class="content"><p>Here is the Image Processing approach to the colloid breakage identification. The test case is take from the Terradisk, Beat_Colloid folder. The main tools are very well explained on the Mathworks blog: <a href="http://blogs.mathworks.com/steve/2006/06/02/cell-segmentation/" class="external free" title="http://blogs.mathworks.com/steve/2006/06/02/cell-segmentation/">http://blogs.mathworks.com/steve/2006/06/02/cell-segmentation/</a>. 
 </p><p>This is by no means the final solution, but rather a demo of the approach that I can propose. The idea is that image is segmented into 'complex shape particles' using image processing subroutines. This allows to extract the boundaries using the grey level thresholding and, in addition, to see if there are one or two (or many) 'bright islands' within that boundary. 
-</p><p>The code is zipped in the file, <a href="../../system/files/segmentation_of_breakage.zip" class="external text" title="http://ptv.origo.ethz.ch/system/files/segmentation_of_breakage.zip">segmentation_of_breakage.zip</a> and in the subroutine colloid_image_segmentation_inpoly. These files allow for proper identification of the single-image-breakage-event, i.e. the point at which the single particle becomes two-hill particle. However, for obvious reasons, this doesn't mean that all the cameras (illumination, view angle effects, etc.) will see the "same" event at the same frame. The main problem is that even I do not know how to define properly breakage in 2D using 4 cameras. The missing step is use the output, feed it back into image-to-3D-space routine in PTV software and get 3D positions of the particles. Maybe then the discrepancies between the four camera images will be found. 
-</p><p><img src="../../system/files/screen.png" alt="screen.png" />
+</p><p>The code is zipped in the file, <a href="../../files/segmentation_of_breakage.zip" class="external text" title="../../files/segmentation_of_breakage.zip">segmentation_of_breakage.zip</a> and in the subroutine colloid_image_segmentation_inpoly. These files allow for proper identification of the single-image-breakage-event, i.e. the point at which the single particle becomes two-hill particle. However, for obvious reasons, this doesn't mean that all the cameras (illumination, view angle effects, etc.) will see the "same" event at the same frame. The main problem is that even I do not know how to define properly breakage in 2D using 4 cameras. The missing step is use the output, feed it back into image-to-3D-space routine in PTV software and get 3D positions of the particles. Maybe then the discrepancies between the four camera images will be found. 
+</p><p><img src="../../files/screen.png" alt="screen.png" />
 </p><p><br />
 From Beat:
 </p>
-I continued along the lines of Steve and Alex an have now a <a href="../../system/files2d_recognition_continued.m.txt" class="external text" title="http://ptv.origo.ethz.ch/system/files2d_recognition_continued.m.txt">matlab script (remove *,txt)</a> that watersheds the 2d particles pretty reliable and that detects the border of possible actually connected points. From here - or something similar - it should be relatively straight forward to produce target files or some suitable connection to the 3D-PTV code. <div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/perim/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/2d_perim_0.preview.jpg" width="180" height="135.972495088" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/perim/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div>Filtered image and perimeters of potential particles framed with gree</div></div></div><div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/watershed/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/2d_watershed.preview.jpg" width="180" height="135.972495088" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/watershed/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div>The -sofar- final result. Each cell, one color, black dot is center of gravity, white lines are borders of cells, and eventual black lines are common borders of cells.</div></div></div>
+I continued along the lines of Steve and Alex an have now a <a href="../../files/files2d_recognition_continued.m.txt" class="external text" title="http://ptv.origo.ethz.ch/system/files2d_recognition_continued.m.txt">matlab script (remove *,txt)</a> that watersheds the 2d particles pretty reliable and that detects the border of possible actually connected points. From here - or something similar - it should be relatively straight forward to produce target files or some suitable connection to the 3D-PTV code. <div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/perim/index.html" class="image" title=""><img alt="" src="../../image/2d_perim_0.preview.jpg" width="180" height="136" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/perim/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div>Filtered image and perimeters of potential particles framed with gree</div></div></div><div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/watershed/index.html" class="image" title=""><img alt="" src="../../image/2d_watershed.preview.jpg" width="180" height="136" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/watershed/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div>The -sofar- final result. Each cell, one color, black dot is center of gravity, white lines are borders of cells, and eventual black lines are common borders of cells.</div></div></div>
 <p><br />
 <a href="../3d_ptv_projects/index.html" class="extiw path" title="path:wiki/3d ptv projects"> back to 3D-PTV projects</a>
 </p><table id="attachments" class="sticky-enabled">
  <thead><tr><th>Attachment</th><th>Size</th> </tr></thead>
 <tbody>
- <tr class="odd"><td><a href="../../system/files/segmentation_of_breakage.zip">segmentation_of_breakage.zip</a></td><td>3.28 KB</td> </tr>
- <tr class="even"><td><a href="../../system/files/screen_1.png">screen.png</a></td><td>124.04 KB</td> </tr>
- <tr class="odd"><td><a href="../../system/files/2d_recognition_continued.m.txt">2d_recognition_continued.m.txt</a></td><td>2.45 KB</td> </tr>
+ <tr class="odd"><td><a href="../../files/segmentation_of_breakage.zip">segmentation_of_breakage.zip</a></td><td>3.28 KB</td> </tr>
+ <tr class="even"><td><a href="../../files/screen_1.png">screen.png</a></td><td>124.04 KB</td> </tr>
+ <tr class="odd"><td><a href="../../files/2d_recognition_continued.m.txt">2d_recognition_continued.m.txt</a></td><td>2.45 KB</td> </tr>
 </tbody>
 </table>
-</div>
-    </div>
-          <div class="links">&raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f38%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f38%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-28291.html">Login</a> or <a href="../../user/register/index-28291.html">register</a> to post comments</span></li>
-</ul></div>
-      </div>
-<div id="comments">
-  <a id="comment-14"></a>
-  <div class="comment">
-      <div class="clear-block">
-<h3 class="title"><a href="index.html#comment-14" class="active">Connection to 3D-PTV</a></h3>
-    <div class="submitted">Submitted by alexl on Mon, 2010-04-26 19:51.</div>
-  <div class="content">
-      <p>The code is already given - see the branch created by Alex on SVN repository, under 
+
+<h3 >Connection to 3D-PTV</h3>
+
+
+<p>The code is already given - see the branch created by Alex on SVN repository, under 
 </p><p>\branches\extended_image_processing
 </p><p>The main idea of this branch is that the software can now READ the _targets files instead of creating it. Use \parameters\pft_version file, set the value to 4 (instead of 0,1,2 or 3 that are usually used, 3 is the default) and you'll get the software that READS _targets files, reorders and sorts them, and builds correspondences (stereo-matching). 
 </p><p><br />
 Everyone can now create any type of Matlab image processing and connect it to the Matlab file write_targets.m
-</p><p>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<code>
 function write_targets(filename,stats)
 </p><p>xy = [stats.Centroid]';
 </p><p>x = xy(1:2:end);
@@ -197,94 +81,21 @@ fid = fopen(filename,'w');
 </p><p>fprintf(fid,'%d\n',np);
 </p><p>fprintf(fid,'%4d&nbsp;%9.4f&nbsp;%9.4f&nbsp;%5d&nbsp;%5d&nbsp;%5d&nbsp;%5d&nbsp;%5d\n',[pnr',x,y,n,nx,ny,sumg,tnr]');
 </p><p>fclose(fid);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 </p><p><br />
 </p>        </div>
-  </div>
-  <div class="links">
-    &raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f38%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f38%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-28291.html">Login</a> or <a href="../../user/register/index-28291.html">register</a> to post comments</span></li>
-</ul>  </div>
-</div>
-<div class="indented"><a id="comment-15"></a>
-  <div class="comment">
-      <div class="clear-block">
-<h3 class="title"><a href="index.html#comment-15" class="active">you are fast!</a></h3>
-    <div class="submitted">Submitted by luethib on Mon, 2010-04-26 19:55.</div>
-  <div class="content">
-      <p>Ok, that is what you added, I did see the link a few days ago, but clicking it just produced "URL not found".... 
-</p>        </div>
-  </div>
-  <div class="links">
-    &raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f38%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f38%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-28291.html">Login</a> or <a href="../../user/register/index-28291.html">register</a> to post comments</span></li>
-</ul>  </div>
-</div>
-<div class="indented"><a id="comment-17"></a>
-  <div class="comment">
-      <div class="clear-block">
-<h3 class="title"><a href="index.html#comment-17" class="active">See our SVN server</a></h3>
-    <div class="submitted">Submitted by alexl on Mon, 2010-04-26 20:01.</div>
-  <div class="content">
-      <p>Development (top right menu), then Web SVN -&gt; branches -&gt; extended_imaging_processing
-</p>        </div>
-  </div>
-  <div class="links">
-    &raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f38%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f38%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-28291.html">Login</a> or <a href="../../user/register/index-28291.html">register</a> to post comments</span></li>
-</ul>  </div>
-</div>
-</div></div></div>
-		<!-- CONTENT END -->
-
-		
-	</div>
-<!-- END MAIN -->
-
-<!-- START FOOTER -->
-	<div id="footer">
-		<a href="http://oriact.com">Powered by</a><br/>
-		<a href="http://oriact.com"><img width="85" height="20" src="../../sites/all/themes/oxymoron/oriact_button.png" alt="Powered by Oriact"/></a><br/>
-		<div class="clear-block block block-origo_eth" id="block-origo_eth-0">
-  
-  <div class="content"><a href="http://origo.ethz.ch">Hosted on </a><br/><a href="http://origo.ethz.ch"><img width="85" height="20" src="../../sites/all/themes/oxymoron/origo_button_1.png" alt="Hosted on Origo"/></a><br/><a href="http://origo.ethz.ch">a project by ETH Zürich</a><br/>&copy;<a href="http://origo.ethz.ch"> 2006 - 2010</a><br/><a href="../../global/terms_of_use/index.html">Terms of Use</a><br/></div>
-</div>
-	</div>
-<!-- END FOOTER -->
-
-  <!-- CLOSURE (e.g. javascript) -->
-    <script type="text/javascript" src="../../sites/all/modules/google_cse/google_cse.js?n"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "googleCSE": { "language": "en" } });
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-if (Drupal.jsEnabled) {
-      $(document).ready(function() {
-        $('a.origo-private').each(function() {
-          $(this).append('&nbsp;<img src="/sites/all/themes/oxymoron/private-page-link.png" alt="private"/>');
-        });
-      });
-    }
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-if (Drupal.jsEnabled) {
-      $(document).ready(function() {
-        $('a.external').each(function() {
-          $(this).append('&nbsp;<img src="/sites/all/modules/mediawiki_filter/external.png" alt="external"/>');
-        });
-      });
-    }
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-1676928-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
-//--><!]]>
-</script>
-
-</body>
-
+</code>
+ 
+ 
+ 
+     </section>
+      <font size="3">
+        <footer>
+          <p>This project is maintained by <a href="https://github.com/3dptv">3D
+              PTV </a> </p>
+          <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        </footer>
+      </font></div>
+    <font size="3">
+      <script src="http://3dptv.github.com/javascripts/scale.fix.js"></script> </font>
+  </body>
 </html>
-<!-- Localized -->

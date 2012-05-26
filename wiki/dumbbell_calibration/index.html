@@ -1,133 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Dumbbell calibration | ptv</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="../../sites/all/themes/oxymoron/favicon.ico" type="image/x-icon" />
-  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/origo_home/css/origo_home-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/node/node-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/defaults-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/system/system-menus-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/user/user-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/geshifilter/geshifilter-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/google_cse/google_cse-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/img_assist/img_assist-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/mediawiki_filter/mediawiki_filter-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/forum/forum-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/views/css/views-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../modules/comment/comment-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/mainmenu-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/iconsmenu-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/night-36200.css" />
-<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/colours/day-36200.css" />
-<link type="text/css" rel="stylesheet" media="print" href="../../sites/all/themes/oxymoron/css/print-36200.css" />
-  <script type="text/javascript" src="../../misc/jquery.js?n"></script>
-<script type="text/javascript" src="../../misc/drupal.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/mediawiki_filter/mediawiki_filter.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/google_analytics/googleanalytics.js?n"></script>
-<script type="text/javascript" src="../../sites/all/modules/img_assist/img_assist.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/jquery_example/jquery.example.min.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/oxymoron.js?n"></script>
-<script type="text/javascript" src="../../sites/all/themes/oxymoron/js/mainmenu.js?n"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": "1", "trackMailto": "1", "trackDownload": "1", "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-Drupal.behaviors.issue_tracker = function(context) {
-        $('a[class=extiw issue]').each(function() {
-          // extract issue number from the URL
-          var issueURL = $(this)[0].href;
-          var issueURLSplitted = issueURL.split('/')
-          var issueNumber = issueURLSplitted[issueURLSplitted.length - 1];
-
-          var target= $(this);
-          $.get(Drupal.settings.basePath + "ajax/issue_get_status/" + issueNumber, null, function(response) {
-            var result = Drupal.parseJson(response);
-
-            var decorationString = "";
-            if (result.issueClosedStatus == true) {
-              decorationString = 'line-through';
-            }
-            $(target).css('text-decoration', decorationString);
-          });
-        });
-      }
-//--><!]]>
-</script>
-  <style type="text/css" media="print">@import "../../sites/all/themes/oxymoron/css/print.css";</style>
-  <script type="text/javascript"> </script>
-  <!--[if IE 7]>
-  	<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/oxymoron/css/style_ie7.css" />
-  <![endif]-->
-
-</head>
-
-<body>
-
-<!-- START HEADER -->
-    <div id="mainheader">
-    
-        <div id="logo">
-			            <a class="logo_link" href="../../index.html" title="Home" rel="home" id="logo">
-                <img src="../../sites/ptv/files/ptv_0.jpg" alt="Home"/>
-            </a>
-						            <div id="site-name-frame">
-				                <h1 class='site-name'><a href="../../index.html" title="Home">3D-PTV</a></h1>
-				            </div>
-        </div>
-
-        <ul id="user-info">
-                                  <li><a href="../../user/register/index-59643.html">Register</a></li>
-                    <li><a href="../../user/index-59643.html">Sign in</a></li>
-                      </ul>
-        <div id='search-box'><form action="/wiki/dumbbell_calibration"  accept-charset="UTF-8" method="post" id="search-theme-form">
-<div><div class="form-item" id="edit-search-theme-form-1-wrapper">
- <input type="text" maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" />
-</div>
-<input type="submit" name="op" id="edit-submit" value="Search"  class="form-submit" />
-<input type="hidden" name="form_build_id" id="form-e8337545d27ea66d3787cf59201cd896" value="form-e8337545d27ea66d3787cf59201cd896"  />
-<input type="hidden" name="form_id" id="edit-search-theme-form" value="search_theme_form"  />
-<input type="hidden" name="3" id="edit-3" value=""  />
-
-</div></form>
-</div>
-	
-		<div id="iconsmenu">
-		  <!-- START TOP NAV -->
-					  					  
-<ul id='navlist'>
-	<li><a href="../../index.html" title="Home" class="home"><div class="home"><span class="notext">Home</span></div></a></li>
-	<li><a href="../../download/index.html" title="Download" class="download"><div class="download"><span class="notext">Download</span></div></a></li>
-	<li><a href="../../forum/index.html" title="Forum" class="forum"><div class="forum"><span class="notext">Forum</span></div></a></li>
-	<li><a href="../../blog/index.html" title="Issues" class="blog"><div class="blog"><span class="notext">Blog</span></div></a></li>
-	<li><a href="../../issues/index.html" title="Issues" class="issues"><div class="issues"><span class="notext">Issues</span></div></a></li>
-	<li><a href="../../statistics/index.html" title="Statistics" class="statistics"><div class="statistics"><span class="notext">Statistics</span></div></a></li>
-</ul>
-					  					  <br class="clear" />
-			  <!-- END TOP NAV -->
-		</div>
-				<div class='main_navi'>
-			<div class="clear-block block block-origo_home" id="block-origo_home-0">
-  
-  <div class="content"><ul class="menu"><li class="collapsed"><a href="../../search_global/index.html">Global Search</a></li></ul></div>
-</div>
-		</div>
-			
-    </div>
-<!-- END HEADER -->
-
-<!-- START MAIN -->
-	<div class="tabs"></div>
-
-	<div id="main">
-		<!-- START TITLE -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>3D PTV</title>
+    <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/styles.css">
+    <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>3D PTV</h1>
+        <img style="width: 200px; " alt="3D-PTV" src="http://3dptv.github.com/image/ptv_0.jpg">
+        <p>3D Particle Tracking Velocimetry software on Github (<a href="http://3dptv.github.com">
+            http://3dptv.github.com </a>)</p>
+        <p class="view"><a href="https://github.com/3dptv/3dptv">View the
+            Project on GitHub <small>3dptv/3dptv</small></a></p>
+        <ul>
+          <li><a href="https://github.com/3dptv/3dptv/zipball/master">Download <strong>ZIP
+                File</strong></a></li>
+          <li><a href="https://github.com/3dptv/3dptv/tarball/master">Download <strong>TAR
+                Ball</strong></a></li>
+          <li><a href="https://github.com/3dptv/3dptv">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+      
+ 
 				   <h1 class="title">
 			 			 Dumbbell calibration			 		   </h1>
 				<!-- END TITLE -->
@@ -156,12 +59,12 @@ Drupal.behaviors.issue_tracker = function(context) {
 </li>
 </ul></div>
 </td></tr></table><a name="Basic_idea"></a><h2> <span class="mw-headline"><b><font color="steelblue">Basic idea</font></b></span></h2>
-Sometimes it is inconvenient to position a calibration target. Either because there is something in the way, like in the case of the aorta replica, or because it is cumbersome to get the entire target again out of the observation domain. It would be much easier to move a simple object randomly around the observation domain and from this perform the calibration. <div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/dumbbell_sample_volume/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/dumbbell_calibration_sampled_volume.preview.jpg" width="180" height="130.257611241" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/dumbbell_sample_volume/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div>
+Sometimes it is inconvenient to position a calibration target. Either because there is something in the way, like in the case of the aorta replica, or because it is cumbersome to get the entire target again out of the observation domain. It would be much easier to move a simple object randomly around the observation domain and from this perform the calibration. <div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/dumbbell_sample_volume/index.html" class="image" title=""><img alt="" src="../../image/dumbbell_calibration_sampled_volume.preview.jpg" width="180" height="130.257611241" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/dumbbell_sample_volume/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div>
 <p>This is what "Dumbbell calibration" is doing. The simple object is a dumbbell with two points separated at a known distance. A very rough initial guess is sufficient to solve the correspondence problem for only two particles per image. In other words, the tolerable epipolar band width is very large: large enough to also find the correspondence for a very rough calibration, but small enough so as not to mix up the two points. From there on, calibration optimizes the distances by which the epipolar lines miss each other, while maintaining the detected distance of the dumbbell points. 
 </p><p>Unlike previous calibration approaches, Dumbbell calibration uses all camera views simultaneously. The "Gauss Markoff Model", based on linearized derivatives of an error function, would definitely blow up for this task (I have tried) and therefor a very simple, slower, but very robust algorithm is used. The algorithm computes sequentially local derivatives of the error function (epipolar mismatches and dumbbell pair distance mismatch) and follows this gradient. It is a simple gradient descent algorithm. Mind you, the poor algorithm has to optimize 36 parameters, 4*3(cam positions)*3(cam angles)*1(focal fistance)*2(dx dy chip position). 
 </p>
 <a name="Required_input"></a><h2> <span class="mw-headline"><b><font color="steelblue">Required input</font></b></span></h2>
-<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/dumbbell_an_epipolar_lines_during_calibration/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/dumbbell.preview.jpg" width="180" height="121.244541485" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/dumbbell_an_epipolar_lines_during_calibration/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/dumbbell_an_epipolar_lines_during_calibration/index.html" class="image" title=""><img alt="" src="../../image/dumbbell.preview.jpg" width="180" height="121.244541485" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/dumbbell_an_epipolar_lines_during_calibration/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div>
 <p>Somehow, an object with two well visible points has to be moved through the observation domain and recorder. The dumbbells points should be separated by roughly a third of the observation scale. In our example we use two 5mm beads that are spaced 46.5mm in an observation domain of roughly 15cm. We recorded 300 frames at a rate of 20Hz. This is slow enough for good illumination, but still fast enough to capture the movements of the dumbbell which was moved manually through the domain. 
 </p><p>Note that the accuracy by which these dumbbell points can be determined in 2d, also defines the possible accuracy in 3d. With 5mm point radii we will be lucky to get a 3d point accuracy less than 1mm. Thus, for real (this is just a feasibility example), the dumbbell points should be as small and as accurate as possible.
 </p>
@@ -171,7 +74,7 @@ Sometimes it is inconvenient to position a calibration target. Either because th
 </p><p><br />
 </p>
 <a name="Processing_2"></a><h3> <span class="mw-headline"> Processing </span></h3>
-The processing is rather simple. After defining in "main parameters" the sequence (names and first and last file number) click "Orientation-&gt;Orientation from Dumbbells". That's it and you have to wait O(2min). <div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/calibration_with_dumbbells/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/dumbbell_calibration.preview.jpg" width="180" height="134.167573449" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/calibration_with_dumbbells/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div>
+The processing is rather simple. After defining in "main parameters" the sequence (names and first and last file number) click "Orientation-&gt;Orientation from Dumbbells". That's it and you have to wait O(2min). <div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/calibration_with_dumbbells/index.html" class="image" title=""><img alt="" src="../../image/dumbbell_calibration.preview.jpg" width="180" height="134.167573449" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/calibration_with_dumbbells/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div>
 <p>The algorithm in the meantime performs the following steps: 
 </p>
 <ul><li>It establishes correspondences and - only if precisely two points are found per frame - store the positions and links to the _target files in <span class="geshifilter"><code class="text geshifilter-text">db_is.xxx</code></span> files (same format as <span class="geshifilter"><code class="text geshifilter-text">rt_is.xxx</code></span>).
@@ -181,7 +84,7 @@ The processing is rather simple. After defining in "main parameters" the sequenc
 </li></ul>
 <p><br />
 </p>
-<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/converged_dumbbell_0/index.html" class="image" title=""><img alt="" src="../../sites/ptv/files/images/dumbbell_calibration_converged_0.preview.jpg" width="180" height="114.842975207" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/converged_dumbbell_0/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="../../image/converged_dumbbell_0/index.html" class="image" title=""><img alt="" src="../../image/dumbbell_calibration_converged_0.preview.jpg" width="180" height="114.842975207" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/converged_dumbbell_0/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div>
 <p>Before clicking again you may want to change the sequence numbers or other parameters, in order not to over-train the calibration. All controlling parameters are stored in the file <span class="geshifilter"><code class="text geshifilter-text">parameters/dumbbell.par</code></span> it contains 6 parameters:
 </p>
 <ul><li> epipolar tolerance (mm) (in our example it is set to 5)
@@ -240,65 +143,19 @@ The processing is rather simple. After defining in "main parameters" the sequenc
 5) well, it is step size. It could be different to 1 when the dumbbell recording is very long with successivee images that are almost identical, then step size of 10 or so might be more appropriate.
 6) well, this is clear, I find 500 a good value for the begin and later to really fine tune the calibration with careful values for 3) I run the thing over night for say 5000 steps or so.
 </p>        </div>
-  </div>
-  <div class="links">
-    &raquo; <ul class="links inline"><li class="first last comment_forbidden"><span class="comment_forbidden &lt;a href=&quot;/user/login?destination=comment%2freply%2f69%23comment-form&quot;&gt;login&lt;/a&gt; or &lt;a href=&quot;/user/register?destination=comment%2freply%2f69%23comment-form&quot;&gt;register&lt;/a&gt; to post comments"><a href="../../user/login/index-38349.html">Login</a> or <a href="../../user/register/index-38349.html">register</a> to post comments</span></li>
-</ul>  </div>
-</div>
-</div>
-		<!-- CONTENT END -->
 
-		
 	</div>
 <!-- END MAIN -->
-
-<!-- START FOOTER -->
-	<div id="footer">
-		<a href="http://oriact.com">Powered by</a><br/>
-		<a href="http://oriact.com"><img width="85" height="20" src="../../sites/all/themes/oxymoron/oriact_button.png" alt="Powered by Oriact"/></a><br/>
-		<div class="clear-block block block-origo_eth" id="block-origo_eth-0">
-  
-  <div class="content"><a href="http://origo.ethz.ch">Hosted on </a><br/><a href="http://origo.ethz.ch"><img width="85" height="20" src="../../sites/all/themes/oxymoron/origo_button_1.png" alt="Hosted on Origo"/></a><br/><a href="http://origo.ethz.ch">a project by ETH Zürich</a><br/>&copy;<a href="http://origo.ethz.ch"> 2006 - 2010</a><br/><a href="../../global/terms_of_use/index.html">Terms of Use</a><br/></div>
-</div>
-	</div>
-<!-- END FOOTER -->
-
-  <!-- CLOSURE (e.g. javascript) -->
-    <script type="text/javascript" src="../../sites/all/modules/google_cse/google_cse.js?n"></script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-jQuery.extend(Drupal.settings, { "googleCSE": { "language": "en" } });
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-if (Drupal.jsEnabled) {
-      $(document).ready(function() {
-        $('a.origo-private').each(function() {
-          $(this).append('&nbsp;<img src="/sites/all/themes/oxymoron/private-page-link.png" alt="private"/>');
-        });
-      });
-    }
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-if (Drupal.jsEnabled) {
-      $(document).ready(function() {
-        $('a.external').each(function() {
-          $(this).append('&nbsp;<img src="/sites/all/modules/mediawiki_filter/external.png" alt="external"/>');
-        });
-      });
-    }
-//--><!]]>
-</script>
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
-var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-1676928-1"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
-//--><!]]>
-</script>
-
-</body>
-
+     </section>
+      <font size="3">
+        <footer>
+          <p>This project is maintained by <a href="https://github.com/3dptv">3D
+              PTV </a> </p>
+          <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        </footer>
+      </font></div>
+    <font size="3">
+      <script src="http://3dptv.github.com/javascripts/scale.fix.js"></script> </font>
+  </body>
 </html>
-<!-- Localized -->
+
