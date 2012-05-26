@@ -121,28 +121,49 @@ The processing is rather simple. After defining in "main parameters" the sequenc
       <p>I copy the dumbbell.par file and try to explain more:
 </p>
 <hr />
-<p>3
+<pre>
+<code>
+3
 25
 0.05
 1
 1
 500
-</p><p>explanation for parameters:
-</p><p>1: eps (mm)
+</code>
+</pre>
+
+<h3> Explanation for parameters:</h3>
+<pre><code>
+1: eps (mm)
 2: dumbbell scale
 3: gradient descent factor
 4: weight for dumbbell penalty
 5: step size through sequence
 6: num iterations per click
-</p>
+</code>
+</pre>
 <hr />
-<p>1: eps(mm) is now set to 3mm. It is the tolerable bandwith by which epipolar lines are allowed to miss each other during calibration
-2) the dumbbell scale is quite important: Here it is 25mm. Since the algorithm optimizes two targets, a) the epipolar mismatch and b) the scale of the dumbbell particle pair.
-3) if everything would be linear then a factor of 1 would converge after one step. Generally one is a bit instable though, so a more careful, but slow, value is 0.05. But I encourage you to play with it yourself and try.
-4) this is the relative weight that is given to the dumbbell scale penalty. with one it is equally bad to have dumbbell scale of only 24mm and to have epipolar mismatch of 1mm. Usually I reduce this value to 0.01-0.2 after rough convergence, since it is difficult to precisely even measure this scale.
-5) well, it is step size. It could be different to 1 when the dumbbell recording is very long with successivee images that are almost identical, then step size of 10 or so might be more appropriate.
-6) well, this is clear, I find 500 a good value for the begin and later to really fine tune the calibration with careful values for 3) I run the thing over night for say 5000 steps or so.
-</p>        </div>
+<p>
+<ol>
+
+<li> eps(mm) is now set to 3mm. It is the tolerable bandwith by which epipolar lines are allowed to miss each other during calibration </li>
+
+<li> the dumbbell scale is quite important: Here it is 25mm. Since the algorithm optimizes two targets, </li>
+<ul>
+<li> the epipolar mismatch and </li>
+<li> the scale of the dumbbell particle pair.</li>
+</ul>
+<li> if everything would be linear then a factor of 1 would converge after one step. Generally one is a bit instable though, so a more careful, but slow, value is 0.05. But I encourage you to play with it yourself and try.
+</li>
+<li> this is the relative weight that is given to the dumbbell scale penalty. with one it is equally bad to have dumbbell scale of only 24mm and to have epipolar mismatch of 1mm. Usually I reduce this value to 0.01-0.2 after rough convergence, since it is difficult to precisely even measure this scale.
+</li>
+<li> well, it is step size. It could be different to 1 when the dumbbell recording is very long with successivee images that are almost identical, then step size of 10 or so might be more appropriate.
+</li>
+<li> well, this is clear, I find 500 a good value for the begin and later to really fine tune the calibration with careful values for 3) I run the thing over night for say 5000 steps or so.
+</li>
+</ol>
+
+</p>
 
 	</div>
 <!-- END MAIN -->
