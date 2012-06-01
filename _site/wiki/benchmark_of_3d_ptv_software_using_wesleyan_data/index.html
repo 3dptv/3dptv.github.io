@@ -1,0 +1,82 @@
+<!DOCTYPE html><html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <meta charset="utf-8">    <meta http-equiv="X-UA-Compatible" content="chrome=1">    <title> 3D-PTV benchmark - Wesleyan Uni. data </title>    <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/styles.css">    <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/pygment_trac.css">    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">    <!--[if lt IE 9]>    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>    <![endif]-->  </head>  <body>    <div class="wrapper">      <header>        <h1>3D PTV</h1>        <img style="width: 200px; " alt="3D-PTV" src="http://3dptv.github.com/image/ptv_0.jpg">        <p>3D Particle Tracking Velocimetry software on Github (<a href="http://3dptv.github.com">            http://3dptv.github.com </a>)</p>        <p class="view"><a href="https://github.com/3dptv/3dptv">View the            Project on GitHub <small>3dptv/3dptv</small></a></p>        <p class="view"><a href="http://3dptv.github.com/blog/index.html"> Read the <b> News </b>  </a> 		</p>        <ul>          <li><a href="https://github.com/3dptv/3dptv/zipball/master">Download <strong>ZIP
+                File</strong></a></li>          <li><a href="https://github.com/3dptv/3dptv/tarball/master">Download <strong>TAR
+                Ball</strong></a></li>          <li><a href="https://github.com/3dptv/3dptv">View On <strong>GitHub</strong></a></li>        </ul>              </header>                   <section>             <h1 class="title">
+			 			 benchmark of 3d ptv software using wesleyan data			 		   </h1>
+		     <div class="node">
+        <div class="clear-block">
+        <span class="submitted"></span>
+    <span class="taxonomy"></span>
+    <div class="content"><a name="Result_of_our_software_tracking_of_the_data_posted_by_Greg_Voth_Wesleyan_University"></a><h2> <span class="mw-headline">Result of our software tracking of the data posted by Greg Voth, Wesleyan University</span></h2>
+<p>The data is posted on 
+<a href="http://gvoth.web.wesleyan.edu/PTV/Wes_data.htm" class="external free" title="http://gvoth.web.wesleyan.edu/PTV/Wes_data.htm">http://gvoth.web.wesleyan.edu/PTV/Wes_data.htm</a>
+</p><p>After some transformations (the detailed instructions will be posted soon), Alex got this:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:182px;"><a href="../../image/trajectories_from_wesleyan_uni_data_view_1/index.html" class="image" title=""><img alt="" src="../../image/screen1_0.preview.png" width="180" height="157.279651795" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/trajectories_from_wesleyan_uni_data_view_1/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div></div>
+<p>There are 310 trajectories of various length, few longest are 200 frames (full run) long:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:182px;"><a href="../../image/histogram_of_trajectory_length_wesleyan_data/index.html" class="image" title=""><img alt="" src="../../image/hist_trajlen.preview.png" width="180" height="135.113350126" border="0" class="thumbimage" /></a>  <div class="thumbcaption"><div class="magnify" style="float:right"><a href="../../image/histogram_of_trajectory_length_wesleyan_data/index.html" class="internal" title="Enlarge"><strong>+</strong></a></div></div></div></div></div>
+<a name="some_e-mail_that_should_be_converted_into_wiki_page"></a><h3> <span class="mw-headline"> some e-mail that should be converted into wiki page </span></h3>
+<ol><li> The data is Wesleyan data. 
+</li><li> The software is 3D-PTV software, v1.02 (I installed the batteries-included-version <a href="../Windows_Installer_Package/index.html" class="external free" title="http://ptv.origo.ethz.ch/wiki/Windows_Installer_Package">http://ptv.origo.ethz.ch/wiki/Windows_Installer_Package</a>) 
+</li><li> All the changes were performed in the /test subfolder of this installation in order to be sure that the same parameters are set up. (parameters.zip is attached). 
+</li></ol>
+<ol><li> our coordinate system is different and it's not flexible, so I had to change it to: <div class="geshifilter"><div class="geshifilter-text" style="font-family: monospace;"><ol><li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">x -&gt; z, y -&gt; x, z -&gt; y</div></li></ol></div></div>
+</li><li> renamed image files to the format of <span class="geshifilter"><code class="text geshifilter-text">&nbsp;cam1.10001 - cam4.10200</code></span>(I added 10000 for the convenience, I never sure about 0xxx format of the extension)
+</li><li> renamed calibration images <div class="geshifilter"><div class="geshifilter-text" style="font-family: monospace;"><ol><li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">av_calib1_edit -&gt; cam1.tif </div></li></ol></div></div>
+</li><li> We use 'negative' images, i.e. white dots on dark background. some matlab trick is attached
+</li></ol>
+<p><div class="geshifilter"><div class="geshifilter-text" style="font-family: monospace;"><ol><li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">function wesleyan_calib_img_to_zurich_img(imgfilename)</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">if ~nargin</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp; &nbsp; imgfilename = 'E:\PTV\New Folder\test\cal\av_calib1_edit.tif';</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">end</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">cam = imread(imgfilename);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">imshow([cam,imcomplement(cam)])</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">[path,name,ext] = fileparts(imgfilename);</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">imwrite(imcomplement(cam),'cam4.tif','compression','none');</div></li></ol></div></div>
+</p>
+<ol><li> created orientation files. first version was simply the copy of the information from Wes_data.htm, e.g. for camera 1:
+</li></ol>
+<p><div class="geshifilter"><div class="geshifilter-text" style="font-family: monospace;"><ol><li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">650.0 70.0 650.0 &lt;-- x,y,z camera position</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">0.2 0.0 0.0 &nbsp; &nbsp; &nbsp;&lt;-- angles, 0.2 rad looking d
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">0 1 0</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">0 0 1</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">0.0 0.0 &nbsp; &nbsp; &nbsp; &nownwards</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">1 0 0</div></li>bsp; &lt;--- xp,yp, default</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">100.0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;--- focal distance, unknown parameter</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">&nbsp;</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">500.0 0.0001 500.0 &lt;--- interface, perpendicular to the camera, radius of the tank</div></li></ol></div></div>
+</p>
+<ol><li> the attached *.ori files are already after static (using the calibration plate) and dynamic calibration ("shaking"). 
+</li><li> created <span class="geshifilter"><code class="text geshifilter-text">&nbsp;calblock.txt</code></span> file that numbers the points on the calibration plate from 1 to 100, such that:
+</li></ol>
+<p><div class="geshifilter"><div class="geshifilter-text" style="font-family: monospace;"><ol><li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">1 ... 9</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">.......</div></li>
+<li style="font-family: monospace; font-weight: normal;"><div style="font-family: monospace; font-weight: normal; font-style: normal">91 .. 100</div></li></ol></div></div>
+top left is 1 and top right is 9, bottom left is 91 and bottom right is 100. the origin is point 95. 
+</p>
+<ol><li> changed the Main Parameters to have 10 mm glass and images of the 1280 x 1024 pixels. I didn't know the pixel size, changed it to 10 micron (should not be a big problem on average) and I do not know how much it affects the final results.  
+</li><li> using manual tagging of points 1,9,91,100 and few iterations, the data was pretty well calibrated, due to large distance from the calibration plane, the numbers are below 1 micron accuracy. 
+</li><li> added dynamic calibration using first 50 frames. the parameters folder is zipped and attached. 
+</li><li> standard run of the 3D-PTV software (v1.02, from the standalone installation, see origo) with sequence/tracking and tracking backwards created the data which is attached in wes_data.zip. The files were converted from _targets files to the cam1,2,3,4_2D.dat using our Matlab subroutine (attached, et_targets_to_bench2D_format).
+</li><li>  the branch of our post_processing software (see on origo) that is called bench_3D_output creates the text file (inside the wes_data.zip) called wes_bench3d.txt. the format is as it was before: x,y,z,frameId,trajID
+</li></ol>
+<p><i>Hopefully, everyone can now re-run it with the same settings to get the same/close result</i>. If possible, someone has to repeat the steps (now it's easier) and type a tutorial of how to use Wesleyan data in 3D-PTV software. Since it's a nice one-plane calibration that evolves as a dynamic calibration is added - we could consider this case as a nice tutorial for the 3D-PTV users. we can also test various dynamic calibrator algorithms on this case, as a part of the post-benchmark collaboration.
+</p><p><br />
+</p><table id="attachments" class="sticky-enabled">
+ <thead><tr><th>Attachment</th><th>Size</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><a href="../../files/wesleyandataprocessingandresults.zip">wesleyandataprocessingandresults.zip</a></td><td>998.24 KB</td> </tr>
+</tbody>
+</table>
+</div>
+
+		<!-- CONTENT END -->
+
+		
+	</div>
+
+                  </section>      <font size="3">        <footer>          <p>This project is maintained by <a href="https://github.com/3dptv">3D
+              PTV </a> </p>          <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>        </footer>      </font></div>    <font size="3">      <script src="http://3dptv.github.com/javascripts/scale.fix.js"></script> </font>  </body></html>

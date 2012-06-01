@@ -1,0 +1,50 @@
+<!DOCTYPE html><html>  <head>    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">    <meta charset="utf-8">    <meta http-equiv="X-UA-Compatible" content="chrome=1">    <title> 3D-PTV - creating a stand-alone installation executable </title>    <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/styles.css">    <link rel="stylesheet" href="http://3dptv.github.com/stylesheets/pygment_trac.css">    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">    <!--[if lt IE 9]>    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>    <![endif]-->  </head>  <body>    <div class="wrapper">      <header>        <h1>3D PTV</h1>        <img style="width: 200px; " alt="3D-PTV" src="http://3dptv.github.com/image/ptv_0.jpg">        <p>3D Particle Tracking Velocimetry software on Github (<a href="http://3dptv.github.com">            http://3dptv.github.com </a>)</p>        <p class="view"><a href="https://github.com/3dptv/3dptv">View the            Project on GitHub <small>3dptv/3dptv</small></a></p>        <p class="view"><a href="http://3dptv.github.com/blog/index.html"> Read the <b> News </b>  </a> 		</p>        <ul>          <li><a href="https://github.com/3dptv/3dptv/zipball/master">Download <strong>ZIP
+                File</strong></a></li>          <li><a href="https://github.com/3dptv/3dptv/tarball/master">Download <strong>TAR
+                Ball</strong></a></li>          <li><a href="https://github.com/3dptv/3dptv">View On <strong>GitHub</strong></a></li>        </ul>              </header>                   <section>             				   <h1 class="title">
+			 			 Creating standalone package			 		   </h1>
+				<!-- END TITLE -->
+
+		
+		
+		<!-- CONTENT START -->
+		     <div class="node">
+        <div class="clear-block">
+        <span class="submitted"></span>
+    <span class="taxonomy"></span>
+    <div class="content"><a name="This_wiki_page_explains_the_way_the_standalone_installation_package_was_created"></a><h3> <span class="mw-headline"> This wiki page explains the way the standalone installation package was created </span></h3>
+<ol><li> The source code of the ver 1.02 was exported using TortoiseSVN to a 'standalone' directory
+</li><li> the open source Inno Setup <a href="http://www.jrsoftware.org/isinfo.php" class="external free" title="http://www.jrsoftware.org/isinfo.php">http://www.jrsoftware.org/isinfo.php</a> is used. The setup script is attached to this page, so all the structure is given there. It's a simple ASCII file that provides the directory structure and the included list of files.
+</li></ol>
+<a name="Compilation"></a><h4> <span class="mw-headline"> Compilation </span></h4>
+<ul><li> all the header files *.h are copied from the <tt>C:\Tcl\include</tt> directory to the <tt>src_c</tt> directory: tcl.h tk.h, etc. and X11 subdirectory
+</li><li> tcl84.lib and tk84.lib are copied to <tt> src_c </tt>
+</li><li> Additional library and tcl files are copied to the <tt>\lib</tt> directory (see the full list in the setup script file) but basically these are tcl8, tcl8.4, teapot, tk8.4 and tooltip directories. 
+</li><li> the <tt> tk84.dll tcl84.dll </tt> are copied to the 'test' directory and included in the setup, but at the end these two files should be in system folder (e.g. system32 on Windows XP)
+</li><li> the start.bat file in the <tt> \test </tt> directory is modified to:
+</li></ul>
+<p><span class="geshifilter"><code class="text geshifilter-text">&nbsp;..\3DPTV.exe ..\ptv.tcl &amp; &nbsp;</code></span>
+</p>
+<ul><li> The Project Parameters in Visual Studio are modified such that no external dependencies exist (no VC++ projects, include directories) and the .vcproj file is also attached here:
+</li></ul>
+<p><tt> Output directory = "..\..\" 
+</p><p>Debugging Command Argument "..\ptv.tcl"
+</p><p>Debugging Working Directory "..\test"
+</p><p>C/C++ preprocessor  definitions "WIN32;_DEBUG;_WINDOWS"
+</p><p>Linker Output File "..\3DPTV.exe"
+</p><p>Linker Additional Dependencies "tcl84.lib tk84.lib"
+</p><p></tt> 
+</p><p><i>That is it - no ActiveTcl is needed any more, unless some Tcl/Tk development is planned</i>
+</p><p><br />
+</p><table id="attachments" class="sticky-enabled">
+ <thead><tr><th>Attachment</th><th>Size</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td><a href="../../system/files/3dptv.vcproj.zip">3dptv.vcproj.zip</a></td><td>1.59 KB</td> </tr>
+ <tr class="even"><td><a href="../../system/files/setup.iss_.zip">setup.iss_.zip</a></td><td>2.09 KB</td> </tr>
+</tbody>
+</table>
+
+
+		
+	</div>
+                  </section>      <font size="3">        <footer>          <p>This project is maintained by <a href="https://github.com/3dptv">3D
+              PTV </a> </p>          <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>        </footer>      </font></div>    <font size="3">      <script src="http://3dptv.github.com/javascripts/scale.fix.js"></script> </font>  </body></html>
