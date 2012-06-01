@@ -16,6 +16,6 @@ Post title
 	* Unordered list
 	* next tree branch
 	
-Links are just http://alexlib.github.com
+Links are just ```[link text](link url)``` e.g.  [link text](http://alexlib.github.com) 
 
 
