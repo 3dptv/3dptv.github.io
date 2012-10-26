@@ -9,7 +9,6 @@ published_date: Tue. Oct 26, 2012
 
 
 Found the great prose.io editor that allows us to blog in seconds
-published: true
 ---
 
 # How does it work?
@@ -21,13 +20,9 @@ published: true
 5. edit Metadata according to the example below:
 
 	layout: post
-	author: Alex Liberzon
-	author_url: http://alexlib.github.com/
-	author_email: alex.liberzon@gmail.com
-	title: Discussion round table on the future of 3D-PTV at TU/e
-	published_date: Tue. Oct 17, 2012
-	---
-
-
-	
-	published: true
+    author: Alex Liberzon
+    author_url: http://alexlib.github.com/
+    author_email: alex.liberzon@gmail.com
+    title: Discussion round table on the future of 3D-PTV at TU/e
+    published_date: Tue. Oct 17, 2012
+ 
