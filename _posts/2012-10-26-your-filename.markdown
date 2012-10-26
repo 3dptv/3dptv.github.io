@@ -16,7 +16,7 @@ published: false
 
 1. open http://prose.io
 2. authorize your github account
-3. browse to the directory ```_posts
+3. browse to the directory `_posts/`
 4. edit the files, name them automatically as year-month-date-title.markdown
 5. edit Metadata according to the example below:
 
