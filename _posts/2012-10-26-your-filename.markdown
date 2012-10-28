@@ -5,7 +5,7 @@ author_url: http://alexlib.github.com/
 author_email: alex.liberzon@gmail.com
 title: Test of the great online prose.io editor
 published_date: Tue. Oct 26, 2012
-published: false
+published: true
 ---
 
 # How does it work?
