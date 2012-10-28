@@ -7,11 +7,6 @@ title: Test of the great online prose.io editor
 published_date: Tue. Oct 26, 2012
 ---
 
-
-Found the great prose.io editor that allows us to blog in seconds
-published: false
----
-
 # How does it work?
 
 1. open http://prose.io
@@ -32,5 +27,3 @@ published: false
     title: Discussion round table on the future of 3D-PTV at TU/e
     
     published_date: Tue. Oct 17, 2012
-    
- 
