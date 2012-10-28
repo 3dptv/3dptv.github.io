@@ -18,8 +18,14 @@ published: true
 
 
     `layout: post`
+    
     `author: Your Name`
+    
     `author_url: your url`
+    
     `author_email: your e-mail`
+    
     `title: Title`
+    
     `published_date: Tue. Oct 17, 2012`
+    
