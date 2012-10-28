@@ -1,0 +1,11 @@
+auto: false
+server: false
+lsi: false
+markdown: kramdown
+pygments: true
+permalink: /:year/:month/:day/:title
+paginate: 10
+exclude: ["Rakefile", "LICENSE.txt", "README.md", "CNAME"]
+title: 3D Particle Tracking Velocimetry Software
+url: http://3dptv.github.com
+github_user: alexlib
