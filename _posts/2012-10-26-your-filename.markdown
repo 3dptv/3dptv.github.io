@@ -17,9 +17,9 @@ published: true
 5. edit Metadata according to the example below:
 
 
-    layout: post
-    author: Alex Liberzon
-    author_url: http://alexlib.github.com/
-    author_email: alex.liberzon@gmail.com
-    title: Discussion round table on the future of 3D-PTV at TU/e
-    published_date: Tue. Oct 17, 2012
+    `layout: post`
+    `author: Your Name`
+    `author_url: your url`
+    `author_email: your e-mail`
+    `title: Title`
+    `published_date: Tue. Oct 17, 2012`
