@@ -7,6 +7,6 @@ permalink: /:year/:month/:day/:title
 paginate: 10
 exclude: ["Rakefile", "LICENSE.txt", "README.md", "CNAME"]
 title: 3D Particle Tracking Velocimetry Software
-url: http://3dptv.github.com
+url: http://3dptv.github.io
 github_user: alexlib
 theme: jekyll-theme-minimal
